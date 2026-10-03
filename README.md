@@ -12,8 +12,6 @@
 
 ---
 
-> **Reproduce it end to end** — download the public data, train the five autobidders from the bundled source, evaluate them under the pacing controllers, and rebuild every figure and table.
-
 **English** · [**中文**](README_CN.md)
 
 ---
