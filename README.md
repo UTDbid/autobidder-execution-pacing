@@ -50,13 +50,13 @@ controllers**, across **three datasets**:
 
 ## The five learned autobidders
 
-| Bidder | Type | Where it lives |
+| Bidder | Type | Training entrypoint |
 | --- | --- | --- |
 | **CQL** | Conservative Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/cql.py` |
 | **IQL** | Implicit Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
 | **DT** | Decision Transformer (`state_dim=16`, `K=20`) | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/dt.py` |
-| **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/` |
-| **SemBid** | OpenLBM / Qwen2.5-0.5B language-bidding model | `code/bidders/sembid_cpa/Testing/test_exp23_standard.py` |
+| **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
+| **SemBid** | OpenLBM / Qwen2.5-0.5B language-bidding model | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
 > All five bidders are trained from source bundled in this repository
 > (`docs/REPRODUCTION.md` §3); the evaluator loads the resulting checkpoints.

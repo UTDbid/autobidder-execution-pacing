@@ -48,13 +48,13 @@
 <a id="bidders"></a>
 ## 五个 autobidder
 
-| autobidder | 类型 | 位置 |
+| autobidder | 类型 | 训练入口 |
 | --- | --- | --- |
 | **CQL** | Conservative Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/cql.py` |
 | **IQL** | Implicit Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
 | **DT** | Decision Transformer（`state_dim=16`、`K=20`） | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/dt.py` |
-| **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/` |
-| **SemBid** | OpenLBM / Qwen2.5-0.5B 语言出价模型 | `code/bidders/sembid_cpa/Testing/test_exp23_standard.py` |
+| **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
+| **SemBid** | OpenLBM / Qwen2.5-0.5B 语言出价模型 | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
 > 五个 autobidder 的训练源码都在仓库里（`docs/REPRODUCTION.md` §3），评估器会直接加载你训练出来的 checkpoint。DT 与 SemBid 共用 `code/bidders/sembid_cpa/`，GAS 单独打包。
 
