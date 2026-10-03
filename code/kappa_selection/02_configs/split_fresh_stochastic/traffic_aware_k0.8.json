@@ -1,0 +1,16 @@
+[
+  {
+    "autonomy_operator": "relative_hard",
+    "budget_multiplier": 1.0,
+    "cpa_multiplier": 1.0,
+    "h": 4,
+    "id": "traffic_aware_k0.8",
+    "kappa": 0.8,
+    "market_volatility": 0.0,
+    "policy_mode": "hard",
+    "q_scale": 1.0,
+    "reference_mode": "traffic_aware",
+    "valuation_bias": 0.0,
+    "valuation_noise": 0.0
+  }
+]

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="755" viewBox="0 0 1320 755" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="abn" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#C62828"/></marker>
+<marker id="abnTime" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#AD1457"/></marker>
+<marker id="akey" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#9E9E9E"/></marker>
+<marker id="alat" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#00838F"/></marker>
+<marker id="aappE" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/></marker>
+<marker id="acampE" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#EF6C00"/></marker>
+<marker id="aev" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6A1B9A"/></marker>
+</defs>
+<rect width="1320" height="755" fill="#FFFFFF"/>
+<text x="660" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#212121">Predictive pathway: observable features &#8594; latent ground-truth &#8594; outcome labels</text>
+<text x="660" y="50" text-anchor="middle" font-size="12" fill="#546E7A">a feature is predictive only if a path reaches it into the latents that generate the labels</text>
+<rect x="24" y="70" width="202" height="510" rx="10" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="36" y="89" font-size="11.5" font-weight="700" fill="#455A64">OBSERVABLE FEATURES  (visible -&gt; ML training)</text>
+<rect x="286" y="110" width="350" height="480" rx="10" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="298" y="129" font-size="11.5" font-weight="700" fill="#455A64">LATENT GROUND-TRUTH  (hidden from all conditions)</text>
+<rect x="1046" y="108" width="230" height="220" rx="10" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="1058" y="127" font-size="11.5" font-weight="700" fill="#455A64">OUTCOME LABELS - funnel</text>
+<rect x="1046" y="474" width="230" height="122" rx="10" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="1058" y="493" font-size="11.5" font-weight="700" fill="#455A64">OUTCOME LABELS - auction</text>
+<line x1="210" y1="107" x2="296" y2="153" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="210" y1="145" x2="296" y2="153" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="210" y1="183" x2="296" y2="153" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="428" y1="153" x2="470" y2="156" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="428" y1="153" x2="470" y2="190" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="428" y1="153" x2="470" y2="224" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="428" y1="153" x2="470" y2="258" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="428" y1="153" x2="470" y2="292" stroke="#C62828" stroke-width="2.4" marker-end="url(#abn)"/>
+<line x1="210" y1="225" x2="296" y2="153" stroke="#AD1457" stroke-width="2.4" stroke-dasharray="2,3" marker-end="url(#abnTime)"/>
+<line x1="210" y1="263" x2="296" y2="153" stroke="#AD1457" stroke-width="2.4" stroke-dasharray="2,3" marker-end="url(#abnTime)"/>
+<line x1="210" y1="301" x2="470" y2="340" stroke="#9E9E9E" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#akey)"/>
+<line x1="210" y1="301" x2="470" y2="374" stroke="#9E9E9E" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#akey)"/>
+<line x1="210" y1="467" x2="470" y2="460" stroke="#9E9E9E" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#akey)"/>
+<line x1="210" y1="467" x2="470" y2="494" stroke="#9E9E9E" stroke-width="1.4" stroke-dasharray="6,4" marker-end="url(#akey)"/>
+<line x1="630" y1="156" x2="1060" y2="154" stroke="#00838F" stroke-width="1.6" marker-end="url(#alat)"/>
+<line x1="630" y1="292" x2="1060" y2="154" stroke="#00838F" stroke-width="1.6" marker-end="url(#alat)"/>
+<line x1="630" y1="190" x2="1060" y2="200" stroke="#00838F" stroke-width="1.6" marker-end="url(#alat)"/>
+<line x1="630" y1="224" x2="1060" y2="246" stroke="#00838F" stroke-width="1.6" marker-end="url(#alat)"/>
+<line x1="630" y1="258" x2="1060" y2="292" stroke="#00838F" stroke-width="1.6" marker-end="url(#alat)"/>
+<line x1="630" y1="340" x2="1060" y2="154" stroke="#2E7D32" stroke-width="1.8" marker-end="url(#aappE)"/>
+<line x1="630" y1="340" x2="1060" y2="200" stroke="#2E7D32" stroke-width="1.8" marker-end="url(#aappE)"/>
+<line x1="630" y1="460" x2="1060" y2="154" stroke="#EF6C00" stroke-width="1.8" marker-end="url(#acampE)"/>
+<line x1="630" y1="494" x2="1060" y2="200" stroke="#EF6C00" stroke-width="1.8" marker-end="url(#acampE)"/>
+<line x1="630" y1="494" x2="1060" y2="292" stroke="#EF6C00" stroke-width="1.8" marker-end="url(#acampE)"/>
+<line x1="630" y1="224" x2="720" y2="474" stroke="#6A1B9A" stroke-width="1.9" marker-end="url(#aev)"/>
+<line x1="630" y1="258" x2="720" y2="474" stroke="#6A1B9A" stroke-width="1.9" marker-end="url(#aev)"/>
+<line x1="806" y1="496" x2="806" y2="524" stroke="#6A1B9A" stroke-width="1.9" marker-end="url(#aev)"/>
+<line x1="892" y1="539" x2="1060" y2="512" stroke="#6A1B9A" stroke-width="1.9" marker-end="url(#aev)"/>
+<line x1="892" y1="539" x2="1060" y2="558" stroke="#6A1B9A" stroke-width="1.9" marker-end="url(#aev)"/>
+<rect x="40" y="92" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="111" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">A1 region</text>
+<rect x="40" y="130" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="149" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">A3 os</text>
+<rect x="40" y="168" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="187" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">A5 device_type</text>
+<rect x="40" y="210" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="229" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">D2 hour_of_day</text>
+<rect x="40" y="248" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="267" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">D3 day_of_week</text>
+<rect x="40" y="286" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="305" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">B1 app_id</text>
+<rect x="40" y="324" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="343" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">B2 app_category</text>
+<rect x="40" y="362" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="381" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">B4/B5/B6 slot</text>
+<rect x="40" y="452" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="471" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">C1/C3 campaign_id</text>
+<rect x="40" y="490" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="509" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">C2 advertiser_scale</text>
+<rect x="40" y="528" width="170" height="30" rx="7" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.4"/>
+<text x="125" y="547" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">C4 ad_genre</text>
+<rect x="296" y="132" width="132" height="42" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="2.6"/>
+<text x="362" y="150" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU1 archetype</text>
+<text x="362" y="163" text-anchor="middle" font-size="9.5" font-weight="400" fill="#1A1A1A">(hub)</text>
+<rect x="470" y="142" width="160" height="28" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.4"/>
+<text x="550" y="160" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU2 click prop.</text>
+<rect x="470" y="176" width="160" height="28" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.4"/>
+<text x="550" y="194" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU3 install prop.</text>
+<rect x="470" y="210" width="160" height="28" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.4"/>
+<text x="550" y="228" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU4 pay prop.</text>
+<rect x="470" y="244" width="160" height="28" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.4"/>
+<text x="550" y="262" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU5 spend / whale</text>
+<rect x="470" y="278" width="160" height="28" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.4"/>
+<text x="550" y="296" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU6 interest vec.</text>
+<rect x="470" y="326" width="160" height="28" rx="7" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.4"/>
+<text x="550" y="344" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">LA1 app_quality</text>
+<rect x="470" y="360" width="160" height="28" rx="7" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.4"/>
+<text x="550" y="378" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">LA2 audience</text>
+<rect x="470" y="446" width="160" height="28" rx="7" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.4"/>
+<text x="550" y="464" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">LC1 creative_appeal</text>
+<rect x="470" y="480" width="160" height="28" rx="7" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.4"/>
+<text x="550" y="498" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1A1A1A">LC2 game_quality</text>
+<rect x="720" y="452" width="172" height="44" rx="7" fill="#E1BEE7" stroke="#6A1B9A" stroke-width="1.4"/>
+<text x="806" y="471" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">EV (truth)</text>
+<text x="806" y="484" text-anchor="middle" font-size="9.5" font-weight="400" fill="#1A1A1A">= product of Tier-1 latents</text>
+<rect x="720" y="524" width="172" height="30" rx="7" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.4"/>
+<text x="806" y="543" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">LU7 competing_bid</text>
+<rect x="1060" y="138" width="214" height="32" rx="7" fill="#FFCDD2" stroke="#C62828" stroke-width="1.4"/>
+<text x="1167" y="158" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">E1 click</text>
+<rect x="1060" y="184" width="214" height="32" rx="7" fill="#FFCDD2" stroke="#C62828" stroke-width="1.4"/>
+<text x="1167" y="204" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">F1 install</text>
+<rect x="1060" y="230" width="214" height="32" rx="7" fill="#FFCDD2" stroke="#C62828" stroke-width="1.4"/>
+<text x="1167" y="250" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">G1 is_payer</text>
+<rect x="1060" y="276" width="214" height="32" rx="7" fill="#FFCDD2" stroke="#C62828" stroke-width="1.4"/>
+<text x="1167" y="296" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">G2 / G3 / G4 LTV</text>
+<rect x="1060" y="496" width="214" height="32" rx="7" fill="#FFCDD2" stroke="#C62828" stroke-width="1.4"/>
+<text x="1167" y="516" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">H3 won</text>
+<rect x="1060" y="542" width="214" height="32" rx="7" fill="#FFCDD2" stroke="#C62828" stroke-width="1.4"/>
+<text x="1167" y="562" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1A1A1A">H4 clearing</text>
+<rect x="40" y="580" width="590" height="92" rx="9" fill="#FFFDE7" stroke="#E6C200" stroke-width="1.2"/>
+<text x="52" y="600" font-size="10.5" font-weight="700" fill="#5D4E00">Direct funnel multipliers (observable -&gt; outcome, no latent):</text>
+<text x="52" y="618" font-size="10.5" font-weight="400" fill="#5D4E00">  slot B4/B5/B6 -&gt; click ;  ease(B2) -&gt; install ;  C4 ad_genre x LU6 -&gt; click ;  C2 -&gt; bid</text>
+<text x="52" y="636" font-size="10.5" font-weight="400" fill="#5D4E00">Nesting (observable -&gt; observable):  A2 city &lt;- A1 region ;  A4 os_version &lt;- A3 os</text>
+<text x="52" y="654" font-size="10.5" font-weight="400" fill="#5D4E00">won = [ bid &gt;= max(LU7, floor H1) ] ;  clearing = bid if won, LU7 if lost-sold</text>
+<text x="660" y="596" font-size="11" font-weight="700" fill="#37474F">Legend</text>
+<line x1="660" y1="614" x2="686" y2="614" stroke="#C62828" stroke-width="2.6"/>
+<text x="692" y="618" font-size="10.5" fill="#37474F">NEW BN edge: user feature -&gt; archetype -&gt; value latents (the pathway BN creates)</text>
+<line x1="660" y1="634" x2="686" y2="634" stroke="#AD1457" stroke-width="2.6"/>
+<text x="692" y="638" font-size="10.5" fill="#37474F">Compact B (proposed): time D2/D3 -&gt; archetype mix (per-archetype von Mises active-hour prior; gated on BN; sensitivity)</text>
+<line x1="660" y1="654" x2="686" y2="654" stroke="#9E9E9E" stroke-width="2.6"/>
+<text x="692" y="658" font-size="10.5" fill="#37474F">ID -&gt; per-entity latent (key; already predictive)</text>
+<line x1="660" y1="674" x2="686" y2="674" stroke="#00838F" stroke-width="2.6"/>
+<text x="692" y="678" font-size="10.5" fill="#37474F">user latent (LU) -&gt; outcome</text>
+<line x1="660" y1="694" x2="686" y2="694" stroke="#2E7D32" stroke-width="2.6"/>
+<text x="692" y="698" font-size="10.5" fill="#37474F">app latent (LA1/LA2) -&gt; outcome</text>
+<line x1="660" y1="714" x2="686" y2="714" stroke="#EF6C00" stroke-width="2.6"/>
+<text x="692" y="718" font-size="10.5" fill="#37474F">campaign latent (LC1/LC2) -&gt; outcome</text>
+<line x1="660" y1="734" x2="686" y2="734" stroke="#6A1B9A" stroke-width="2.6"/>
+<text x="692" y="738" font-size="10.5" fill="#37474F">value latents -&gt; EV -&gt; competing bid -&gt; won / clearing</text>
+</svg>

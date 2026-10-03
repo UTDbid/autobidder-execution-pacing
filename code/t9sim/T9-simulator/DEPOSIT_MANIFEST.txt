@@ -1,0 +1,182 @@
+# T9 Zenodo deposit manifest
+#
+# One archive per dataset. Each is self-contained: the auction master
+# plus the three entity pools (users, apps, campaigns), and the run's
+# manifest, provenance and validation report.
+#
+# Plus one source snapshot, the tagged release of the generator that
+# produced them, so the record stands alone if the repository does not.
+#
+# md5     matches what Zenodo displays per uploaded file - use it to
+#         confirm the transfer arrived intact.
+# sha256  stronger check of the same archive.
+# members each inner parquet, verifiable after unpacking.
+# fingerprint  content hash of the DATA, independent of parquet's
+#         non-deterministic file metadata. Recompute with:
+#             python -m t9sim.fingerprint <unpacked_dir>
+#         This is what proves a dataset matches the published one; a
+#         correct regeneration may not match on bytes under a different
+#         platform or pyarrow release (parquet stores writer metadata).
+
+## t9_v10_10m_seed90213.zip    (10M master, seed 90213)
+bytes  = 1742745973
+md5    = 56a6c73f219f08a44cc68c928394c9bd
+sha256 = 9f378b9a01b24fd0aed0fe42c7af7ce3347598948fc581c20cee9eba589ef259
+members:
+  0d82cc15e9452a00dd0b22171377111158d1234a1301bd5f8cef01ee97cbe428  auctions.parquet  rows=10000000  bytes=1588229934
+  575ea7dc6c70c4a2aa92fac18af42b7b5eff4d7c9bdf84f58c40cb9abf7a619a  pool_users.parquet  rows=2200000  bytes=154410554
+  3620ff0d413aa3d3ccc0fbf068ff2515cfc32cd7712b3f05bd9fb5acf9686b3d  pool_apps.parquet  rows=1200  bytes=80671
+  27993c085c9a2cd783d6aa5016e261fc907dda39e3f51ce5702e480c5a72095e  pool_campaigns.parquet  rows=200  bytes=10041
+  3bc69ae99e543e047b502ea124a4fbc51c496c591ccc81996e2f68c5985fa12d  manifest.json  bytes=872
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  e9ec915935e9f2e6f09a60d145b046e490b19e7b55641c5f8a441befda18f873  validation_report.csv  bytes=312
+fingerprint = 0xc11a7e6d1436c931
+
+## t9_v10_10m_seed90214.zip    (10M master, seed 90214)
+bytes  = 1743998864
+md5    = 2cb46f034313c4803ea0876ab682220b
+sha256 = eddfcdfbd6cee84a95ca963e124e3f7ac1c34a172b27ecd2f792ae86cfc044cf
+members:
+  8939cc65168e9a25cd62c44a6e2b14e3edf47d8fc290bf100c7f2fe6ff44ad62  auctions.parquet  rows=10000000  bytes=1589498926
+  4d30cb143f93b995a274a2aba6abdcac2497eb6a9faaa35c37a83e78a5a191be  pool_users.parquet  rows=2200000  bytes=154394442
+  e2cc494929f3068fec07b3d5d990577a662c77b6d201fe18e361aa38f57525a0  pool_apps.parquet  rows=1200  bytes=80684
+  3cd0f1133a3377d4e836bcdea4f84b6f09ea7e3f8d5e9fe53d80195ff424692b  pool_campaigns.parquet  rows=200  bytes=10034
+  cf9af08268b9c963c03c2c6a18a8b513d0bea6d7dda9448f97706d90b38b45e6  manifest.json  bytes=877
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  b4fd62ab60689388fc1234126063341ec27410ff6236a648038adcefdc03105e  validation_report.csv  bytes=312
+fingerprint = 0x89cbdcac4f0ffd94
+
+## t9_v10_10m_seed90215.zip    (10M master, seed 90215)
+bytes  = 1740288468
+md5    = e49b6f2a8b9e4a357f9845cc57a7e5ac
+sha256 = 467e0d08208f8d8175c898326e83e359f854a997c7e10ff37fe3aa3f4b880a23
+members:
+  e3e66178781954caa33130f7cc84b13e27c3d90763e78f3b8b1cbfaf9e4918d8  auctions.parquet  rows=10000000  bytes=1585808909
+  2c30bef517a42c0e701816b16a87aacb76249de05fe07969ff22674bba80aea8  pool_users.parquet  rows=2200000  bytes=154374082
+  905a2ba399c6ee2e7ed17c1662e1fe3da8f14838dcd6e56d1066ec65774220db  pool_apps.parquet  rows=1200  bytes=80667
+  ecb8195d434fea9c0fc221a9e40f958fb3b02cb65676ac505a4c535956456f3f  pool_campaigns.parquet  rows=200  bytes=10031
+  af95abf2ba561eb2bb502b5e44feaeb63ba2aa198020047a7b8184f794cd4ab0  manifest.json  bytes=877
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  6d1fead6a4095bf7570cf56f993f697a08085648eda222c8445b96babc85370a  validation_report.csv  bytes=313
+fingerprint = 0x9c63b49e11cd4e44
+
+## t9_v10_10m_seed90216.zip    (10M master, seed 90216)
+bytes  = 1745860333
+md5    = f45f2a922665e7282f12787ffaf05679
+sha256 = 4040b5530eae34f45e06297e977677456d4486fd450bdf78150d32cfdaa1e4af
+members:
+  cedbd39a93f99da8689bad1906895b58075330f6da4f3cfcb60c7d972c7baf12  auctions.parquet  rows=10000000  bytes=1591354884
+  6183f92cd09f3fca9b9831fb3947c590c93fb9053b59635679fa567de1578121  pool_users.parquet  rows=2200000  bytes=154399982
+  68a6e709172531ed6cc8754adcaa77b4e7c67df857b1b5b86c2c2c6fdada9f5d  pool_apps.parquet  rows=1200  bytes=80628
+  dae2322d88d3c6089389a9ac418ceb140f7f4fe4c8ac3742e082278194863812  pool_campaigns.parquet  rows=200  bytes=10061
+  dae94a61f2edecefb43005e186de157494bd7c07ec84bd0a083485c4eb86655e  manifest.json  bytes=877
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  631da2db450da5781f1296b3d0409c10d2001564e4aa0adb078ee970e610ecd4  validation_report.csv  bytes=312
+fingerprint = 0xc318bb3925841020
+
+## t9_v10_10m_seed90217.zip    (10M master, seed 90217)
+bytes  = 1745330793
+md5    = 44f67bcf0e8fa5998fad8962ca2f8e0c
+sha256 = 05078bbedae50d0206708c6a8084b3fd0ca27bc39101f13026bf385133b75eb9
+members:
+  ef6a325a9d0cffcbdad61852a634d9da91afac4083ce43f2fdbeeac9725a8b02  auctions.parquet  rows=10000000  bytes=1590827848
+  cfab1f706bb2c7b6429b58798ded2dc8f9fcae789e8927c9d9dc8db3ef417a72  pool_users.parquet  rows=2200000  bytes=154397455
+  84dd9f77573976cbe8ea8f63de631838be76f3a778bea3079fa79000eeaa5ddc  pool_apps.parquet  rows=1200  bytes=80669
+  f706a6b773bd435955238a0fc638e3f912c49d4a5fda19b56718831e09ada45c  pool_campaigns.parquet  rows=200  bytes=10050
+  c1c2f696aa735b2b4f7191091105c3d652ac14a80135e257070cb1778c6e7f14  manifest.json  bytes=870
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  16abee59d82608e396967b7c7f591aa10b7376ef8f15344149c19f388b6cc702  validation_report.csv  bytes=312
+fingerprint = 0x79ef1f6a85540375
+
+## t9_v10_10m_seed90218.zip    (10M master, seed 90218)
+bytes  = 1744747912
+md5    = f5c460d78e2d38eaa4cc51f517125911
+sha256 = 31663f0b77cf3459ce9a565e69736ef947c2352c34441a47ccc2ba518a670f38
+members:
+  e6aee6ddb06088587fc40e8ab95e3bdef89e7b35879fdb73f8f7bd66707bc3e3  auctions.parquet  rows=10000000  bytes=1590248656
+  ddad193f3f64af2a2b898e68d38737cfdd5a64d1690c0a63ad772b625ce0da6a  pool_users.parquet  rows=2200000  bytes=154393776
+  8201a42c8d076b332086f97420a4ea93a5c6cb90609ee2615744391b3c87d778  pool_apps.parquet  rows=1200  bytes=80666
+  321528326e3ad5dfb877ba7a8c354c8b2c0452783674a682fd45046acb89a68f  pool_campaigns.parquet  rows=200  bytes=10037
+  7c2d034482ef9b29bc3617c61d11b333b4281cb6fc77473545f2b33d86a2224a  manifest.json  bytes=875
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  2af1b9071a9180283cbedff250fa65adcefac3b843805ad05848faf17e51e42c  validation_report.csv  bytes=313
+fingerprint = 0xe875758b02d5b406
+
+## t9_v10_10m_seed90219.zip    (10M master, seed 90219)
+bytes  = 1744305261
+md5    = 8830240063e450fd6afd379471cef0db
+sha256 = afe6a62327f578daf7732982baa5fa46322de2bfc9c39c8d367c06b63bafc8a1
+members:
+  40220f2dfc58df56c9a5d644b420122b21eac02edf1700b42c23815a04970bf4  auctions.parquet  rows=10000000  bytes=1589803574
+  7aa2333d07feb2331a46de6ddfdbfc131a4dc9fe49c9ca683de9b65ddea73854  pool_users.parquet  rows=2200000  bytes=154396202
+  452f6493ea3ef153f592b66dacb36cffc3a08ff9d8bf78594e045c5b3c89bb74  pool_apps.parquet  rows=1200  bytes=80679
+  bdc98f35df004835b5edc70dc3de5a38dd92690957fa1fc39c7f1944dd66e624  pool_campaigns.parquet  rows=200  bytes=10031
+  51a0cf0f8e45a78c52e3ce37756dd201c64724dcc7994fb56e151254bfab6af9  manifest.json  bytes=873
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  991c74fc3f607b0cd146d3bc61956e00cf6b413aa72db8cb1244faef87fbf2ce  validation_report.csv  bytes=313
+fingerprint = 0x0d2c9e1f1217adf4
+
+## t9_v10_10m_seed90220.zip    (10M master, seed 90220)
+bytes  = 1743184746
+md5    = 0757eabfd4ff8787ae7b282881e57899
+sha256 = d6c21c40c116f5249f22476555ee57c266af7be4ed3dbf3d36fcc55416bc7f7b
+members:
+  202bb53939247275eccd1b24094f9c254b4ac318be498d1797f6a422d3ea22bb  auctions.parquet  rows=10000000  bytes=1588692900
+  a12709a8616c4a9980b882dc110a8f0906f023c8f04f0b7ac2e02b23b52f2824  pool_users.parquet  rows=2200000  bytes=154386327
+  156cae201d31b8f5d6dfaef40c41a6bb14426f36fba76cc2e9be1dd16d3b915f  pool_apps.parquet  rows=1200  bytes=80698
+  edcfccfc95dd08694af7528157ae8387f273d3bded79018ad90577624cb372d1  pool_campaigns.parquet  rows=200  bytes=10049
+  131835678dc32eb723f3ce14c5547151923becbdc27ebd5a85cd37a8283c3923  manifest.json  bytes=872
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  59e4cae6f023c29542936b950ce59835e2e2f57dd89acff8f2c0985e8cbfecac  validation_report.csv  bytes=311
+fingerprint = 0xfe9ebee114c1544e
+
+## t9_v10_10m_seed90221.zip    (10M master, seed 90221)
+bytes  = 1745019054
+md5    = a017ddc81a72b3ae27e13db784c71e42
+sha256 = 4cefea45b382da35956ed54d8e690bb0b11b3f7288e2f3ba85b7e8df71ad571c
+members:
+  fd3e2d0be128a3c4cf86804e37cce8c99852ea4c2d309360c85bfb845981e649  auctions.parquet  rows=10000000  bytes=1590524753
+  b4cde56bc5d03c7e68542f0a359ada6aa9f12800ab364d2c2d1f08183aa4d3cc  pool_users.parquet  rows=2200000  bytes=154388784
+  847477be48d04404c278874f0d0653e9839c35497a1be6e43bbfc2814ad86d80  pool_apps.parquet  rows=1200  bytes=80712
+  93020a30339e21b6f3b31725c280911faba980a4355a09fc876a61295f7cd7aa  pool_campaigns.parquet  rows=200  bytes=10029
+  42f30679d5a0e573384f3bf8b6d1a151fd18f7a871e8ad66b97b1f58da2ef3f3  manifest.json  bytes=874
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  c3043ff2dd65e4cf2ffa183b9e1decfa2933c70faf9648622b20ebdb7bba11b2  validation_report.csv  bytes=313
+fingerprint = 0x1084aa8e768e8267
+
+## t9_v10_10m_seed90222.zip    (10M master, seed 90222)
+bytes  = 1744538430
+md5    = 1a4a397ce93138efe19a986683c17322
+sha256 = 17bf704fd29671fc067063942499bc1a44de4253521bacbc579aeb7f50e5c796
+members:
+  2ba80368e823e443834099fd31fa4579456d6721ab12eb0900d36b52f2451ca3  auctions.parquet  rows=10000000  bytes=1590049034
+  9085aa055ae4979693af6f3d5e0585b6a4a76a0a4de839ac0438870cf4f8fd42  pool_users.parquet  rows=2200000  bytes=154383905
+  d9852704c872c33af9f27f4a47f0771b3787bed9022140e4d6e65b0a981c80e2  pool_apps.parquet  rows=1200  bytes=80680
+  f82694f646e27b6f95f6ea81cb3388946b1f93c6d795f700756451297cb0574c  pool_campaigns.parquet  rows=200  bytes=10036
+  6f6f7aebaf44588add40fcf2f246e4b5df2ada4a03f1a1ee77e5cfa1bda5d019  manifest.json  bytes=874
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  0d024ce16f36e52e2a91bbdc7f9861f9cf34862ad4d746bce6d46cd156d98148  validation_report.csv  bytes=312
+fingerprint = 0x1de737330ff8b806
+
+## t9_v10_1m_sample_seed90213.zip    (1M sample, seed 90213)
+bytes  = 169573423
+md5    = 3a3bf22d4d8099ea1b99264e43470ede
+sha256 = 8b35ac1e72740e0852fb83d39b2e152ed899c4505afb2985c66b52d4d8731708
+members:
+  efd49538eb1108306037fbfce8b75f4dc165d4789a873f41084238890627fb73  auctions.parquet  rows=1000000  bytes=152287843
+  15ae90a7f5e87176664ab8c0dcdf72cd06b73a5b08b6e01ec25f971a545497f2  pool_users.parquet  rows=220000  bytes=17227401
+  40c03a1c5245bd7e3c5fe3078c8ee784b33926110aa5bf396cda1b5195971458  pool_apps.parquet  rows=500  bytes=35900
+  97966175ab8bbdcd1ec971666599ac7831cdacc542254746d4870bcc44fdd34f  pool_campaigns.parquet  rows=100  bytes=7425
+  aea9f1998706fcc040dcb3cc13bbcc667ed6eb56505da167e2f94b9ed1903333  manifest.json  bytes=868
+  899a16719e2f6c807a80101b45203d68587ed9eb03f92375600b658d53e7d225  provenance.csv  bytes=12499
+  8725b2e692d25cc4479a2b646838e0b60bc11454747e9d43f12b307c888715e0  validation_report.csv  bytes=313
+fingerprint = 0xa8f93f650dbfe629
+
+## t9sim-1.0.1-source.zip    (source snapshot, tag v1.0.1)
+bytes  = 652972
+md5    = 9ea822a5977025f4084cb9bfd924ff3e
+sha256 = d5d26d6ec9ef2b333132f4ae6dbf4e21921e9c563072fe9074bd48218157cc70
+git    = 0d3f3a91ffb38f194750ad0537fecffc9526f4e5
+files  = 186
+
+# 11 data archives + 1 source snapshot, 17.61 GB total

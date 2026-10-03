@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="308" viewBox="0 0 510 308" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="510" height="308" fill="#FAFAFA"/>
+<text x="255" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">E2  click_timestamp</text>
+<polyline points="143,76 220,76 220,150 246,150" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="150,142 220,142 220,150 246,150" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="146,216 220,216 220,150 246,150" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="35" y="56" width="108" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="89" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">D1 timestamp</text>
+<rect x="28" y="122" width="122" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="89" y="146" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">E1 click (0/1)</text>
+<rect x="31" y="188" width="115" height="56" rx="9" fill="#E1BEE7" stroke="#8E24AA" stroke-width="1.4"/>
+<text x="89" y="212" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">Exp(mean=30s)</text>
+<text x="89" y="228" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">random draw</text>
+<rect x="246" y="122" width="236" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="364" y="146" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">E2 click_timestamp</text>
+<text x="364" y="162" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= D1 + Exp  if click=1  else −1</text>
+<text x="28" y="258" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="268" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="46" y="278" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="196.0" y="268" width="13" height="13" rx="3" fill="#E1BEE7" stroke="#8E24AA"/>
+<text x="214.0" y="278" font-size="10.5" fill="#37474F">random draw</text>
+<rect x="298.0" y="268" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="316.0" y="278" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

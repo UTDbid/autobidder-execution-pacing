@@ -1,0 +1,572 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="908" height="2150" viewBox="0 0 908 2150" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="908" height="2150" fill="#FFFFFF"/>
+<text x="454" y="34" text-anchor="middle" font-size="21" font-weight="700" fill="#212121">Data sources by feature — T9 simulator</text>
+
+<!-- chip legend row -->
+<rect x="286" y="58" width="44" height="30" rx="7" fill="#00897B"/>
+<text x="308" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">IP</text>
+<rect x="342" y="58" width="44" height="30" rx="7" fill="#3949AB"/>
+<text x="364" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">BM</text>
+<rect x="398" y="58" width="44" height="30" rx="7" fill="#FB8C00"/>
+<text x="420" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">IN</text>
+<rect x="454" y="58" width="44" height="30" rx="7" fill="#43A047"/>
+<text x="476" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">SP</text>
+<rect x="510" y="58" width="44" height="30" rx="7" fill="#E53935"/>
+<text x="532" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">CP</text>
+<text x="570" y="78" font-size="12.5" font-weight="700" fill="#37474F">Calculated from</text>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 1 — OBSERVABLE PARAMETERS
+     ══════════════════════════════════════════════════════ -->
+<rect x="30" y="94" width="848" height="28" fill="#37474F"/>
+<text x="46" y="113" font-size="12.5" font-weight="700" fill="#FFFFFF">SECTION 1 — OBSERVABLE PARAMETERS</text>
+
+<!-- ── USER ── -->
+<rect x="30" y="122" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="138" font-size="11" font-weight="700" fill="#FFFFFF">USER</text>
+
+<!-- A1 region  shade y=144 -->
+<rect x="30" y="144" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="161" font-size="12" fill="#263238">A1  region</text>
+<rect x="300" y="148" width="16" height="16" rx="4" fill="#00897B"/>
+<circle cx="364" cy="156" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="156" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="156" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="156" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="161" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- A2 city  no fill y=169 -->
+<text x="40" y="186" font-size="12" fill="#263238">A2  city</text>
+<rect x="300" y="173" width="16" height="16" rx="4" fill="#00897B"/>
+<circle cx="364" cy="181" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="181" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="181" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="181" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="186" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">A1</text>
+
+<!-- A3 os  shade y=194 -->
+<rect x="30" y="194" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="211" font-size="12" fill="#263238">A3  os</text>
+<circle cx="308" cy="206" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="198" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="206" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="206" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="206" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="211" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- A4 os_version  no fill y=219 -->
+<text x="40" y="236" font-size="12" fill="#263238">A4  os_version</text>
+<circle cx="308" cy="231" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="223" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="231" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="231" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="231" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="236" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">A3</text>
+
+<!-- A5 device_type  shade y=244 -->
+<rect x="30" y="244" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="261" font-size="12" fill="#263238">A5  device_type</text>
+<circle cx="308" cy="256" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="248" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="256" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="256" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="256" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="261" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- ── APP · CONTEXT ── -->
+<rect x="30" y="269" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="285" font-size="11" font-weight="700" fill="#FFFFFF">APP · CONTEXT</text>
+
+<!-- B1 app_id  shade y=291 -->
+<rect x="30" y="291" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="308" font-size="12" fill="#263238">B1  app_id</text>
+<circle cx="308" cy="303" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="303" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="303" r="1.6" fill="#CFD8DC"/>
+<rect x="468" y="295" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="303" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="308" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- B2 app_category  no fill y=316 -->
+<text x="40" y="333" font-size="12" fill="#263238">B2  app_category</text>
+<circle cx="308" cy="328" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="320" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="328" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="328" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="328" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="333" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">B1</text>
+
+<!-- B3 ad_exchange  shade y=341 -->
+<rect x="30" y="341" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="358" font-size="12" fill="#263238">B3  ad_exchange</text>
+<circle cx="308" cy="353" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="345" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="353" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="353" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="353" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="358" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- B4 slot_width  no fill y=366 -->
+<text x="40" y="383" font-size="12" fill="#263238">B4  slot_width</text>
+<circle cx="308" cy="378" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="370" width="16" height="16" rx="4" fill="#3949AB"/>
+<rect x="412" y="370" width="16" height="16" rx="4" fill="#FB8C00"/>
+<circle cx="476" cy="378" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="378" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="383" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">B6</text>
+
+<!-- B5 slot_height  shade y=391 -->
+<rect x="30" y="391" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="408" font-size="12" fill="#263238">B5  slot_height</text>
+<circle cx="308" cy="403" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="395" width="16" height="16" rx="4" fill="#3949AB"/>
+<rect x="412" y="395" width="16" height="16" rx="4" fill="#FB8C00"/>
+<circle cx="476" cy="403" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="403" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="408" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">B6</text>
+
+<!-- B6 slot_format  no fill y=416 -->
+<text x="40" y="433" font-size="12" fill="#263238">B6  slot_format</text>
+<circle cx="308" cy="428" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="428" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="420" width="16" height="16" rx="4" fill="#FB8C00"/>
+<circle cx="476" cy="428" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="428" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="433" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- ── CAMPAIGN ── -->
+<rect x="30" y="441" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="457" font-size="11" font-weight="700" fill="#FFFFFF">CAMPAIGN</text>
+
+<!-- C1 advertiser_id  shade y=463 -->
+<rect x="30" y="463" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="480" font-size="12" fill="#263238">C1  advertiser_id</text>
+<rect x="300" y="467" width="16" height="16" rx="4" fill="#00897B"/>
+<circle cx="364" cy="475" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="475" r="1.6" fill="#CFD8DC"/>
+<rect x="468" y="467" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="475" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="480" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- C2 advertiser_scale  no fill y=488 -->
+<text x="40" y="505" font-size="12" fill="#263238">C2  advertiser_scale</text>
+<circle cx="308" cy="500" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="500" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="492" width="16" height="16" rx="4" fill="#FB8C00"/>
+<circle cx="476" cy="500" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="500" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="505" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- C3 campaign_id  shade y=513 -->
+<rect x="30" y="513" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="530" font-size="12" fill="#263238">C3  campaign_id</text>
+<circle cx="308" cy="525" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="525" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="525" r="1.6" fill="#CFD8DC"/>
+<rect x="468" y="517" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="525" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="530" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">C1</text>
+
+<!-- C4 ad_genre  no fill y=538 -->
+<text x="40" y="555" font-size="12" fill="#263238">C4  ad_genre</text>
+<circle cx="308" cy="550" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="550" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="542" width="16" height="16" rx="4" fill="#FB8C00"/>
+<circle cx="476" cy="550" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="550" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="555" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- ── TIME ── -->
+<rect x="30" y="563" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="579" font-size="11" font-weight="700" fill="#FFFFFF">TIME</text>
+
+<!-- D1 timestamp  shade y=585 -->
+<rect x="30" y="585" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="602" font-size="12" fill="#263238">D1  timestamp</text>
+<rect x="300" y="589" width="16" height="16" rx="4" fill="#00897B"/>
+<circle cx="364" cy="597" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="597" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="597" r="1.6" fill="#CFD8DC"/>
+<circle cx="532" cy="597" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="602" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- D2 hour_of_day  no fill y=610 -->
+<text x="40" y="627" font-size="12" fill="#263238">D2  hour_of_day</text>
+<circle cx="308" cy="622" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="622" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="622" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="622" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="614" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="627" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">D1</text>
+
+<!-- D3 day_of_week  shade y=635 -->
+<rect x="30" y="635" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="652" font-size="12" fill="#263238">D3  day_of_week</text>
+<circle cx="308" cy="647" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="647" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="647" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="647" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="639" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="652" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">D1</text>
+
+<!-- ── CLICK OUTCOME ── -->
+<rect x="30" y="660" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="676" font-size="11" font-weight="700" fill="#FFFFFF">CLICK OUTCOME</text>
+
+<!-- E1 click  shade y=682 -->
+<rect x="30" y="682" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="699" font-size="12" fill="#263238">E1  click</text>
+<circle cx="308" cy="694" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="694" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="694" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="694" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="686" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="699" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU2, B4, B5, B6, LU6, C4, LA1, LC1</text>
+
+<!-- E2 click_timestamp  no fill y=707 -->
+<text x="40" y="724" font-size="12" fill="#263238">E2  click_timestamp</text>
+<circle cx="308" cy="719" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="719" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="719" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="719" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="711" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="724" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">D1, E1</text>
+
+<!-- ── INSTALL OUTCOME ── -->
+<rect x="30" y="732" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="748" font-size="11" font-weight="700" fill="#FFFFFF">INSTALL OUTCOME</text>
+
+<!-- F1 install  shade y=754 -->
+<rect x="30" y="754" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="771" font-size="12" fill="#263238">F1  install</text>
+<circle cx="308" cy="766" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="766" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="766" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="766" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="758" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="771" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU3, B2, LU6, C4, LA1, E1</text>
+
+<!-- F2 install_timestamp  no fill y=779 -->
+<text x="40" y="796" font-size="12" fill="#263238">F2  install_timestamp</text>
+<circle cx="308" cy="791" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="791" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="791" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="791" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="783" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="796" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">E2, F1</text>
+
+<!-- ── LTV OUTCOME ── -->
+<rect x="30" y="804" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="820" font-size="11" font-weight="700" fill="#FFFFFF">LTV OUTCOME</text>
+
+<!-- G1 is_payer  shade y=826 -->
+<rect x="30" y="826" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="843" font-size="12" fill="#263238">G1  is_payer</text>
+<circle cx="308" cy="838" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="838" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="838" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="838" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="830" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="843" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">F1, C4, LU4, LU6</text>
+
+<!-- G2 ltv_value  no fill y=851 -->
+<text x="40" y="868" font-size="12" fill="#263238">G2  ltv_value</text>
+<circle cx="308" cy="863" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="863" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="863" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="863" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="855" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="868" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">G1, B2, LU5, LC2</text>
+
+<!-- G3 ltv_7d  shade y=876 -->
+<rect x="30" y="876" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="893" font-size="12" fill="#263238">G3  ltv_7d</text>
+<circle cx="308" cy="888" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="888" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="888" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="888" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="880" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="893" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">G2</text>
+
+<!-- G4 ltv_30d  no fill y=901 -->
+<text x="40" y="918" font-size="12" fill="#263238">G4  ltv_30d</text>
+<circle cx="308" cy="913" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="913" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="913" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="913" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="905" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="918" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">G2</text>
+
+<!-- ── BID / PRICE ── -->
+<rect x="30" y="926" width="848" height="22" fill="#546E7A"/>
+<text x="46" y="942" font-size="11" font-weight="700" fill="#FFFFFF">BID / PRICE</text>
+
+<!-- H1 floor_price  shade y=948 -->
+<rect x="30" y="948" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="965" font-size="12" fill="#263238">H1  floor_price</text>
+<rect x="300" y="952" width="16" height="16" rx="4" fill="#00897B"/>
+<rect x="356" y="952" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="960" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="960" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="952" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="965" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">B6</text>
+
+<!-- H2 bid_price  no fill y=973 -->
+<text x="40" y="990" font-size="12" fill="#263238">H2  bid_price</text>
+<circle cx="308" cy="985" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="985" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="985" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="985" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="977" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="990" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">C2, B2, B4, B5, B6</text>
+
+<!-- H3 won  shade y=998 -->
+<rect x="30" y="998" width="848" height="25" fill="#F5F5F5"/>
+<text x="40" y="1015" font-size="12" fill="#263238">H3  won</text>
+<circle cx="308" cy="1010" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1010" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1010" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1010" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1002" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1015" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">H2, LU7, H1</text>
+
+<!-- H4 clearing_price  no fill y=1023 -->
+<text x="40" y="1040" font-size="12" fill="#263238">H4  clearing_price</text>
+<circle cx="308" cy="1035" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1035" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1035" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1035" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1027" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1040" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">H2, LU7</text>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 2 — LATENT PARAMETERS
+     ══════════════════════════════════════════════════════ -->
+<rect x="30" y="1048" width="848" height="28" fill="#1A237E"/>
+<text x="46" y="1067" font-size="12.5" font-weight="700" fill="#FFFFFF">SECTION 2 — LATENT PARAMETERS  (Stage-1 draws)</text>
+
+<!-- ── USER POOL ── -->
+<rect x="30" y="1076" width="848" height="22" fill="#303F9F"/>
+<text x="46" y="1092" font-size="11" font-weight="700" fill="#FFFFFF">USER POOL</text>
+
+<!-- LU1 archetype  shade y=1098 -->
+<rect x="30" y="1098" width="848" height="25" fill="#EDE7F6"/>
+<text x="40" y="1115" font-size="12" fill="#263238">LU1  archetype</text>
+<circle cx="308" cy="1110" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="1102" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="1110" r="1.6" fill="#CFD8DC"/>
+<rect x="468" y="1102" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1110" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1115" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- LU2 click_propensity  no fill y=1123 -->
+<text x="40" y="1140" font-size="12" fill="#263238">LU2  click_propensity</text>
+<circle cx="308" cy="1135" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="1127" width="16" height="16" rx="4" fill="#3949AB"/>
+<rect x="412" y="1127" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1127" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1135" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1140" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU1</text>
+
+<!-- LU3 install_propensity  shade y=1148 -->
+<rect x="30" y="1148" width="848" height="25" fill="#EDE7F6"/>
+<text x="40" y="1165" font-size="12" fill="#263238">LU3  install_propensity</text>
+<circle cx="308" cy="1160" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="1152" width="16" height="16" rx="4" fill="#3949AB"/>
+<rect x="412" y="1152" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1152" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1160" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1165" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU1</text>
+
+<!-- LU4 payer_probability  no fill y=1173 -->
+<text x="40" y="1190" font-size="12" fill="#263238">LU4  payer_probability</text>
+<circle cx="308" cy="1185" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="1177" width="16" height="16" rx="4" fill="#3949AB"/>
+<rect x="412" y="1177" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1177" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1185" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1190" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU1</text>
+
+<!-- LU5 ltv_multiplier  shade y=1198 -->
+<rect x="30" y="1198" width="848" height="25" fill="#EDE7F6"/>
+<text x="40" y="1215" font-size="12" fill="#263238">LU5  ltv_multiplier</text>
+<circle cx="308" cy="1210" r="1.6" fill="#CFD8DC"/>
+<rect x="356" y="1202" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="1210" r="1.6" fill="#CFD8DC"/>
+<rect x="468" y="1202" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1210" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1215" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU1</text>
+
+<!-- LU6 interest_vector  no fill y=1223 -->
+<text x="40" y="1240" font-size="12" fill="#263238">LU6  interest_vector</text>
+<circle cx="308" cy="1235" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1235" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="1227" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1227" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1235" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1240" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU1</text>
+
+<!-- ── APP POOL ── -->
+<rect x="30" y="1248" width="848" height="22" fill="#2E7D32"/>
+<text x="46" y="1264" font-size="11" font-weight="700" fill="#FFFFFF">APP POOL</text>
+
+<!-- LA1 app_quality  shade y=1270 -->
+<rect x="30" y="1270" width="848" height="25" fill="#E8F5E9"/>
+<text x="40" y="1287" font-size="12" fill="#263238">LA1  app_quality</text>
+<circle cx="308" cy="1282" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1282" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="1274" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1274" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1282" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1287" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- LA2 app_audience_profile  no fill y=1295 -->
+<text x="40" y="1312" font-size="12" fill="#263238">LA2  app_audience_profile</text>
+<circle cx="308" cy="1307" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1307" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="1299" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1299" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1307" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1312" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- ── CAMPAIGN POOL ── -->
+<rect x="30" y="1320" width="848" height="22" fill="#BF360C"/>
+<text x="46" y="1336" font-size="11" font-weight="700" fill="#FFFFFF">CAMPAIGN POOL</text>
+
+<!-- LC1 creative_appeal  shade y=1342 -->
+<rect x="30" y="1342" width="848" height="25" fill="#FFF3E0"/>
+<text x="40" y="1359" font-size="12" fill="#263238">LC1  creative_appeal</text>
+<circle cx="308" cy="1354" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1354" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="1346" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1346" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1354" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1359" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- LC2 game_quality  no fill y=1367 -->
+<text x="40" y="1384" font-size="12" fill="#263238">LC2  game_quality</text>
+<circle cx="308" cy="1379" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1379" r="1.6" fill="#CFD8DC"/>
+<rect x="412" y="1371" width="16" height="16" rx="4" fill="#FB8C00"/>
+<rect x="468" y="1371" width="16" height="16" rx="4" fill="#43A047"/>
+<circle cx="532" cy="1379" r="1.6" fill="#CFD8DC"/>
+<text x="570" y="1384" font-size="10.5" fill="#B0BEC5">—</text>
+
+<!-- ── AUCTION LATENT ── -->
+<rect x="30" y="1392" width="848" height="22" fill="#1565C0"/>
+<text x="46" y="1408" font-size="11" font-weight="700" fill="#FFFFFF">AUCTION</text>
+
+<!-- LU7 competing_bid  shade y=1414 -->
+<rect x="30" y="1414" width="848" height="25" fill="#E3F2FD"/>
+<text x="40" y="1431" font-size="12" fill="#263238">LU7  competing_bid</text>
+<rect x="300" y="1418" width="16" height="16" rx="4" fill="#00897B"/>
+<rect x="356" y="1418" width="16" height="16" rx="4" fill="#3949AB"/>
+<circle cx="420" cy="1426" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1426" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1418" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1431" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU2&#8211;LU6, B2, B4&#8211;B6, C4, LA1, LC1, LC2</text>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 3 — ESTIMANDS
+     ══════════════════════════════════════════════════════ -->
+<rect x="30" y="1439" width="848" height="28" fill="#4A148C"/>
+<text x="46" y="1458" font-size="12.5" font-weight="700" fill="#FFFFFF">SECTION 3 — ESTIMANDS  (ground truth)</text>
+
+<!-- p_click  shade y=1467 -->
+<rect x="30" y="1467" width="848" height="25" fill="#F3E5F5"/>
+<text x="40" y="1484" font-size="12" fill="#263238">p_click</text>
+<circle cx="308" cy="1479" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1479" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1479" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1479" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1471" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1484" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU2, v_slot, m(r), LA1, LC1</text>
+
+<!-- p_install  no fill y=1492 -->
+<text x="40" y="1509" font-size="12" fill="#263238">p_install</text>
+<circle cx="308" cy="1504" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1504" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1504" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1504" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1496" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1509" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU3, ease(B2), m(r), LA1</text>
+
+<!-- p_payer  shade y=1517 -->
+<rect x="30" y="1517" width="848" height="25" fill="#F3E5F5"/>
+<text x="40" y="1534" font-size="12" fill="#263238">p_payer</text>
+<circle cx="308" cy="1529" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1529" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1529" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1529" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1521" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1534" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU4, t_pay(D2, D3)</text>
+
+<!-- e_ltv  no fill y=1542 -->
+<text x="40" y="1559" font-size="12" fill="#263238">e_ltv</text>
+<circle cx="308" cy="1554" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1554" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1554" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1554" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1546" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1559" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">LU5, LC2, &#956;(B2), &#961;(A3)</text>
+
+<!-- ev_truth  shade y=1567 -->
+<rect x="30" y="1567" width="848" height="25" fill="#F3E5F5"/>
+<text x="40" y="1584" font-size="12" fill="#263238">ev_truth</text>
+<circle cx="308" cy="1579" r="1.6" fill="#CFD8DC"/>
+<circle cx="364" cy="1579" r="1.6" fill="#CFD8DC"/>
+<circle cx="420" cy="1579" r="1.6" fill="#CFD8DC"/>
+<circle cx="476" cy="1579" r="1.6" fill="#CFD8DC"/>
+<rect x="524" y="1571" width="16" height="16" rx="4" fill="#E53935"/>
+<text x="570" y="1584" font-size="10.5" fill="#37474F" font-family="Consolas, monospace">p_click &#215; p_install &#215; p_payer &#215; e_ltv</text>
+
+<!-- column divider lines (y=94 to y=1592) -->
+<line x1="280" y1="94" x2="280" y2="1592" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="336" y1="94" x2="336" y2="1592" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="392" y1="94" x2="392" y2="1592" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="448" y1="94" x2="448" y2="1592" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="504" y1="94" x2="504" y2="1592" stroke="#E0E0E0" stroke-width="1"/>
+<line x1="560" y1="94" x2="560" y2="1592" stroke="#BDBDBD" stroke-width="1.5"/>
+
+<!-- ══════ LEGEND ══════ -->
+<text x="30" y="1614" font-size="12" font-weight="700" fill="#37474F">DATA SOURCES</text>
+<rect x="30" y="1629" width="14" height="14" rx="3" fill="#00897B"/>
+<text x="52" y="1640" font-size="11" fill="#37474F"><tspan font-weight="700">IP</tspan>  iPinYou — empirical distribution shapes &amp; anchors</text>
+<rect x="30" y="1647" width="14" height="14" rx="3" fill="#3949AB"/>
+<text x="52" y="1658" font-size="11" fill="#37474F"><tspan font-weight="700">BM</tspan>  Benchmark config — external US-2025 reports (StatCounter, Sensor Tower / Newzoo, IAB, mediation reports, AppsFlyer / Liftoff …)</text>
+<rect x="30" y="1665" width="14" height="14" rx="3" fill="#FB8C00"/>
+<text x="52" y="1676" font-size="11" fill="#37474F"><tspan font-weight="700">IN</tspan>  Inferred config — set by documented judgment (flagged INFERRED)</text>
+<rect x="30" y="1683" width="14" height="14" rx="3" fill="#43A047"/>
+<text x="52" y="1694" font-size="11" fill="#37474F"><tspan font-weight="700">SP</tspan>  Synthetic pool — Stage-1 generation: synthetic ids + latent draws</text>
+<rect x="30" y="1701" width="14" height="14" rx="3" fill="#E53935"/>
+<text x="52" y="1712" font-size="11" fill="#37474F"><tspan font-weight="700">CP</tspan>  Computed — calculated from the feature columns listed on the right (Stage-2 formulas + random draws)</text>
+
+<!-- ══════ FORMULAS ══════ -->
+<text x="30" y="1738" font-size="12" font-weight="700" fill="#37474F">COMPUTATION FORMULAS  (CP rows)</text>
+<text x="30" y="1754" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">D2   </tspan>= hour_of_day extracted from D1 timestamp</text>
+<text x="30" y="1770" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">D3   </tspan>= day_of_week extracted from D1 timestamp</text>
+<text x="30" y="1786" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">E1   </tspan>~ Bernoulli( base_ctr &#183; LU2 &#183; v_slot &#183; m(r) &#183; LA1 &#183; LC1 )</text>
+<text x="30" y="1802" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">E2   </tspan>= D1 + Exponential(&#955;_click) offset      [0 if E1=0]</text>
+<text x="30" y="1818" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">F1   </tspan>~ Bernoulli( base_ir &#183; LU3 &#183; ease(B2) &#183; m(r) &#183; LA1 )     [0 if E1=0]</text>
+<text x="30" y="1834" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">F2   </tspan>= E2 + Exponential(&#955;_install) offset     [0 if F1=0]</text>
+<text x="30" y="1850" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">G1   </tspan>~ Bernoulli( LU4 &#183; m(r) )                 [0 if F1=0]</text>
+<text x="30" y="1866" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">G2   </tspan>= LogNormal(&#956;_cat, &#963;) &#183; LU5 &#183; LC2        [&#956;_cat = lognormal_&#956; + ln(ltv_mult(B2));  0 if G1=0]</text>
+<text x="30" y="1882" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">G3,G4</tspan>= G2 &#215; cumulative_fraction(7d / 30d window)</text>
+<text x="30" y="1898" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">H1   </tspan>~ LogNormal(&#956;_floor, &#963;) &#183; wt(B6)</text>
+<text x="30" y="1914" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">H2   </tspan>= k_cpa(C2) &#183; v_slot &#183; ease(B2) &#183; E[ltv|B2] &#183; LogNormal(0, &#963;_explore)</text>
+<text x="30" y="1930" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">H3   </tspan>= 1 if H2 &#8805; max(LU7, H1) else 0</text>
+<text x="30" y="1946" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">H4   </tspan>= max(H2, LU7)        [H4 absent in C1/C2 — only C3/C4 receive clearing price]</text>
+<text x="30" y="1962" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#C62828">LU7  </tspan>= max( base_eCPM(B6)&#183;exp(&#947;&#183;z(logEV)+&#949;_g),  base_eCPM(B6)&#183;exp(&#949;_x) )</text>
+<text x="30" y="1982" xml:space="preserve" font-size="10" font-family="Consolas, monospace" fill="#546E7A">where:  m(r) = (1&#8722;w_stage) + w_stage&#183;LU6[ad_genre]  |  v_slot = fmt_wt(B6)&#183;size_wt(B4,B5)  |  EV = p_click&#183;p_install&#183;p_payer&#183;e_ltv</text>
+
+<text x="30" y="2002" font-size="12" font-weight="700" fill="#4A148C">GROUND TRUTH ESTIMANDS  (Section 3 — master dataset only)</text>
+<text x="30" y="2018" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#6A1B9A">p_click  </tspan>= base_ctr &#183; LU2 &#183; v_slot &#183; m(r) &#183; LA1 &#183; LC1</text>
+<text x="30" y="2034" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#6A1B9A">p_install</tspan>= base_ir &#183; LU3 &#183; ease(B2) &#183; m(r) &#183; LA1</text>
+<text x="30" y="2050" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#6A1B9A">p_payer  </tspan>= base_payer &#183; LU4 &#183; t_pay(D2,D3) &#183; m(r)</text>
+<text x="30" y="2066" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#6A1B9A">e_ltv    </tspan>= exp(&#956;_cat) &#183; LU5 &#183; LC2 &#183; &#961;(A3)    [&#961;(iOS)&#8776;1.8&#215;;  &#956;_cat = lognormal_&#956; + ln(ltv_mult(B2))]</text>
+<text x="30" y="2082" xml:space="preserve" font-size="10.5" font-family="Consolas, monospace" fill="#263238"><tspan font-weight="700" fill="#6A1B9A">ev_truth </tspan>= p_click &#183; p_install &#183; p_payer &#183; e_ltv</text>
+
+<text x="30" y="2104" font-size="10" fill="#78909C">Notes:  A3&#8211;A5 = US mobile config targets (StatCounter, BM).  B4/B5 = IAB standard sizes (BM) with inferred distribution (IN).  B6 slot_format = inferred from IAB taxonomy (IN).</text>
+<text x="30" y="2120" font-size="10" fill="#78909C">E/F/G rows: observed on ALL rows in C2/C4 (MMP data); on won rows only in C1/C3 (no MMP — censored by auction outcome).  H4 clearing_price: C3/C4 only (SSP data).</text>
+<text x="30" y="2136" font-size="10" fill="#78909C">Latent row shading: lavender=USER, green=APP, orange=CAMPAIGN, blue=AUCTION.  Estimand rows shaded lavender.  'Calculated from' lists input COLUMNS only; config constants and draw seeds omitted.</text>
+</svg>

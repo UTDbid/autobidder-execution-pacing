@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="804" height="440" viewBox="0 0 804 440" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="804" height="440" fill="#FAFAFA"/>
+<text x="402" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">EV  expected value (ground truth)</text>
+<polyline points="195,76 340,76 340,216 366,216" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="217,142 340,142 340,216 366,216" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="217,208 340,208 340,216 366,216" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="203,274 340,274 340,216 366,216" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="270,348 340,348 340,216 366,216" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="103" y="56" width="92" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="149" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">P(click)</text>
+<rect x="82" y="122" width="135" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="149" y="146" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">P(install|click)</text>
+<rect x="82" y="188" width="135" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="149" y="212" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">P(payer|install)</text>
+<rect x="95" y="254" width="108" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="149" y="278" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">E[ltv|payer]</text>
+<rect x="28" y="320" width="242" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="149" y="344" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">(each P built from user LU2–LU6,</text>
+<text x="149" y="360" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">app LA1, campaign LC1/LC2)</text>
+<rect x="366" y="188" width="410" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="571" y="212" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">EV</text>
+<text x="571" y="228" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= P(click)·P(install|click)·P(payer|install)·E[ltv|payer]</text>
+<text x="28" y="390" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="400" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="46" y="410" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="196.0" y="400" width="13" height="13" rx="3" fill="#FFF9C4" stroke="#FBC02D"/>
+<text x="214.0" y="410" font-size="10.5" fill="#37474F">intermediate op</text>
+<rect x="322.0" y="400" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="340.0" y="410" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

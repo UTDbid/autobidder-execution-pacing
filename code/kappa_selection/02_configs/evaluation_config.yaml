@@ -1,0 +1,31 @@
+version: 1
+status: design_only
+selection_unit: bidder_reference_pair
+bidders:
+  - cql
+  - iql
+  - dt
+  - gas
+  - sembid
+references:
+  - traffic_aware
+  - pid
+  - dual
+rules:
+  - R1_constrained_frontier
+  - R2_conservative_near_best_95
+  - R3_sequential_stability
+  - R4_structural_kink_aware
+baselines:
+  - fixed
+  - global_calibration
+  - reference_calibration
+primary_metric: budget_normalized_feasible_value_regret
+co_primary_metrics:
+  - delivery_violation_rate
+  - delivery_violation_severity
+inference_unit: bidder_reference_pair
+calibration_seed_ids: resolve_from_inherited_frozen_manifest
+evaluation_seed_ids: freeze_before_outcome_access
+allow_complex_ml_selector: false
+allow_llm_api: false

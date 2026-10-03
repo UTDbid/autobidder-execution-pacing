@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+.mypy_cache/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Secrets / local config
+.env
+.env.*
+*.key
+*.pem
+id_rsa*
+
+# Generated model checkpoints / weights (reproducers train their own)
+*.pkl
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Downloaded raw data (reproducers run the bundled download scripts)
+*.zip
+*.7z
+*.parquet
+*.pickle

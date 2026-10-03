@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="apool" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565C0"/></marker>
+<marker id="ariv" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/></marker>
+<marker id="astep" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#90A4AE"/></marker>
+<marker id="aout" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6A1B9A"/></marker>
+<marker id="aghost" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#B0BEC5"/></marker>
+</defs>
+<rect width="1080" height="620" fill="#FFFFFF"/>
+<text x="542" y="40" text-anchor="middle" font-size="19" font-weight="700" fill="#212121">T9Sim generator: four pools, one uncensored row</text>
+<text x="130" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#546E7A">FROZEN ONCE</text>
+<text x="485" y="88" text-anchor="middle" font-size="12" font-weight="700" fill="#546E7A">ONE AUCTION ROW</text>
+<rect x="310" y="96" width="350" height="486" rx="12" fill="#FAFAFA" stroke="#CFD8DC" stroke-width="1.4"/>
+<polyline points="220,138 265,138" fill="none" stroke="#1565C0" stroke-width="2.0"/>
+<polyline points="220,272 265,272" fill="none" stroke="#1565C0" stroke-width="2.0"/>
+<polyline points="220,406 265,406" fill="none" stroke="#1565C0" stroke-width="2.0"/>
+<polyline points="265,406 265,131 325,131" fill="none" stroke="#1565C0" stroke-width="2.0" marker-end="url(#apool)"/>
+<polyline points="220,540 288,540 288,287 325,287" fill="none" stroke="#2E7D32" stroke-width="2.0" marker-end="url(#ariv)"/>
+<polyline points="288,339 325,339" fill="none" stroke="#2E7D32" stroke-width="2.0" marker-end="url(#ariv)"/>
+<polyline points="485,149 485,165" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,201 485,217" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,253 485,269" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,305 485,321" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,357 485,373" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,409 485,425" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,461 485,477" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="485,513 485,529" fill="none" stroke="#90A4AE" stroke-width="2.0" marker-end="url(#astep)"/>
+<polyline points="645,547 695,547 695,240 730,240" fill="none" stroke="#6A1B9A" stroke-width="2.1" marker-end="url(#aout)"/>
+<polyline points="880,300 880,400" fill="none" stroke="#B0BEC5" stroke-width="2.0" stroke-dasharray="6,4" marker-end="url(#aghost)"/>
+<circle cx="265" cy="138" r="2.6" fill="#1565C0"/>
+<circle cx="265" cy="272" r="2.6" fill="#1565C0"/>
+<circle cx="288" cy="339" r="2.6" fill="#2E7D32"/>
+<rect x="40" y="96" width="180" height="84" rx="10" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.8"/>
+<text x="56" y="122" font-size="12.5" font-weight="700" fill="#1A1A1A">User pool</text>
+<text x="56" y="144" font-size="11" fill="#1565C0">A1-A5, LU1-LU6</text>
+<rect x="40" y="230" width="180" height="84" rx="10" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.8"/>
+<text x="56" y="256" font-size="12.5" font-weight="700" fill="#1A1A1A">App pool</text>
+<text x="56" y="278" font-size="11" fill="#1565C0">B1-B2, LA1-LA2</text>
+<rect x="40" y="364" width="180" height="84" rx="10" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.8"/>
+<text x="56" y="390" font-size="12.5" font-weight="700" fill="#1A1A1A">Campaign pool</text>
+<text x="56" y="412" font-size="11" fill="#1565C0">C1-C4, LC1-LC2</text>
+<rect x="56" y="422" width="92" height="17" rx="8.5" fill="#90A4AE"/>
+<text x="102.0" y="434" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">scale-weighted</text>
+<rect x="40" y="498" width="180" height="84" rx="10" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.8"/>
+<text x="56" y="524" font-size="12.5" font-weight="700" fill="#1A1A1A">Rival pool #6</text>
+<text x="56" y="546" font-size="11" fill="#2E7D32">K=8 (3 gaming), LR1-LR6</text>
+<rect x="56" y="556" width="80" height="17" rx="8.5" fill="#90A4AE"/>
+<text x="96.0" y="568" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">28-day paths</text>
+<rect x="325" y="113" width="320" height="36" rx="8" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.8"/>
+<circle cx="347" cy="131" r="11" fill="#1565C0"/>
+<text x="347" y="135" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">1</text>
+<text x="367" y="136" font-size="12" fill="#1A1A1A">sample pools</text>
+<rect x="553" y="123" width="80" height="17" rx="8.5" fill="#90A4AE"/>
+<text x="593.0" y="135" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">IPF raked #1</text>
+<rect x="325" y="165" width="320" height="36" rx="8" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.8"/>
+<circle cx="347" cy="183" r="11" fill="#546E7A"/>
+<text x="347" y="187" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">2</text>
+<text x="367" y="188" font-size="12" fill="#1A1A1A">B3-B6, time D, floor H1</text>
+<rect x="325" y="217" width="320" height="36" rx="8" fill="#FFCDD2" stroke="#C62828" stroke-width="1.8"/>
+<circle cx="347" cy="235" r="11" fill="#C62828"/>
+<text x="347" y="239" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">3</text>
+<text x="367" y="240" font-size="12" fill="#1A1A1A">oracle ev_truth, z</text>
+<rect x="325" y="269" width="320" height="36" rx="8" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.8"/>
+<circle cx="347" cy="287" r="11" fill="#2E7D32"/>
+<text x="347" y="291" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">4</text>
+<text x="367" y="292" font-size="12" fill="#1A1A1A">participants H9</text>
+<rect x="325" y="321" width="320" height="36" rx="8" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.8"/>
+<circle cx="347" cy="339" r="11" fill="#2E7D32"/>
+<text x="347" y="343" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">5</text>
+<text x="367" y="344" font-size="12" fill="#1A1A1A">rival bids, LU7</text>
+<rect x="325" y="373" width="320" height="36" rx="8" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.8"/>
+<circle cx="347" cy="391" r="11" fill="#EF6C00"/>
+<text x="347" y="395" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">6</text>
+<text x="367" y="396" font-size="12" fill="#1A1A1A">our bid H2</text>
+<rect x="553" y="383" width="80" height="17" rx="8.5" fill="#90A4AE"/>
+<text x="593.0" y="395" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">no LU7 input</text>
+<rect x="325" y="425" width="320" height="36" rx="8" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.8"/>
+<circle cx="347" cy="443" r="11" fill="#EF6C00"/>
+<text x="347" y="447" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">7</text>
+<text x="367" y="448" font-size="12" fill="#1A1A1A">won H3</text>
+<rect x="325" y="477" width="320" height="36" rx="8" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.8"/>
+<circle cx="347" cy="495" r="11" fill="#EF6C00"/>
+<text x="347" y="499" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">8</text>
+<text x="367" y="500" font-size="12" fill="#1A1A1A">price H4</text>
+<rect x="325" y="529" width="320" height="36" rx="8" fill="#FFCDD2" stroke="#C62828" stroke-width="1.8"/>
+<circle cx="347" cy="547" r="11" fill="#C62828"/>
+<text x="347" y="551" text-anchor="middle" font-size="11" font-weight="700" fill="#FFFFFF">9</text>
+<text x="367" y="552" font-size="12" fill="#1A1A1A">funnel draws E, F, G, every row</text>
+<rect x="730" y="180" width="300" height="120" rx="10" fill="#E1BEE7" stroke="#6A1B9A" stroke-width="1.8"/>
+<text x="746" y="212" font-size="13" font-weight="700" fill="#1A1A1A">Master row</text>
+<text x="746" y="234" font-size="11" fill="#6A1B9A">auctions.parquet</text>
+<rect x="747" y="258" width="26" height="20" rx="4" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.0"/>
+<rect x="777" y="258" width="26" height="20" rx="4" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.0"/>
+<rect x="807" y="258" width="26" height="20" rx="4" fill="#FFCDD2" stroke="#C62828" stroke-width="1.0"/>
+<rect x="837" y="258" width="26" height="20" rx="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.0"/>
+<rect x="867" y="258" width="26" height="20" rx="4" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.0"/>
+<rect x="897" y="258" width="26" height="20" rx="4" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.0"/>
+<rect x="927" y="258" width="26" height="20" rx="4" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.0"/>
+<rect x="957" y="258" width="26" height="20" rx="4" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.0"/>
+<rect x="987" y="258" width="26" height="20" rx="4" fill="#FFCDD2" stroke="#C62828" stroke-width="1.0"/>
+<rect x="730" y="400" width="300" height="130" rx="10" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="880" y="458" text-anchor="middle" font-size="12" fill="#546E7A">censored views C1-C4</text>
+<text x="880" y="483" text-anchor="middle" font-size="12" fill="#546E7A">models, bidder</text>
+<line x1="710" y1="376" x2="1045" y2="376" stroke="#90A4AE" stroke-width="1.6" stroke-dasharray="7,5"/>
+<text x="710" y="368" font-size="11" fill="#546E7A">generator stops here</text>
+</svg>

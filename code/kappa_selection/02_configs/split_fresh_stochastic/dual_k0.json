@@ -1,0 +1,18 @@
+[
+  {
+    "autonomy_operator": "relative_hard",
+    "budget_multiplier": 1.0,
+    "cpa_multiplier": 1.0,
+    "dual_eta": 10.0,
+    "dual_log_shadow_limit": 2.995732274,
+    "h": 4,
+    "id": "dual_k0",
+    "kappa": 0.0,
+    "market_volatility": 0.0,
+    "policy_mode": "hard",
+    "q_scale": 1.0,
+    "reference_mode": "dual",
+    "valuation_bias": 0.0,
+    "valuation_noise": 0.0
+  }
+]

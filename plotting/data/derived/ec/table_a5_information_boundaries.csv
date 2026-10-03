@@ -1,0 +1,6 @@
+Pacing architecture,Information used,Uses raw action,Paper role
+Traffic-aware,"Budget, time, traffic, historical value–price response",No,Bidder-independent pacing
+PID pacing,Cumulative spend-path error,No,Delivery feedback
+Dual pacing,Budget shadow price and spend feedback,No,Economic pacing
+Smoothed-controller,Lagged raw bidder actions and spend,Yes,Information-overlap extension
+Response-aware,Spend and CPA response,No raw action,Value-aware boundary

@@ -1,0 +1,11 @@
+reference,kappa,mean,ci95_low,ci95_high,n,panel,diagnostic,spearman_rho,p_value,policy,selection,mean_net_regret,mean_constraint_violation,feasible_rate,mean_expected_value,mean_underdelivery,fraction_global_regret_reduced
+smoothed_controller,0.3,2453.1358720602,2418.295887311708,2490.096676965922,8.0,endpoint_lottery,,,,,,,,,,,
+smoothed_controller,0.5,325.78284381489,309.151687610454,345.5481311744473,8.0,endpoint_lottery,,,,,,,,,,,
+traffic_aware,0.3,1937.913937687572,1934.3138976937448,1941.677673865036,8.0,endpoint_lottery,,,,,,,,,,,
+traffic_aware,0.5,2615.808924012295,2609.6091180677345,2622.5206642864728,8.0,endpoint_lottery,,,,,,,,,,,
+traffic_aware,0.8,683.4788038973913,677.5601426194322,689.4730606557005,8.0,endpoint_lottery,,,,,,,,,,,
+,,,,,48.0,useful_disagreement,disagreement_magnitude,-0.11202778983934,0.4484011606559618,,,,,,,,
+,,,,,48.0,useful_disagreement,useful_disagreement,0.05591141059983,0.7058390209373406,,,,,,,,
+,,,,,,transparent_tiers,,,,single_global,h8_k1.2,9.648048424011956,0.1544697454698131,0.5972222222222222,254.2451694347845,0.0649645467154167,0.0
+,,,,,,transparent_tiers,,,,three_delivery_tiers,"{""0.05"": ""h8_k1.2"", ""0.15"": ""h8_k1.2"", ""0.3"": ""h8_k1.2""}",9.648048424011956,0.1544697454698131,0.5972222222222222,254.2451694347845,0.0649645467154167,0.0
+,,,,,,transparent_tiers,,,,oracle,case_specific,0.0,0.1021162352545073,0.6388888888888888,264.5172919328705,0.0342323414805376,1.0

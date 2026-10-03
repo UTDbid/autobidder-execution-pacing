@@ -1,0 +1,19 @@
+# generated data (reproducible by seed; see README "Data & reproducibility")
+output/
+
+# environments / caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# local scratch
+*.log
+*.tmp
+~$*
+zenodo_deposit/
+
+# generated locally by scripts/aggregate_results.py --docx (readable copy, not shipped)
+*.docx

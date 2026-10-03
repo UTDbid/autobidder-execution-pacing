@@ -1,0 +1,662 @@
+{
+  "scale_reported": "10m",
+  "n_10m": 10,
+  "seeds_10m": [
+    90213,
+    90214,
+    90215,
+    90216,
+    90217,
+    90218,
+    90219,
+    90220,
+    90221,
+    90222
+  ],
+  "n_1m": 10,
+  "seeds_1m": [
+    90213,
+    90214,
+    90215,
+    90216,
+    90217,
+    90218,
+    90219,
+    90220,
+    90221,
+    90222
+  ],
+  "bidder": "classifier (clf_bidder), the bidding algorithm the paper reports",
+  "excluded": "AFT-only metrics (price RMSE/CRPS, AFT win AUC and its calibration error) because the paper does not report that model; rmse_spend and the MCE rows because their paired intervals span zero at n=10; the 100K profile because it has no ten-seed set",
+  "main": [
+    {
+      "block": "Tier 1 value model",
+      "rows": [
+        {
+          "metric": "ev_spearman",
+          "means": {
+            "C1": 0.58894,
+            "C2": 0.63328,
+            "C3": 0.58894,
+            "C4": 0.63328,
+            "oracle": 1.0
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": "",
+          "stat": {
+            "mean": 0.04434,
+            "ci95": [
+              0.02405,
+              0.06463
+            ],
+            "n_pos": 10,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        },
+        {
+          "metric": "ev_ratio",
+          "means": {
+            "C1": 0.52384,
+            "C2": 0.88868,
+            "C3": 0.52384,
+            "C4": 0.88868,
+            "oracle": 1.0
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": " (bias)",
+          "stat": {
+            "mean": -0.3609,
+            "ci95": [
+              -0.50927,
+              -0.21253
+            ],
+            "n_pos": 0,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        },
+        {
+          "metric": "auc_click",
+          "means": {
+            "C1": 0.70898,
+            "C2": 0.7212,
+            "C3": 0.70898,
+            "C4": 0.7212,
+            "oracle": 0.78419
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": "",
+          "stat": {
+            "mean": 0.01222,
+            "ci95": [
+              0.01149,
+              0.01295
+            ],
+            "n_pos": 10,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        },
+        {
+          "metric": "auc_install",
+          "means": {
+            "C1": 0.67189,
+            "C2": 0.69944,
+            "C3": 0.67189,
+            "C4": 0.69944,
+            "oracle": 0.85951
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": "",
+          "stat": {
+            "mean": 0.02755,
+            "ci95": [
+              0.0245,
+              0.0306
+            ],
+            "n_pos": 10,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        },
+        {
+          "metric": "auc_payer",
+          "means": {
+            "C1": 0.58553,
+            "C2": 0.68346,
+            "C3": 0.58553,
+            "C4": 0.68346,
+            "oracle": 0.83519
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": "",
+          "stat": {
+            "mean": 0.09793,
+            "ci95": [
+              0.07964,
+              0.11622
+            ],
+            "n_pos": 10,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        }
+      ]
+    },
+    {
+      "block": "Tier 2 win model, classifier",
+      "rows": [
+        {
+          "metric": "auc_win",
+          "means": {
+            "C1": 0.81424,
+            "C2": 0.81424,
+            "C3": 0.82798,
+            "C4": 0.82798,
+            "oracle": null
+          },
+          "contrast": "SSP (C3-C1)",
+          "note": "",
+          "stat": {
+            "mean": 0.01374,
+            "ci95": [
+              0.0055,
+              0.02198
+            ],
+            "n_pos": 10,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        },
+        {
+          "metric": "logloss_win",
+          "means": {
+            "C1": 0.44628,
+            "C2": 0.44628,
+            "C3": 0.43181,
+            "C4": 0.43181,
+            "oracle": null
+          },
+          "contrast": "SSP (C3-C1)",
+          "note": "",
+          "stat": {
+            "mean": -0.01447,
+            "ci95": [
+              -0.023,
+              -0.00594
+            ],
+            "n_pos": 0,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        }
+      ]
+    },
+    {
+      "block": "Economics, classifier bidding algorithm",
+      "rows": [
+        {
+          "metric": "profit, total ($)",
+          "means": {
+            "C1": 4745.8,
+            "C2": 6575.0,
+            "C3": 4817.158,
+            "C4": 6235.866,
+            "oracle": null
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": "",
+          "stat": {
+            "mean": 1829.2,
+            "ci95": [
+              245.46297,
+              3412.93703
+            ],
+            "n_pos": 10,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "supported"
+        },
+        {
+          "metric": "profit CPM ($)",
+          "means": {
+            "C1": 10.227,
+            "C2": 13.82,
+            "C3": 10.25,
+            "C4": 12.904,
+            "oracle": null
+          },
+          "contrast": "MMP (C2-C1)",
+          "note": "",
+          "stat": {
+            "mean": 3.593,
+            "ci95": [
+              -0.87021,
+              8.05621
+            ],
+            "n_pos": 8,
+            "n": 10
+          },
+          "improved": "yes",
+          "verdict": "not supported"
+        },
+        {
+          "metric": "overpay CPM ($)",
+          "means": {
+            "C1": 1.185,
+            "C2": 1.452,
+            "C3": 1.193,
+            "C4": 1.45,
+            "oracle": null
+          },
+          "contrast": "SSP (C3-C1)",
+          "note": "",
+          "stat": {
+            "mean": 0.008,
+            "ci95": [
+              -0.01246,
+              0.02846
+            ],
+            "n_pos": 6,
+            "n": 10
+          },
+          "improved": "no",
+          "verdict": "not supported"
+        },
+        {
+          "metric": "revenue ($)",
+          "means": {
+            "C1": 6004.476,
+            "C2": 8135.027,
+            "C3": 6103.497,
+            "C4": 7817.415,
+            "oracle": null
+          },
+          "contrast": "-",
+          "note": "",
+          "stat": null,
+          "improved": "-",
+          "verdict": "no claim"
+        },
+        {
+          "metric": "spend ($)",
+          "means": {
+            "C1": 1258.677,
+            "C2": 1560.028,
+            "C3": 1286.339,
+            "C4": 1581.547,
+            "oracle": null
+          },
+          "contrast": "-",
+          "note": "",
+          "stat": null,
+          "improved": "-",
+          "verdict": "no claim"
+        },
+        {
+          "metric": "ROAS",
+          "means": {
+            "C1": 4.64856,
+            "C2": 5.30931,
+            "C3": 4.62036,
+            "C4": 5.0146,
+            "oracle": null
+          },
+          "contrast": "-",
+          "note": "",
+          "stat": null,
+          "improved": "-",
+          "verdict": "no claim"
+        },
+        {
+          "metric": "n_won",
+          "means": {
+            "C1": 442763.3,
+            "C2": 477605.7,
+            "C3": 449194.9,
+            "C4": 483265.8,
+            "oracle": null
+          },
+          "contrast": "-",
+          "note": "",
+          "stat": null,
+          "improved": "-",
+          "verdict": "no claim"
+        }
+      ]
+    }
+  ],
+  "econ": {
+    "C2-C1 (MMP alone)": {
+      "profit, total ($)": {
+        "mean": 1829.2,
+        "ci95": [
+          245.46297,
+          3412.93703
+        ],
+        "n_pos": 10,
+        "n": 10
+      },
+      "overpay CPM ($)": {
+        "mean": 0.267,
+        "ci95": [
+          0.12613,
+          0.40787
+        ],
+        "n_pos": 8,
+        "n": 10
+      }
+    },
+    "C3-C1 (SSP alone)": {
+      "profit, total ($)": {
+        "mean": 71.358,
+        "ci95": [
+          -112.68763,
+          255.40363
+        ],
+        "n_pos": 4,
+        "n": 10
+      },
+      "overpay CPM ($)": {
+        "mean": 0.008,
+        "ci95": [
+          -0.01246,
+          0.02846
+        ],
+        "n_pos": 6,
+        "n": 10
+      }
+    },
+    "C4-C1 (both layers)": {
+      "profit, total ($)": {
+        "mean": 1490.066,
+        "ci95": [
+          -143.08008,
+          3123.21208
+        ],
+        "n_pos": 10,
+        "n": 10
+      },
+      "overpay CPM ($)": {
+        "mean": 0.265,
+        "ci95": [
+          0.11486,
+          0.41514
+        ],
+        "n_pos": 8,
+        "n": 10
+      }
+    },
+    "C4-C2 (SSP given MMP)": {
+      "profit, total ($)": {
+        "mean": -339.134,
+        "ci95": [
+          -1244.8454,
+          566.5774
+        ],
+        "n_pos": 4,
+        "n": 10
+      },
+      "overpay CPM ($)": {
+        "mean": -0.002,
+        "ci95": [
+          -0.03269,
+          0.02869
+        ],
+        "n_pos": 3,
+        "n": 10
+      }
+    },
+    "C4-C3 (MMP given SSP)": {
+      "profit, total ($)": {
+        "mean": 1418.708,
+        "ci95": [
+          -211.61275,
+          3049.02875
+        ],
+        "n_pos": 10,
+        "n": 10
+      },
+      "overpay CPM ($)": {
+        "mean": 0.257,
+        "ci95": [
+          0.1206,
+          0.3934
+        ],
+        "n_pos": 8,
+        "n": 10
+      }
+    }
+  },
+  "scale": [
+    {
+      "metric": "ev_spearman",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": 0.1064,
+        "ci95": [
+          0.05138,
+          0.16142
+        ],
+        "n_pos": 9,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 0.04434,
+        "ci95": [
+          0.02405,
+          0.06463
+        ],
+        "n_pos": 10,
+        "n": 10
+      }
+    },
+    {
+      "metric": "ev_ratio (bias)",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": -0.11965,
+        "ci95": [
+          -0.46782,
+          0.22852
+        ],
+        "n_pos": 3,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": -0.3609,
+        "ci95": [
+          -0.50927,
+          -0.21253
+        ],
+        "n_pos": 0,
+        "n": 10
+      }
+    },
+    {
+      "metric": "auc_click",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": 0.03026,
+        "ci95": [
+          0.02681,
+          0.03371
+        ],
+        "n_pos": 10,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 0.01222,
+        "ci95": [
+          0.01149,
+          0.01295
+        ],
+        "n_pos": 10,
+        "n": 10
+      }
+    },
+    {
+      "metric": "auc_install",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": 0.05078,
+        "ci95": [
+          0.04261,
+          0.05895
+        ],
+        "n_pos": 10,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 0.02755,
+        "ci95": [
+          0.0245,
+          0.0306
+        ],
+        "n_pos": 10,
+        "n": 10
+      }
+    },
+    {
+      "metric": "auc_payer",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": 0.05779,
+        "ci95": [
+          0.02036,
+          0.09522
+        ],
+        "n_pos": 9,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 0.09793,
+        "ci95": [
+          0.07964,
+          0.11622
+        ],
+        "n_pos": 10,
+        "n": 10
+      }
+    },
+    {
+      "metric": "auc_win",
+      "contrast": "SSP (C3-C1)",
+      "s_1m": {
+        "mean": 0.01365,
+        "ci95": [
+          0.00533,
+          0.02197
+        ],
+        "n_pos": 10,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 0.01374,
+        "ci95": [
+          0.0055,
+          0.02198
+        ],
+        "n_pos": 10,
+        "n": 10
+      }
+    },
+    {
+      "metric": "logloss_win",
+      "contrast": "SSP (C3-C1)",
+      "s_1m": {
+        "mean": -0.01364,
+        "ci95": [
+          -0.02218,
+          -0.0051
+        ],
+        "n_pos": 0,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": -0.01447,
+        "ci95": [
+          -0.023,
+          -0.00594
+        ],
+        "n_pos": 0,
+        "n": 10
+      }
+    },
+    {
+      "metric": "profit, total ($)",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": 410.983,
+        "ci95": [
+          -270.46009,
+          1092.42609
+        ],
+        "n_pos": 9,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 1829.2,
+        "ci95": [
+          245.46297,
+          3412.93703
+        ],
+        "n_pos": 10,
+        "n": 10
+      }
+    },
+    {
+      "metric": "profit CPM ($)",
+      "contrast": "MMP (C2-C1)",
+      "s_1m": {
+        "mean": 8.745,
+        "ci95": [
+          -3.95851,
+          21.44851
+        ],
+        "n_pos": 9,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 3.593,
+        "ci95": [
+          -0.87021,
+          8.05621
+        ],
+        "n_pos": 8,
+        "n": 10
+      }
+    },
+    {
+      "metric": "overpay CPM ($)",
+      "contrast": "SSP (C3-C1)",
+      "s_1m": {
+        "mean": 0.005,
+        "ci95": [
+          -0.00469,
+          0.01469
+        ],
+        "n_pos": 5,
+        "n": 10
+      },
+      "s_10m": {
+        "mean": 0.008,
+        "ci95": [
+          -0.01246,
+          0.02846
+        ],
+        "n_pos": 6,
+        "n": 10
+      }
+    }
+  ]
+}

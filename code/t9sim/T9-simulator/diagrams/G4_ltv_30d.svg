@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="242" viewBox="0 0 422 242" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="422" height="242" fill="#FAFAFA"/>
+<text x="211" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">G4  ltv_30d</text>
+<polyline points="150,76 233,76 233,117 259,117" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="163,150 233,150 233,117 259,117" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="41" y="56" width="108" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="96" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">G2 ltv_value</text>
+<rect x="28" y="122" width="135" height="56" rx="9" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1.4"/>
+<text x="96" y="146" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">decay_d30 = 0.70</text>
+<text x="96" y="162" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(config)</text>
+<rect x="259" y="89" width="102" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="310" y="113" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">G4 ltv_30d</text>
+<text x="310" y="129" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= G2 × 0.70</text>
+<text x="28" y="192" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="202" width="13" height="13" rx="3" fill="#ECEFF1" stroke="#90A4AE"/>
+<text x="46" y="212" font-size="10.5" fill="#37474F">config constant</text>
+<rect x="154.0" y="202" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="172.0" y="212" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="322.0" y="202" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="340.0" y="212" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

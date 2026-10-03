@@ -1,0 +1,27 @@
+# Written by t9sim.autocal - FN-1 solved calibration knobs.
+# Merged over benchmarks.yaml by config_loader; regenerate by
+# re-running `python -m t9sim.autocal`. Only route:auto-calibrated params appear.
+meta:
+  date: '2026-06-18'
+  samples: 23
+solved:
+  benchmarks.funnel.base_ctr:
+    value: 0.27141
+    note: 'SOLVED by autocal 2026-06-18 against population CTR target 0.02-0.05 (route:
+      auto-calibrated)'
+  benchmarks.funnel.base_ir:
+    value: 2.564963
+    note: 'SOLVED by autocal 2026-06-18 against click->install target 0.25-0.40 (route:
+      auto-calibrated)'
+  benchmarks.funnel.base_payer:
+    value: 0.257853
+    note: 'SOLVED by autocal 2026-06-18 against install->payer target 0.02-0.05 (route:
+      auto-calibrated)'
+  benchmarks.ltv.lognormal_mu:
+    value: 0.481154
+    note: 'SOLVED by autocal 2026-06-18 against median payer spend target $6 (route:
+      auto-calibrated)'
+  benchmarks.ltv.lognormal_sigma:
+    value: 1.648169
+    note: 'SOLVED by autocal 2026-06-18 against whale top-5% share target 0.55-0.65
+      (route: auto-calibrated)'

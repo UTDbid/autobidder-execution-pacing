@@ -1,0 +1,584 @@
+{
+  "profile": "v10_10m_s20",
+  "n_rows": 10000000,
+  "split_counts": {
+    "train": 7141485,
+    "val": 1429229,
+    "test": 1429286
+  },
+  "conditions": {
+    "C1": {
+      "auc_click": 0.7091,
+      "logloss_click": 0.1421,
+      "auc_install": 0.6741,
+      "logloss_install": 0.5878,
+      "auc_payer": 0.5559,
+      "logloss_payer": 0.1504,
+      "rmse_spend": 352.4464,
+      "ev_pred_mean": 0.013814,
+      "ev_true_mean": 0.018462,
+      "ev_ratio": 0.7483,
+      "ev_rmse": 0.203625,
+      "ev_spearman": 0.5243,
+      "auc_win": 0.7716,
+      "logloss_win": 0.4539,
+      "wincurve_calib_err": 0.1379,
+      "wincurve_reliability": {
+        "0": [
+          0.023,
+          0.011
+        ],
+        "1": [
+          0.058,
+          0.025
+        ],
+        "2": [
+          0.111,
+          0.045
+        ],
+        "3": [
+          0.202,
+          0.089
+        ],
+        "4": [
+          0.286,
+          0.134
+        ],
+        "5": [
+          0.353,
+          0.174
+        ],
+        "6": [
+          0.414,
+          0.218
+        ],
+        "7": [
+          0.477,
+          0.27
+        ],
+        "8": [
+          0.549,
+          0.34
+        ],
+        "9": [
+          0.672,
+          0.46
+        ]
+      },
+      "ece_win": 0.1379,
+      "mce_win": 0.217,
+      "price_rmse_all": 29.7627,
+      "price_rmse_won": 3.467,
+      "price_rmse_lost": 32.7608,
+      "price_crps_all": 0.6136,
+      "price_crps_won": 0.671,
+      "price_crps_lost": 0.6013,
+      "t2_gain_top": {
+        "slot_format": 169394.8,
+        "app_category": 1217.6,
+        "os": 911.0,
+        "advertiser_id": 523.7,
+        "hist_clearing_dsp": 482.8,
+        "device_type": 445.3,
+        "slot_height": 289.0,
+        "day_of_week": 248.5
+      },
+      "auc_win_clf": 0.8103,
+      "logloss_win_clf": 0.435,
+      "ece_win_clf": 0.1458,
+      "mce_win_clf": 0.2769,
+      "t2_gain_top_clf": {
+        "slot_format": 17357.7,
+        "slot_height": 9559.0,
+        "floor_price": 5286.4,
+        "bid_price": 2865.1,
+        "app_category": 664.5,
+        "os": 618.6,
+        "device_type": 289.8,
+        "slot_width": 190.8
+      },
+      "roas": 3.9572,
+      "profit": 4801.34,
+      "n_won": 372957,
+      "revenue": 6424.97,
+      "spend": 1623.63,
+      "overpay": 797.23,
+      "overpay_per_won": 0.00214,
+      "surplus_per_won": 0.01287,
+      "clf_bidder": {
+        "roas": 4.215,
+        "profit": 2527.04,
+        "n_won": 331378,
+        "revenue": 3313.06,
+        "spend": 786.02,
+        "overpay": 297.1,
+        "overpay_per_won": 0.0009,
+        "surplus_per_won": 0.00763
+      }
+    },
+    "C2": {
+      "auc_click": 0.7209,
+      "logloss_click": 0.1403,
+      "auc_install": 0.7,
+      "logloss_install": 0.5688,
+      "auc_payer": 0.6946,
+      "logloss_payer": 0.1419,
+      "rmse_spend": 129.4535,
+      "ev_pred_mean": 0.016478,
+      "ev_true_mean": 0.018462,
+      "ev_ratio": 0.8926,
+      "ev_rmse": 0.15142,
+      "ev_spearman": 0.6346,
+      "auc_win": 0.7716,
+      "logloss_win": 0.4539,
+      "wincurve_calib_err": 0.1379,
+      "wincurve_reliability": {
+        "0": [
+          0.023,
+          0.011
+        ],
+        "1": [
+          0.058,
+          0.025
+        ],
+        "2": [
+          0.111,
+          0.045
+        ],
+        "3": [
+          0.202,
+          0.089
+        ],
+        "4": [
+          0.286,
+          0.134
+        ],
+        "5": [
+          0.353,
+          0.174
+        ],
+        "6": [
+          0.414,
+          0.218
+        ],
+        "7": [
+          0.477,
+          0.27
+        ],
+        "8": [
+          0.549,
+          0.34
+        ],
+        "9": [
+          0.672,
+          0.46
+        ]
+      },
+      "ece_win": 0.1379,
+      "mce_win": 0.217,
+      "price_rmse_all": 29.7627,
+      "price_rmse_won": 3.467,
+      "price_rmse_lost": 32.7608,
+      "price_crps_all": 0.6136,
+      "price_crps_won": 0.671,
+      "price_crps_lost": 0.6013,
+      "t2_gain_top": {
+        "slot_format": 169394.8,
+        "app_category": 1217.6,
+        "os": 911.0,
+        "advertiser_id": 523.7,
+        "hist_clearing_dsp": 482.8,
+        "device_type": 445.3,
+        "slot_height": 289.0,
+        "day_of_week": 248.5
+      },
+      "auc_win_clf": 0.8103,
+      "logloss_win_clf": 0.435,
+      "ece_win_clf": 0.1458,
+      "mce_win_clf": 0.2769,
+      "t2_gain_top_clf": {
+        "slot_format": 17357.7,
+        "slot_height": 9559.0,
+        "floor_price": 5286.4,
+        "bid_price": 2865.1,
+        "app_category": 664.5,
+        "os": 618.6,
+        "device_type": 289.8,
+        "slot_width": 190.8
+      },
+      "roas": 3.4458,
+      "profit": 7360.27,
+      "n_won": 443761,
+      "revenue": 10369.58,
+      "spend": 3009.31,
+      "overpay": 1489.74,
+      "overpay_per_won": 0.00336,
+      "surplus_per_won": 0.01659,
+      "clf_bidder": {
+        "roas": 4.3602,
+        "profit": 3256.97,
+        "n_won": 349369,
+        "revenue": 4226.25,
+        "spend": 969.28,
+        "overpay": 395.21,
+        "overpay_per_won": 0.00113,
+        "surplus_per_won": 0.00932
+      }
+    },
+    "C3": {
+      "auc_click": 0.7091,
+      "logloss_click": 0.1421,
+      "auc_install": 0.6741,
+      "logloss_install": 0.5878,
+      "auc_payer": 0.5559,
+      "logloss_payer": 0.1504,
+      "rmse_spend": 352.4464,
+      "ev_pred_mean": 0.013814,
+      "ev_true_mean": 0.018462,
+      "ev_ratio": 0.7483,
+      "ev_rmse": 0.203625,
+      "ev_spearman": 0.5243,
+      "auc_win": 0.7764,
+      "logloss_win": 0.4607,
+      "wincurve_calib_err": 0.1491,
+      "wincurve_reliability": {
+        "0": [
+          0.022,
+          0.01
+        ],
+        "1": [
+          0.06,
+          0.024
+        ],
+        "2": [
+          0.12,
+          0.045
+        ],
+        "3": [
+          0.212,
+          0.087
+        ],
+        "4": [
+          0.295,
+          0.131
+        ],
+        "5": [
+          0.364,
+          0.17
+        ],
+        "6": [
+          0.427,
+          0.215
+        ],
+        "7": [
+          0.492,
+          0.268
+        ],
+        "8": [
+          0.569,
+          0.341
+        ],
+        "9": [
+          0.696,
+          0.474
+        ]
+      },
+      "ece_win": 0.1491,
+      "mce_win": 0.2294,
+      "price_rmse_all": 29.4921,
+      "price_rmse_won": 3.3797,
+      "price_rmse_lost": 32.4643,
+      "price_crps_all": 0.6144,
+      "price_crps_won": 0.6461,
+      "price_crps_lost": 0.6075,
+      "t2_gain_top": {
+        "slot_format": 456748.2,
+        "bid_density": 1796.4,
+        "os": 1463.0,
+        "device_type": 652.7,
+        "app_category": 580.2,
+        "hist_clearing_ssp": 556.3,
+        "hist_clearing_dsp": 508.4,
+        "slot_height": 410.7
+      },
+      "auc_win_clf": 0.8142,
+      "logloss_win_clf": 0.4202,
+      "ece_win_clf": 0.1294,
+      "mce_win_clf": 0.2711,
+      "t2_gain_top_clf": {
+        "slot_format": 27909.5,
+        "floor_price": 4714.4,
+        "slot_height": 4414.4,
+        "bid_price": 2463.8,
+        "bid_density": 944.8,
+        "app_category": 881.8,
+        "hist_clearing_ssp": 736.3,
+        "os": 572.4
+      },
+      "roas": 4.0675,
+      "profit": 4875.62,
+      "n_won": 366741,
+      "revenue": 6465.05,
+      "spend": 1589.43,
+      "overpay": 775.37,
+      "overpay_per_won": 0.00211,
+      "surplus_per_won": 0.01329,
+      "clf_bidder": {
+        "roas": 3.7195,
+        "profit": 2248.16,
+        "n_won": 340576,
+        "revenue": 3074.86,
+        "spend": 826.69,
+        "overpay": 316.53,
+        "overpay_per_won": 0.00093,
+        "surplus_per_won": 0.0066
+      }
+    },
+    "C4": {
+      "auc_click": 0.7209,
+      "logloss_click": 0.1403,
+      "auc_install": 0.7,
+      "logloss_install": 0.5688,
+      "auc_payer": 0.6946,
+      "logloss_payer": 0.1419,
+      "rmse_spend": 129.4535,
+      "ev_pred_mean": 0.016478,
+      "ev_true_mean": 0.018462,
+      "ev_ratio": 0.8926,
+      "ev_rmse": 0.15142,
+      "ev_spearman": 0.6346,
+      "auc_win": 0.7764,
+      "logloss_win": 0.4607,
+      "wincurve_calib_err": 0.1491,
+      "wincurve_reliability": {
+        "0": [
+          0.022,
+          0.01
+        ],
+        "1": [
+          0.06,
+          0.024
+        ],
+        "2": [
+          0.12,
+          0.045
+        ],
+        "3": [
+          0.212,
+          0.087
+        ],
+        "4": [
+          0.295,
+          0.131
+        ],
+        "5": [
+          0.364,
+          0.17
+        ],
+        "6": [
+          0.427,
+          0.215
+        ],
+        "7": [
+          0.492,
+          0.268
+        ],
+        "8": [
+          0.569,
+          0.341
+        ],
+        "9": [
+          0.696,
+          0.474
+        ]
+      },
+      "ece_win": 0.1491,
+      "mce_win": 0.2294,
+      "price_rmse_all": 29.4921,
+      "price_rmse_won": 3.3797,
+      "price_rmse_lost": 32.4643,
+      "price_crps_all": 0.6144,
+      "price_crps_won": 0.6461,
+      "price_crps_lost": 0.6075,
+      "t2_gain_top": {
+        "slot_format": 456748.2,
+        "bid_density": 1796.4,
+        "os": 1463.0,
+        "device_type": 652.7,
+        "app_category": 580.2,
+        "hist_clearing_ssp": 556.3,
+        "hist_clearing_dsp": 508.4,
+        "slot_height": 410.7
+      },
+      "auc_win_clf": 0.8142,
+      "logloss_win_clf": 0.4202,
+      "ece_win_clf": 0.1294,
+      "mce_win_clf": 0.2711,
+      "t2_gain_top_clf": {
+        "slot_format": 27909.5,
+        "floor_price": 4714.4,
+        "slot_height": 4414.4,
+        "bid_price": 2463.8,
+        "bid_density": 944.8,
+        "app_category": 881.8,
+        "hist_clearing_ssp": 736.3,
+        "os": 572.4
+      },
+      "roas": 3.4859,
+      "profit": 7424.2,
+      "n_won": 438240,
+      "revenue": 10410.7,
+      "spend": 2986.5,
+      "overpay": 1470.5,
+      "overpay_per_won": 0.00336,
+      "surplus_per_won": 0.01694,
+      "clf_bidder": {
+        "roas": 3.9946,
+        "profit": 3023.5,
+        "n_won": 357236,
+        "revenue": 4033.14,
+        "spend": 1009.64,
+        "overpay": 414.1,
+        "overpay_per_won": 0.00116,
+        "surplus_per_won": 0.00846
+      }
+    },
+    "oracle": {
+      "roas": 6.8375,
+      "profit": 16322.2,
+      "n_won": 119249,
+      "revenue": 19118.3,
+      "spend": 2796.1,
+      "overpay": 1521.87,
+      "overpay_per_won": 0.01276,
+      "surplus_per_won": 0.13687,
+      "ev_true_mean": 0.018462,
+      "ev_pred_mean": 0.018462,
+      "ev_ratio": 1.0,
+      "ev_rmse": 0.0,
+      "ev_spearman": 1.0,
+      "auc_click": 0.7854,
+      "logloss_click": 0.1319,
+      "auc_install": 0.8585,
+      "logloss_install": 0.4167,
+      "auc_payer": 0.8421,
+      "logloss_payer": 0.1208,
+      "rmse_spend": 118.5719
+    }
+  },
+  "h2_incumbent": {
+    "roas": 2.4773,
+    "profit": 653.58,
+    "n_won": 252464
+  },
+  "oracle_features": false,
+  "hist_clearing": true,
+  "contrasts": {
+    "ssp_C3_C1_aft": {
+      "diff": 0.0048,
+      "se": 0.00018,
+      "ci95": [
+        0.0044,
+        0.0052
+      ],
+      "z": 26.69,
+      "p": 0.0,
+      "auc_a": 0.7764,
+      "auc_b": 0.7716
+    },
+    "ssp_C3_C1_clf": {
+      "diff": 0.0039,
+      "se": 0.00017,
+      "ci95": [
+        0.0036,
+        0.0042
+      ],
+      "z": 23.16,
+      "p": 0.0,
+      "auc_a": 0.8142,
+      "auc_b": 0.8103
+    },
+    "ssp_C4_C2_aft": {
+      "diff": 0.0048,
+      "se": 0.00018,
+      "ci95": [
+        0.0044,
+        0.0052
+      ],
+      "z": 26.69,
+      "p": 0.0,
+      "auc_a": 0.7764,
+      "auc_b": 0.7716
+    },
+    "ssp_C4_C2_clf": {
+      "diff": 0.0039,
+      "se": 0.00017,
+      "ci95": [
+        0.0036,
+        0.0042
+      ],
+      "z": 23.16,
+      "p": 0.0,
+      "auc_a": 0.8142,
+      "auc_b": 0.8103
+    },
+    "mmp_C2_C1_aft": {
+      "diff": 0.0,
+      "se": 0.0,
+      "ci95": [
+        -0.0,
+        0.0
+      ],
+      "z": 0.0,
+      "p": 1.0,
+      "auc_a": 0.7716,
+      "auc_b": 0.7716
+    },
+    "mmp_C2_C1_clf": {
+      "diff": 0.0,
+      "se": 0.0,
+      "ci95": [
+        -0.0,
+        0.0
+      ],
+      "z": 0.0,
+      "p": 1.0,
+      "auc_a": 0.8103,
+      "auc_b": 0.8103
+    }
+  },
+  "economics": {
+    "profit_capture_vs_oracle": {
+      "C1": 0.2942,
+      "C2": 0.4509,
+      "C3": 0.2987,
+      "C4": 0.4549
+    },
+    "overpay_reduction_pct": {
+      "C3_vs_C1": 1.4,
+      "C4_vs_C2": 0.0
+    },
+    "surplus_uplift_pct": {
+      "C3_vs_C1": 3.26,
+      "C4_vs_C2": 2.11
+    }
+  },
+  "roas_lift_vs_C1": {
+    "C2": -0.5114,
+    "C3": 0.1103,
+    "C4": -0.4713
+  },
+  "pct_of_oracle": {
+    "C1": 57.9,
+    "C2": 50.4,
+    "C3": 59.5,
+    "C4": 51.0
+  },
+  "profit_regret_vs_oracle": {
+    "C1": 11520.86,
+    "C2": 8961.93,
+    "C3": 11446.58,
+    "C4": 8898.0
+  },
+  "elapsed_s": 2438.4
+}

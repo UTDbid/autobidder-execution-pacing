@@ -1,0 +1,9 @@
+Claim,Evidence,Estimand,Status
+Performance–delivery frontier,AuctionNet campaign,Within bidder–reference width contrast,Supported
+Current advertiser–platform wedge,AuctionNet synchronous market,Paired market-episode contrast,Supported
+Downward selectivity is the main regular mechanism,AuctionNet directional,Down/up/symmetric decomposition,Supported; not downward-only optimum
+Purchase-set quality depends on information and pacing,T9Sim,True-value exclusive-set contrast,Supported conditionally
+Room for selection moderates value,AuctionNet supply + iPinYou pressure,Cross-design comparative statics,Supported; not literal replication
+Universal waiting for later opportunities,T9Sim timing,Exclusive-set timing contrast,Rejected
+Universal optimal κ=1.0,Aligned width grid,0.8-to-1.0 pair comparison,Rejected
+Deployable κ-selection rule,Retrospective challenge,Regret and guardrail gates,Not supported; STOP

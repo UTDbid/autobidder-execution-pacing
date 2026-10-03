@@ -1,0 +1,86 @@
+# =====================================================================
+# T9 v6 — User-pool latents (LU1-LU6, per archetype)
+# =====================================================================
+# Mirrors "T9_Simulator_Schema - June 10 (v6).md" — Latent (Ground-Truth)
+# Parameters + the sect-Calibration provenance table.
+# Provenance wrappers {value, route, source} as in benchmarks.yaml.
+
+# Genre order for LU6 interest vectors and r = LU6[ad_genre].
+category_order: [casual, strategy, rpg, hypercasual]
+
+# ---------------------------------------------------------------------
+# LU1 — archetype ~ Categorical(pi)   (v5/v6: {2/8/20/40/30})
+# Route: BM-synthesis, NOT yet quoted — pinning each share is an open task.
+# ---------------------------------------------------------------------
+shares:
+  whale: {value: 0.02, route: auto-calibrated, source: "BM-synthesis: industry whale band 1-5% (Unity/Moloco); pinning open"}
+  engaged_spender: {value: 0.08, route: auto-calibrated, source: "BM-synthesis: Newzoo 8% spend >$25/mo; pinning open"}
+  casual: {value: 0.20, route: inferred, source: "BM-synthesis: Unity casual-spender mass; pinning open"}
+  time_filler: {value: 0.40, route: inferred, source: "BM-synthesis: Newzoo Time Filler persona (largest); pinning open"}
+  inactive: {value: 0.30, route: inferred, source: "non-payer/ad-blind remainder (~70% non-payer incl. time_filler)"}
+
+# ---------------------------------------------------------------------
+# LU2/LU3/LU4 — Beta(alpha, beta) per archetype  (mean = a/(a+b))
+# Levels are auto-calibrated via funnel base rates; the per-archetype
+# ORDERING and SPREAD below are inferred (no published propensity-by-segment).
+# ---------------------------------------------------------------------
+propensity:
+  whale:
+    click: {value: [5, 5], route: inferred, source: "~0.50; whales click selectively, convert hard"}
+    install: {value: [6, 4], route: inferred, source: "~0.60"}
+    payer: {value: [9, 1], route: inferred, source: "~0.90; near-certain payers"}
+  engaged_spender:
+    click: {value: [5, 5], route: inferred, source: "~0.50"}
+    install: {value: [5, 5], route: inferred, source: "~0.50"}
+    payer: {value: [6, 4], route: inferred, source: "~0.60"}
+  casual:
+    click: {value: [4, 6], route: inferred, source: "~0.40"}
+    install: {value: [3, 7], route: inferred, source: "~0.30"}
+    payer: {value: [1, 19], route: inferred, source: "~0.05"}
+  time_filler:
+    click: {value: [3, 7], route: inferred, source: "~0.30; taps a lot, converts little"}
+    install: {value: [1, 9], route: inferred, source: "~0.10"}
+    payer: {value: [1, 49], route: inferred, source: "~0.02"}
+  inactive:
+    click: {value: [1, 19], route: inferred, source: "~0.05; ad-blind"}
+    install: {value: [1, 49], route: inferred, source: "~0.02"}
+    payer: {value: [1, 199], route: inferred, source: "~0.005"}
+
+# ---------------------------------------------------------------------
+# LU5 — RELATIVE LTV multiplier ~ LogNormal(mu, sigma) per archetype.
+# UNIT REFERENCE MEDIAN: casual is the reference archetype (mu = 0); the $6
+# population median lives in G2's base LogNormal (benchmarks.ltv), NOT here.
+# Offsets are solved against the whale top-5% ~ 55-65% target (autocal);
+# spreads are judgment.
+# ---------------------------------------------------------------------
+ltv_multiplier:
+  whale:
+    mu: {value: 1.95, route: auto-calibrated, source: "~7x median; solved vs whale-share target"}
+    sigma: {value: 0.50, route: inferred, source: "spread judgment"}
+  engaged_spender:
+    mu: {value: 0.92, route: auto-calibrated, source: "~2.5x; solved vs whale-share target"}
+    sigma: {value: 0.40, route: inferred, source: "spread judgment"}
+  casual:
+    mu: {value: 0.0, route: quoted, source: "reference archetype (unit median by construction)"}
+    sigma: {value: 0.30, route: inferred, source: "spread judgment"}
+  time_filler:
+    mu: {value: -1.20, route: auto-calibrated, source: "~0.3x; solved vs whale-share target"}
+    sigma: {value: 0.30, route: inferred, source: "spread judgment"}
+  inactive: {fixed: 0}        # structural: never spends; generator also forces
+                              # LU4 = 0 (payer <=> spend > 0 invariant), so the
+                              # propensity.inactive.payer Beta is never drawn from
+
+
+# ---------------------------------------------------------------------
+# LU6 — interest_vector ~ Dirichlet(k * centroid) per archetype.
+# Concentrations published nowhere -> inferred, sensitivity-tested.
+# Centroids over category_order; each sums to 1.0.
+# ---------------------------------------------------------------------
+interest:
+  concentration_k: {value: 20.0, route: inferred, source: "tightness around centroid; sensitivity-test"}
+  centroids:
+    whale: {value: [0.10, 0.40, 0.40, 0.10], route: inferred, source: "whales skew strategy/RPG (high-LTV genres)"}
+    engaged_spender: {value: [0.20, 0.30, 0.30, 0.20], route: inferred, source: "broad but core-leaning"}
+    casual: {value: [0.40, 0.15, 0.15, 0.30], route: inferred, source: "casual/hypercasual-leaning"}
+    time_filler: {value: [0.35, 0.10, 0.10, 0.45], route: inferred, source: "session-filler genres"}
+    inactive: {value: [0.25, 0.25, 0.25, 0.25], route: inferred, source: "uniform (no engagement signal)"}

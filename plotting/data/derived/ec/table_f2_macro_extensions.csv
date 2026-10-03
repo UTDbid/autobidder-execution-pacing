@@ -1,0 +1,5 @@
+reference,value_delta_pct,cpa_delta,underdelivery_delta_pp,revenue_delta_pct,price_delta_pct,episodes,panel,hypothesis,estimand,direction,n_market_episodes,mean_delta_treatment_minus_baseline,median_delta_treatment_minus_baseline,bootstrap_95ci_low,bootstrap_95ci_high,direction_consistency_rate,exact_one_sided_sign_flip_p,holm_adjusted_p,reject_holm_005
+response,0.7513983263385777,0.15343180486834596,-1.5315543668630947,2.729366734300792,1.3797686969646725,20.0,response_aware_market,,,,,,,,,,,,
+,,,,,,,future_temporal_market,H1_total_advertiser_value,delta_total_base_expected_value_alpha1_private,>0,10.0,1494.632100388661,1483.1174444802054,1464.5892080769313,1528.8614747284314,1.0,0.0009765625,0.0029296875,True
+,,,,,,,future_temporal_market,H2_platform_revenue_tradeoff,delta_platform_revenue_alpha1_private,<0,10.0,-27619.7301061743,-27636.362472204502,-28028.702672610063,-27211.199826198143,1.0,0.0009765625,0.0029296875,True
+,,,,,,,future_temporal_market,H3_nonadopter_spillover,delta_matched_nonadopter_ev_per_agent_alpha05_private,<0,10.0,41.03114429472408,40.82946531379199,36.44260608811007,45.45419005465485,0.0,1.0,1.0,False

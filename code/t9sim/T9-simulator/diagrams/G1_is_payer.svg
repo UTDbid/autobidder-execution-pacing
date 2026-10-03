@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="1200" height="340" fill="#FAFAFA"/>
+<text x="600" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">G1  is_payer</text>
+<polyline points="163,133 233,133 233,84 259,84" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="146,199 233,199 233,84 259,84" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="445,166 558,166 558,125 584,125" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="448,248 558,248 558,125 584,125" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="488,84 558,84 558,125 584,125" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="827,125 897,125 897,166 923,166" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="760,199 897,199 897,166 923,166" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="28" y="113" width="135" height="40" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="96" y="137" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU6 interest_vec</text>
+<rect x="45" y="179" width="102" height="40" rx="9" fill="#FFE0B2" stroke="#F57C00" stroke-width="1.4"/>
+<text x="96" y="203" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">C4 ad_genre</text>
+<rect x="259" y="56" width="229" height="56" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="374" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">relevance m(r)</text>
+<text x="374" y="96" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">=(1−w_pay)+w_pay·LU6[ad_genre]</text>
+<rect x="303" y="138" width="142" height="56" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="374" y="162" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU4</text>
+<text x="374" y="178" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">payer_probability</text>
+<rect x="299" y="220" width="149" height="56" rx="9" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1.4"/>
+<text x="374" y="244" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">base_payer</text>
+<text x="374" y="260" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(calibration knob)</text>
+<rect x="584" y="105" width="242" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="705" y="129" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">P(pay) = base_payer · LU4 · m(r)</text>
+<rect x="651" y="171" width="108" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="705" y="195" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">F1 install=1</text>
+<text x="705" y="211" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(gate)</text>
+<rect x="923" y="138" width="249" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="1047" y="162" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">G1 is_payer</text>
+<text x="1047" y="178" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">~ Bernoulli  if install=1  else 0</text>
+<text x="28" y="290" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="300" width="13" height="13" rx="3" fill="#ECEFF1" stroke="#90A4AE"/>
+<text x="46" y="310" font-size="10.5" fill="#37474F">config constant</text>
+<rect x="154.0" y="300" width="13" height="13" rx="3" fill="#BBDEFB" stroke="#1976D2"/>
+<text x="172.0" y="310" font-size="10.5" fill="#37474F">user-pool (hidden LU*)</text>
+<rect x="322.0" y="300" width="13" height="13" rx="3" fill="#FFE0B2" stroke="#F57C00"/>
+<text x="340.0" y="310" font-size="10.5" fill="#37474F">campaign-pool</text>
+<rect x="436.0" y="300" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="454.0" y="310" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="604.0" y="300" width="13" height="13" rx="3" fill="#FFF9C4" stroke="#FBC02D"/>
+<text x="622.0" y="310" font-size="10.5" fill="#37474F">intermediate op</text>
+<rect x="730.0" y="300" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="748.0" y="310" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

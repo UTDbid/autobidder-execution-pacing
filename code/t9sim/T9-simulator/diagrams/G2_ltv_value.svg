@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1226" height="374" viewBox="0 0 1226 374" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="1226" height="374" fill="#FAFAFA"/>
+<text x="613" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">G2  ltv_value</text>
+<polyline points="133,142 206,142 206,142 232,142" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="136,224 206,224 206,142 232,142" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="515,142 585,142 585,76 611,76" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="420,216 585,216 585,76 611,76" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="766,76 836,76 836,183 862,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="763,142 836,142 836,183 862,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="756,208 836,208 836,183 862,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="746,282 836,282 836,183 862,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="31" y="114" width="102" height="56" rx="9" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1.4"/>
+<text x="82" y="138" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">lognormal_μ</text>
+<text x="82" y="154" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(config)</text>
+<rect x="28" y="196" width="108" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="82" y="220" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">ltv_mult(B2)</text>
+<text x="82" y="236" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">by genre</text>
+<rect x="232" y="122" width="283" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="374" y="146" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">μ_cat = lognormal_μ + ln(ltv_mult(B2))</text>
+<rect x="328" y="188" width="92" height="56" rx="9" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1.4"/>
+<text x="374" y="212" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">σ</text>
+<text x="374" y="228" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(config)</text>
+<rect x="611" y="56" width="155" height="40" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="689" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LogNormal(μ_cat, σ)</text>
+<rect x="614" y="122" width="149" height="40" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="689" y="146" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU5 ltv_multiplier</text>
+<rect x="621" y="188" width="135" height="40" rx="9" fill="#FFE0B2" stroke="#F57C00" stroke-width="1.4"/>
+<text x="689" y="212" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LC2 game_quality</text>
+<rect x="631" y="254" width="115" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="689" y="278" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">G1 is_payer=1</text>
+<text x="689" y="294" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(gate)</text>
+<rect x="862" y="155" width="336" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="1030" y="179" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">G2 ltv_value</text>
+<text x="1030" y="195" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= LogNormal·LU5·game_quality  if payer  else 0</text>
+<text x="28" y="324" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="334" width="13" height="13" rx="3" fill="#ECEFF1" stroke="#90A4AE"/>
+<text x="46" y="344" font-size="10.5" fill="#37474F">config constant</text>
+<rect x="154.0" y="334" width="13" height="13" rx="3" fill="#BBDEFB" stroke="#1976D2"/>
+<text x="172.0" y="344" font-size="10.5" fill="#37474F">user-pool (hidden LU*)</text>
+<rect x="322.0" y="334" width="13" height="13" rx="3" fill="#FFE0B2" stroke="#F57C00"/>
+<text x="340.0" y="344" font-size="10.5" fill="#37474F">campaign-pool</text>
+<rect x="436.0" y="334" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="454.0" y="344" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="604.0" y="334" width="13" height="13" rx="3" fill="#FFF9C4" stroke="#FBC02D"/>
+<text x="622.0" y="344" font-size="10.5" fill="#37474F">intermediate op</text>
+<rect x="730.0" y="334" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="748.0" y="344" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="556" height="374" viewBox="0 0 556 374" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="556" height="374" fill="#FAFAFA"/>
+<text x="278" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">H4  clearing_price (first-price)</text>
+<polyline points="170,84 240,84 240,183 266,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="153,158 240,158 240,183 266,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="170,224 240,224 240,183 266,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="160,290 240,290 240,183 266,183" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="28" y="56" width="142" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="99" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">H3 won</text>
+<text x="99" y="96" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(branch selector)</text>
+<rect x="45" y="138" width="108" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="99" y="162" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">H2 bid_price</text>
+<rect x="28" y="204" width="142" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="99" y="228" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU7 competing_bid</text>
+<rect x="38" y="270" width="122" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="99" y="294" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">H1 floor_price</text>
+<rect x="266" y="139" width="262" height="88" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="397" y="163" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">H4 clearing_price</text>
+<text x="397" y="179" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= H2 if won</text>
+<text x="397" y="195" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= LU7 if lost &amp; LU7 ≥ H1</text>
+<text x="397" y="211" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= NaN if unsold (max(H2, LU7) &lt; H1)</text>
+<text x="28" y="324" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="334" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="46" y="344" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="196.0" y="334" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="214.0" y="344" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

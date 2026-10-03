@@ -1,0 +1,230 @@
+{
+  "0.0": [
+    {
+      "rho": 0.0,
+      "seed": 90213,
+      "aft": {
+        "diff": 0.0204,
+        "se": 0.00264,
+        "ci95": [
+          0.0152,
+          0.0256
+        ],
+        "z": 7.71,
+        "p": 0.0,
+        "auc_a": 0.7647,
+        "auc_b": 0.7443
+      },
+      "clf": {
+        "diff": 0.0043,
+        "se": 0.00134,
+        "ci95": [
+          0.0017,
+          0.0069
+        ],
+        "z": 3.23,
+        "p": 0.001254,
+        "auc_a": 0.8359,
+        "auc_b": 0.8315
+      },
+      "auc_clf": {
+        "C1": 0.8315,
+        "C3": 0.8359
+      },
+      "t2_gain_C3_clf": {
+        "slot_format": 1226.8,
+        "slot_height": 198.6,
+        "floor_price": 122.5,
+        "bid_price": 73.5,
+        "city": 24.8,
+        "app_id": 19.6,
+        "app_category": 19.3,
+        "bid_density": 16.1
+      },
+      "economics": {
+        "overpay_reduction_pct": {
+          "C3_vs_C1": 23.23,
+          "C4_vs_C2": 26.04
+        },
+        "surplus_uplift_pct": {
+          "C3_vs_C1": -23.78,
+          "C4_vs_C2": -29.01
+        }
+      },
+      "secs": 32.8
+    },
+    {
+      "rho": 0.0,
+      "seed": 90214,
+      "aft": {
+        "diff": 0.0181,
+        "se": 0.00263,
+        "ci95": [
+          0.0129,
+          0.0232
+        ],
+        "z": 6.89,
+        "p": 0.0,
+        "auc_a": 0.7716,
+        "auc_b": 0.7535
+      },
+      "clf": {
+        "diff": 0.0027,
+        "se": 0.00115,
+        "ci95": [
+          0.0005,
+          0.005
+        ],
+        "z": 2.38,
+        "p": 0.017353,
+        "auc_a": 0.8377,
+        "auc_b": 0.835
+      },
+      "auc_clf": {
+        "C1": 0.835,
+        "C3": 0.8377
+      },
+      "t2_gain_C3_clf": {
+        "slot_format": 136.0,
+        "floor_price": 116.0,
+        "hist_clearing_dsp": 110.7,
+        "bid_price": 71.3,
+        "city": 24.8,
+        "app_id": 19.4,
+        "app_category": 18.0,
+        "advertiser_id": 16.5
+      },
+      "economics": {
+        "profit_capture_vs_oracle": {
+          "C1": -2.0058,
+          "C2": -0.6933,
+          "C3": -0.9912,
+          "C4": -0.0552
+        },
+        "overpay_reduction_pct": {
+          "C3_vs_C1": 31.95,
+          "C4_vs_C2": 29.42
+        },
+        "surplus_uplift_pct": {
+          "C3_vs_C1": -47.89,
+          "C4_vs_C2": -91.61
+        }
+      },
+      "secs": 34.4
+    }
+  ],
+  "1.0": [
+    {
+      "rho": 1.0,
+      "seed": 90213,
+      "aft": {
+        "diff": 0.0323,
+        "se": 0.0031,
+        "ci95": [
+          0.0262,
+          0.0384
+        ],
+        "z": 10.43,
+        "p": 0.0,
+        "auc_a": 0.7702,
+        "auc_b": 0.7379
+      },
+      "clf": {
+        "diff": 0.0205,
+        "se": 0.00199,
+        "ci95": [
+          0.0166,
+          0.0244
+        ],
+        "z": 10.31,
+        "p": 0.0,
+        "auc_a": 0.8318,
+        "auc_b": 0.8113
+      },
+      "auc_clf": {
+        "C1": 0.8113,
+        "C3": 0.8318
+      },
+      "t2_gain_C3_clf": {
+        "slot_format": 822.4,
+        "slot_height": 124.9,
+        "floor_price": 117.5,
+        "bid_price": 56.4,
+        "bid_density": 40.0,
+        "city": 25.9,
+        "hist_clearing_ssp": 24.9,
+        "app_id": 21.1
+      },
+      "economics": {
+        "overpay_reduction_pct": {
+          "C3_vs_C1": 0.0,
+          "C4_vs_C2": 18.69
+        },
+        "surplus_uplift_pct": {
+          "C3_vs_C1": -7.14,
+          "C4_vs_C2": -20.13
+        }
+      },
+      "secs": 33.0
+    },
+    {
+      "rho": 1.0,
+      "seed": 90214,
+      "aft": {
+        "diff": 0.0392,
+        "se": 0.00306,
+        "ci95": [
+          0.0332,
+          0.0451
+        ],
+        "z": 12.81,
+        "p": 0.0,
+        "auc_a": 0.7614,
+        "auc_b": 0.7223
+      },
+      "clf": {
+        "diff": 0.0225,
+        "se": 0.00201,
+        "ci95": [
+          0.0186,
+          0.0264
+        ],
+        "z": 11.2,
+        "p": 0.0,
+        "auc_a": 0.7967,
+        "auc_b": 0.7742
+      },
+      "auc_clf": {
+        "C1": 0.7742,
+        "C3": 0.7967
+      },
+      "t2_gain_C3_clf": {
+        "slot_format": 1327.3,
+        "slot_height": 194.9,
+        "floor_price": 53.1,
+        "bid_price": 39.9,
+        "city": 26.9,
+        "hist_clearing_ssp": 26.8,
+        "bid_density": 26.5,
+        "app_id": 19.9
+      },
+      "economics": {
+        "profit_capture_vs_oracle": {
+          "C1": -0.975,
+          "C2": -0.5952,
+          "C3": -0.4505,
+          "C4": -0.1768
+        },
+        "overpay_reduction_pct": {
+          "C3_vs_C1": 19.97,
+          "C4_vs_C2": 22.17
+        },
+        "surplus_uplift_pct": {
+          "C3_vs_C1": -51.58,
+          "C4_vs_C2": -68.85
+        }
+      },
+      "secs": 32.5
+    }
+  ]
+}

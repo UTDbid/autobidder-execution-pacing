@@ -1,0 +1,9 @@
+Outcome,Definition,Direction/meaning,Scope
+Advertiser value,Sum of expected acquisition value,Higher is better,Primary campaign/market outcome
+Aggregate CPA,Spend divided by realized/expected acquisitions,Lower is better,Efficiency
+Underdelivery,Unspent budget divided by assigned budget,Lower is better,Delivery discipline
+Current auction revenue,Sum of simulated clearing payments,Platform-side current yield,Not long-run profit
+Clearing price,Mean positive auction clearing price,Competition pressure,Market mediator
+Non-adopter value,Value earned by untreated advertisers,Spillover,Undefined at full adoption
+True expected value,Ground-truth expected value in T9Sim,Higher is better,Synthetic mechanism only
+Clicks,Logged supported clicks in iPinYou replay,Higher is better,No unlogged counterfactual outcomes

@@ -1,0 +1,17 @@
+*/data/*
+.idea/*
+
+*.DS_Store
+*__pycache__*
+*.pyc
+*/events.out.tfevents*
+results/dt*
+data
+results
+saved_model
+*.log
+*.out
+nohup.out
+logs
+*.pt
+*.pth

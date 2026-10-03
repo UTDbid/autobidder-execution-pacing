@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="740" viewBox="0 0 1180 740" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="mgenerative" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1B5E20"/></marker>
+<marker id="minert" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#BDBDBD"/></marker>
+<marker id="mlookup" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#616161"/></marker>
+<marker id="minferential" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565C0"/></marker>
+<marker id="mtarget" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#00838F"/></marker>
+<marker id="mscoring" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6A1B9A"/></marker>
+<marker id="mfuture" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8E24AA"/></marker>
+<marker id="mfeedback" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#EF6C00"/></marker>
+</defs>
+<rect width="1180" height="740" fill="#FFFFFF"/>
+<text x="590" y="32" text-anchor="middle" font-size="21" font-weight="700" fill="#212121">Stage 3 — Model training</text>
+<text x="590" y="54" text-anchor="middle" font-size="11.5" fill="#546E7A">Fit P(Y|X) on the censored train split: model sees only X and per-condition-visible Y; latents are hidden and must be implicitly inverted.</text>
+<text x="180" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">OBSERVABLES</text>
+<text x="595" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">LATENT GROUND TRUTH</text>
+<text x="997" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">OUTCOME LABELS</text>
+<line x1="194" y1="220" x2="450" y2="338" stroke="#1565C0" stroke-width="2.1" marker-end="url(#minferential)"/>
+<text x="322" y="274" text-anchor="middle" font-size="9" fill="#1565C0" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">features X</text>
+<line x1="889" y1="220" x2="813" y2="250" stroke="#00838F" stroke-width="2.1" marker-end="url(#mtarget)"/>
+<text x="851" y="230" text-anchor="middle" font-size="9" fill="#00838F" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">labels y</text>
+<line x1="701" y1="288" x2="659" y2="310" stroke="#00838F" stroke-width="2.1" marker-end="url(#mtarget)"/>
+<text x="680" y="294" text-anchor="middle" font-size="9" fill="#00838F" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">won-only C1/C3 · all-rows C2/C4</text>
+<line x1="508" y1="310" x2="595" y2="232" stroke="#1565C0" stroke-width="2.1" marker-end="url(#minferential)"/>
+<text x="552" y="266" text-anchor="middle" font-size="9" fill="#1565C0" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">must invert X-&gt;L-&gt;Y (L unseen)</text>
+<line x1="740" y1="178" x2="855" y2="166" stroke="#BDBDBD" stroke-width="1.6" stroke-dasharray="3,4" marker-end="url(#minert)"/>
+<text x="798" y="167" text-anchor="middle" font-size="9" fill="#BDBDBD" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">gen. law (learned about, not seen)</text>
+<g><rect x="40" y="100" width="280" height="120" rx="9" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.8"/>
+<text x="180" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">OBSERVABLES  (X)</text>
+<text x="180" y="140" text-anchor="middle" font-size="9.5" fill="#37474F">A user · B app · C campaign · D time</text>
+<text x="180" y="154" text-anchor="middle" font-size="9.5" fill="#37474F">keys: app_id/campaign_id · context: slot/time</text>
+<text x="180" y="211" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#1565C0">[INPUT — the only features]</text>
+</g>
+<g><rect x="450" y="90" width="290" height="142" rx="9" fill="#FCE4EC" stroke="#C62828" stroke-width="1.8"/>
+<text x="595" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">LATENT GROUND TRUTH  (L)</text>
+<text x="595" y="130" text-anchor="middle" font-size="9.5" fill="#37474F">LU1-7 · LA1/2 · LC1/2</text>
+<text x="595" y="144" text-anchor="middle" font-size="9.5" fill="#37474F">estimands p_*, e_ltv, ev_truth</text>
+<text x="595" y="223" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#C62828">[HIDDEN — forbidden (leakage guard)]</text>
+</g>
+<g><rect x="855" y="100" width="285" height="120" rx="9" fill="#E0F2F1" stroke="#00838F" stroke-width="1.8"/>
+<text x="998" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">OUTCOME LABELS  (Y)</text>
+<text x="998" y="140" text-anchor="middle" font-size="9.5" fill="#37474F">E click · F install · G payer/LTV</text>
+<text x="998" y="154" text-anchor="middle" font-size="9.5" fill="#37474F">H3 won · H4 clearing</text>
+<text x="998" y="211" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#00838F">[TARGET — censored per condition]</text>
+</g>
+<g><rect x="615" y="250" width="215" height="38" rx="9" fill="#FFFDE7" stroke="#E6C200" stroke-width="1.8"/>
+<text x="722" y="272" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">censor.view (per condition)</text>
+</g>
+<g><rect x="450" y="310" width="290" height="92" rx="9" fill="#FFF3E0" stroke="#EF6C00" stroke-width="1.8"/>
+<text x="595" y="332" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">MODEL</text>
+<text x="595" y="350" text-anchor="middle" font-size="9.5" fill="#37474F">Tier-1 4-head hurdle</text>
+<text x="595" y="364" text-anchor="middle" font-size="9.5" fill="#37474F">Tier-2 AFT  -&gt;  P(win|b)</text>
+<text x="595" y="393" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#EF6C00">[FITTING]</text>
+</g>
+<rect x="40" y="600" width="1100" height="78" rx="9" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="52" y="619" font-size="10.5" font-weight="700" fill="#455A64">Key points</text>
+<text x="52" y="637" font-size="10" fill="#37474F">- Dropped + leakage-guarded: latents (LU/LA/LC), estimands (p_*, e_ltv, ev_truth), user_id.</text>
+<text x="52" y="652" font-size="10" fill="#37474F">- Per-condition TRAIN population (won-only vs all-rows) IS the MMP ablation mechanism.</text>
+<text x="52" y="667" font-size="10" fill="#37474F">- Temporal split (days 1-20) precedes censoring; C3/C4 un-censor exact LU7 via H4 as the AFT label bound.</text>
+<line x1="40" y1="700" x2="64" y2="700" stroke="#BDBDBD" stroke-width="2.4" stroke-dasharray="3,4" marker-end="url(#minert)"/>
+<text x="70" y="704" font-size="9.5" fill="#37474F">designed but INERT (A perp L pre-BN)</text>
+<line x1="279.20000000000005" y1="700" x2="303.20000000000005" y2="700" stroke="#1565C0" stroke-width="2.4" marker-end="url(#minferential)"/>
+<text x="309.20000000000005" y="704" font-size="9.5" fill="#37474F">inference: model consumes X  (X -&gt; Y_hat)</text>
+<line x1="546.9000000000001" y1="700" x2="570.9000000000001" y2="700" stroke="#00838F" stroke-width="2.4" marker-end="url(#mtarget)"/>
+<text x="576.9000000000001" y="704" font-size="9.5" fill="#37474F">supervision / labels</text>
+<text x="40" y="720" font-size="9.5" font-style="italic" fill="#90A4AE">box colour + [pill] = the role's availability at this stage</text>
+</svg>

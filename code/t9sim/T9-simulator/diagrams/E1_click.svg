@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="554" viewBox="0 0 1160 554" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="1160" height="554" fill="#FAFAFA"/>
+<text x="580" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">E1  click</text>
+<polyline points="156,174 250,174 250,248 276,248" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="160,240 250,240 250,248 276,248" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="163,306 233,306 233,330 259,330" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="146,372 233,372 233,330 259,330" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="433,84 585,84 585,273 611,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="455,166 585,166 585,273 611,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="498,248 585,248 585,273 611,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="515,330 585,330 585,273 611,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="451,404 585,404 585,273 611,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="465,470 585,470 585,273 611,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="867,273 937,273 937,273 963,273" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="35" y="154" width="122" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="96" y="178" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">B6 slot_format</text>
+<rect x="31" y="220" width="128" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="96" y="244" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">B4×B5 slot_size</text>
+<rect x="28" y="286" width="135" height="40" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="96" y="310" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU6 interest_vec</text>
+<rect x="45" y="352" width="102" height="40" rx="9" fill="#FFE0B2" stroke="#F57C00" stroke-width="1.4"/>
+<text x="96" y="376" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">C4 ad_genre</text>
+<rect x="341" y="56" width="92" height="56" rx="9" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1.4"/>
+<text x="387" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">base_ctr</text>
+<text x="387" y="96" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(config)</text>
+<rect x="320" y="138" width="135" height="56" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="387" y="162" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU2</text>
+<text x="387" y="178" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">click_propensity</text>
+<rect x="276" y="220" width="222" height="56" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="387" y="244" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">v_slot</text>
+<text x="387" y="260" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= fmt_wt(B6) × size_wt(B4,B5)</text>
+<rect x="259" y="302" width="256" height="56" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="387" y="326" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">relevance m(r)</text>
+<text x="387" y="342" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">=(1−w_click)+w_click·LU6[ad_genre]</text>
+<rect x="323" y="384" width="128" height="40" rx="9" fill="#C8E6C9" stroke="#388E3C" stroke-width="1.4"/>
+<text x="387" y="408" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LA1 app_quality</text>
+<rect x="309" y="450" width="155" height="40" rx="9" fill="#FFE0B2" stroke="#F57C00" stroke-width="1.4"/>
+<text x="387" y="474" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LC1 creative_appeal</text>
+<rect x="611" y="245" width="256" height="56" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="739" y="269" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">P(click)</text>
+<text x="739" y="285" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= base_ctr·LU2·v_slot·m(r)·LA1·LC1</text>
+<rect x="963" y="245" width="169" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="1047" y="269" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">E1 click</text>
+<text x="1047" y="285" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">~ Bernoulli(P(click))</text>
+<text x="28" y="504" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="514" width="13" height="13" rx="3" fill="#ECEFF1" stroke="#90A4AE"/>
+<text x="46" y="524" font-size="10.5" fill="#37474F">config constant</text>
+<rect x="154.0" y="514" width="13" height="13" rx="3" fill="#BBDEFB" stroke="#1976D2"/>
+<text x="172.0" y="524" font-size="10.5" fill="#37474F">user-pool (hidden LU*)</text>
+<rect x="322.0" y="514" width="13" height="13" rx="3" fill="#C8E6C9" stroke="#388E3C"/>
+<text x="340.0" y="524" font-size="10.5" fill="#37474F">app-pool (hidden)</text>
+<rect x="460.0" y="514" width="13" height="13" rx="3" fill="#FFE0B2" stroke="#F57C00"/>
+<text x="478.0" y="524" font-size="10.5" fill="#37474F">campaign-pool</text>
+<rect x="574.0" y="514" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="592.0" y="524" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="742.0" y="514" width="13" height="13" rx="3" fill="#FFF9C4" stroke="#FBC02D"/>
+<text x="760.0" y="524" font-size="10.5" fill="#37474F">intermediate op</text>
+<rect x="868.0" y="514" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="886.0" y="524" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="324" viewBox="0 0 590 324" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="590" height="324" fill="#FAFAFA"/>
+<text x="295" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">F2  install_timestamp</text>
+<polyline points="177,76 247,76 247,158 273,158" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="156,150 247,150 247,158 273,158" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="167,232 247,232 247,158 273,158" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="28" y="56" width="149" height="40" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="102" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">E2 click_timestamp</text>
+<rect x="48" y="122" width="108" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="102" y="146" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">F1 install=1</text>
+<text x="102" y="162" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(gate)</text>
+<rect x="38" y="204" width="128" height="56" rx="9" fill="#E1BEE7" stroke="#8E24AA" stroke-width="1.4"/>
+<text x="102" y="228" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LogNormal</text>
+<text x="102" y="244" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(minutes→hours)</text>
+<rect x="273" y="130" width="289" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="417" y="154" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">F2 install_timestamp</text>
+<text x="417" y="170" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= E2 + LogNormal  if install=1  else −1</text>
+<text x="28" y="274" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="284" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="46" y="294" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="196.0" y="284" width="13" height="13" rx="3" fill="#E1BEE7" stroke="#8E24AA"/>
+<text x="214.0" y="294" font-size="10.5" fill="#37474F">random draw</text>
+<rect x="298.0" y="284" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="316.0" y="294" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

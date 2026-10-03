@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1233" height="488" viewBox="0 0 1233 488" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#455A64"/></marker></defs>
+<rect width="1233" height="488" fill="#FAFAFA"/>
+<text x="617" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#263238">F1  install</text>
+<polyline points="163,207 233,207 233,330 259,330" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="146,273 233,273 233,330 259,330" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="446,84 612,84 612,199 638,199" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="475,166 612,166 612,199 638,199" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="485,248 612,248 612,199 638,199" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="542,330 612,330 612,199 638,199" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="465,404 612,404 612,199 638,199" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="874,199 943,199 943,240 969,240" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<polyline points="803,281 943,281 943,240 969,240" fill="none" stroke="#455A64" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="28" y="187" width="135" height="40" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="96" y="211" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU6 interest_vec</text>
+<rect x="45" y="253" width="102" height="40" rx="9" fill="#FFE0B2" stroke="#F57C00" stroke-width="1.4"/>
+<text x="96" y="277" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">C4 ad_genre</text>
+<rect x="354" y="56" width="92" height="56" rx="9" fill="#ECEFF1" stroke="#90A4AE" stroke-width="1.4"/>
+<text x="400" y="80" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">base_ir</text>
+<text x="400" y="96" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(config)</text>
+<rect x="326" y="138" width="149" height="56" rx="9" fill="#BBDEFB" stroke="#1976D2" stroke-width="1.4"/>
+<text x="400" y="162" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LU3</text>
+<text x="400" y="178" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">install_propensity</text>
+<rect x="316" y="220" width="169" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="400" y="244" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">ease(B2)</text>
+<text x="400" y="260" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">install-ease by genre</text>
+<rect x="259" y="302" width="283" height="56" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="400" y="326" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">relevance m(r)</text>
+<text x="400" y="342" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">=(1−w_install)+w_install·LU6[ad_genre]</text>
+<rect x="336" y="384" width="128" height="40" rx="9" fill="#C8E6C9" stroke="#388E3C" stroke-width="1.4"/>
+<text x="400" y="408" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">LA1 app_quality</text>
+<rect x="638" y="171" width="236" height="56" rx="9" fill="#FFF9C4" stroke="#FBC02D" stroke-width="1.4"/>
+<text x="756" y="195" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">P(install|click)</text>
+<text x="756" y="211" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">= base_ir·LU3·ease(B2)·m(r)·LA1</text>
+<rect x="708" y="253" width="95" height="56" rx="9" fill="#FFFFFF" stroke="#607D8B" stroke-width="1.4"/>
+<text x="756" y="277" text-anchor="middle" font-size="12.5" font-weight="500" fill="#263238">E1 click=1</text>
+<text x="756" y="293" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">(gate)</text>
+<rect x="969" y="212" width="236" height="56" rx="9" fill="#FFCDD2" stroke="#D32F2F" stroke-width="2.6"/>
+<text x="1087" y="236" text-anchor="middle" font-size="12.5" font-weight="700" fill="#263238">F1 install</text>
+<text x="1087" y="252" text-anchor="middle" font-size="11.0" font-weight="400" fill="#263238">~ Bernoulli  if click=1  else 0</text>
+<text x="28" y="438" font-size="11" font-weight="700" fill="#546E7A">NODE TYPES</text>
+<rect x="28" y="448" width="13" height="13" rx="3" fill="#ECEFF1" stroke="#90A4AE"/>
+<text x="46" y="458" font-size="10.5" fill="#37474F">config constant</text>
+<rect x="154.0" y="448" width="13" height="13" rx="3" fill="#BBDEFB" stroke="#1976D2"/>
+<text x="172.0" y="458" font-size="10.5" fill="#37474F">user-pool (hidden LU*)</text>
+<rect x="322.0" y="448" width="13" height="13" rx="3" fill="#C8E6C9" stroke="#388E3C"/>
+<text x="340.0" y="458" font-size="10.5" fill="#37474F">app-pool (hidden)</text>
+<rect x="460.0" y="448" width="13" height="13" rx="3" fill="#FFE0B2" stroke="#F57C00"/>
+<text x="478.0" y="458" font-size="10.5" fill="#37474F">campaign-pool</text>
+<rect x="574.0" y="448" width="13" height="13" rx="3" fill="#FFFFFF" stroke="#607D8B"/>
+<text x="592.0" y="458" font-size="10.5" fill="#37474F">visible / prior column</text>
+<rect x="742.0" y="448" width="13" height="13" rx="3" fill="#FFF9C4" stroke="#FBC02D"/>
+<text x="760.0" y="458" font-size="10.5" fill="#37474F">intermediate op</text>
+<rect x="868.0" y="448" width="13" height="13" rx="3" fill="#FFCDD2" stroke="#D32F2F"/>
+<text x="886.0" y="458" font-size="10.5" fill="#37474F">OUTPUT</text>
+</svg>

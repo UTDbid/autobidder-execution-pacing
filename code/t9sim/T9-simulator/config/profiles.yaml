@@ -1,0 +1,65 @@
+# =====================================================================
+# Run profiles — pool sizes & scale per run type (approved 10 Jun 2026)
+# =====================================================================
+# Users SCALE with auctions (~4.5 auctions/user preserves the schema's
+# id-recoverability property: users appear in only a handful of auctions).
+# Apps/campaigns stay DENSE so app_id / campaign_id remain learnable
+# proxies for LA1 / LC1-LC2 at every scale.
+#
+# Pool sizing is config, not code: change here, regenerate.
+
+default_profile: golden
+
+profiles:
+  golden:                  # fixed-seed CI/invariant run
+    n_auctions: 100000
+    n_users: 22000
+    n_apps: 150
+    n_campaigns: 30
+    n_advertisers: 10
+    chunk_size: 100000
+    seed: 90210
+  test:                    # local 1M development run
+    n_auctions: 1000000
+    n_users: 220000
+    n_apps: 500
+    n_campaigns: 100
+    n_advertisers: 25
+    chunk_size: 250000
+    seed: 90211
+  scale10m:                # mid-scale run (10M auctions; local boundary)
+    n_auctions: 10000000
+    n_users: 2200000
+    n_apps: 1200
+    n_campaigns: 200
+    n_advertisers: 50
+    chunk_size: 500000
+    seed: 90213
+  scale50m:                # stretch run (50M auctions; may need float32)
+    n_auctions: 50000000
+    n_users: 11000000
+    n_apps: 2500
+    n_campaigns: 300
+    n_advertisers: 75
+    chunk_size: 1000000
+    seed: 90215
+  scale100m:               # HPC-scale run (100M auctions; Apocrita)
+    n_auctions: 100000000
+    n_users: 22000000
+    n_apps: 3500
+    n_campaigns: 600
+    n_advertisers: 120
+    chunk_size: 1000000
+    seed: 90214
+
+# Auction win-rate handling (decision 10 Jun 2026): CALIBRATED pinning.
+# A single global bid-level multiplier (k_global, inside k_cpa) is solved on a
+# warm-up sample so the aggregate win rate hits the target; per-auction wins
+# stay fully generative (adverse selection + Tier-2 bid->win causality intact).
+# Exact per-row construction was REJECTED: random pinning erases the
+# value-correlation of wins; deterministic construction makes H2 a function
+# of the latent LU7.
+win_rate:
+  target: 0.30
+  warmup_auctions: 50000
+  solver_tolerance: 0.005      # |achieved - target| acceptable after solve

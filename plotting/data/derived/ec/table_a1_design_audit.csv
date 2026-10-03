@@ -1,0 +1,8 @@
+Component,Design,Width/adoption menu,Replication
+Campaign main,5 learned bidders × 3 pacing references,"0, 0.3, 0.5, 0.8, 1.0, 1.2; Raw separate",Fixed opportunity replay
+Campaign temporal,5 learned bidders × 3 pacing references,0 versus 0.8,Independent later temporal block
+Market uniform,CQL × 3 pacing references,"0, 0.3, 0.5, 0.8, 1.0, 1.2; Raw separate",20 synchronous episodes
+Market rollout,CQL × 3 pacing references × 4 paths,"25%, 50%, 75%, 100% adoption",20 paired episodes per cell
+T9Sim,3 pacing references × 4 information views × 3 budgets,"0, 0.3, 0.5, 0.8, 1.0, 1.2; Raw separate",10 generator seeds
+iPinYou,3 pacing references × 9 campaigns × 3 budget levels,"0, 0.3, 0.5, 0.8, 1.0, 1.2; Raw separate",Logged-support replay
+κ-selection,15 bidder–reference pairs × 3 service caps,"0, 0.3, 0.5, 0.8, 1.0",Retrospective screen; STOP

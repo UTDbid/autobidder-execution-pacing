@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="721" height="955" viewBox="0 0 721 955" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#222222"/></marker>
+<marker id="arrow_pairing" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#E53935"/></marker>
+<marker id="arrow_exposure" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8E24AA"/></marker>
+<marker id="arrow_os_spend" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#F9A825"/></marker>
+<marker id="arrow_payer_timing" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#00838F"/></marker>
+<marker id="arrow_hour" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1E88E5"/></marker>
+<marker id="arrow_rival_bid" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/></marker>
+<marker id="arrow_rival_density" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#D81B60"/></marker>
+<marker id="arrow_tilt_unwired" markerWidth="10" markerHeight="10" refX="8.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#9E9E9E"/></marker>
+</defs>
+<rect width="721" height="955" fill="#FFFFFF"/>
+<text x="360" y="34" text-anchor="middle" font-size="19" font-weight="700" fill="#212121">T9Sim Dependency Graph (23 anchored nodes)</text>
+<text x="360" y="55" text-anchor="middle" font-size="11" fill="#546E7A">V7 dependency edges #1-#5 plus the V10 rival design; V8 out of scope. The three unwired</text>
+<text x="360" y="70" text-anchor="middle" font-size="11" fill="#546E7A">archetype tilts (to OS, DeviceType, DayOfWeek) are dashed grey: declared, to be wired.</text>
+<line x1="115.0" y1="330.0" x2="115.0" y2="380.0" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrow_pairing)"/>
+<line x1="115.0" y1="418.0" x2="115.0" y2="468.0" stroke="#E53935" stroke-width="1.5" marker-end="url(#arrow_pairing)"/>
+<line x1="406.3" y1="143.6" x2="566.4" y2="170.0" stroke="#8E24AA" stroke-width="1.5" marker-end="url(#arrow_exposure)"/>
+<line x1="408.2" y1="187.9" x2="560.5" y2="181.2" stroke="#8E24AA" stroke-width="1.5" marker-end="url(#arrow_exposure)"/>
+<line x1="382.6" y1="368.9" x2="596.4" y2="531.8" stroke="#F9A825" stroke-width="1.5" marker-end="url(#arrow_os_spend)"/>
+<line x1="399.5" y1="363.1" x2="579.5" y2="414.3" stroke="#F9A825" stroke-width="1.5" marker-end="url(#arrow_os_spend)"/>
+<line x1="402.2" y1="253.4" x2="576.8" y2="292.6" stroke="#00838F" stroke-width="1.5" marker-end="url(#arrow_payer_timing)"/>
+<line x1="410.5" y1="298.8" x2="570.5" y2="301.3" stroke="#00838F" stroke-width="1.5" marker-end="url(#arrow_payer_timing)"/>
+<line x1="132.9" y1="469.3" x2="342.7" y2="261.6" stroke="#1E88E5" stroke-width="1.5" marker-end="url(#arrow_hour)"/>
+<line x1="143.4" y1="471.4" x2="332.5" y2="367.4" stroke="#9E9E9E" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow_tilt_unwired)"/>
+<line x1="132.9" y1="504.7" x2="342.4" y2="712.1" stroke="#9E9E9E" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow_tilt_unwired)"/>
+<line x1="137.1" y1="470.0" x2="338.4" y2="315.0" stroke="#9E9E9E" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow_tilt_unwired)"/>
+<line x1="373.0" y1="424.8" x2="606.2" y2="776.7" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="374.9" y1="478.7" x2="604.3" y2="776.8" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="385.6" y1="638.9" x2="592.7" y2="778.0" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="377.2" y1="532.2" x2="601.7" y2="777.0" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="381.5" y1="586.5" x2="598.1" y2="777.4" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="394.1" y1="691.5" x2="584.2" y2="779.5" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="414.6" y1="786.4" x2="556.6" y2="792.6" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="371.3" y1="370.5" x2="607.6" y2="776.6" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="404.6" y1="741.2" x2="570.5" y2="783.2" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="404.8" y1="830.7" x2="563.6" y2="804.4" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="370.2" y1="316.6" x2="608.8" y2="776.6" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow_rival_bid)"/>
+<line x1="402.4" y1="584.9" x2="582.8" y2="657.6" stroke="#D81B60" stroke-width="1.5" marker-end="url(#arrow_rival_density)"/>
+<line x1="418.9" y1="675.1" x2="564.1" y2="672.8" stroke="#D81B60" stroke-width="1.5" marker-end="url(#arrow_rival_density)"/>
+<line x1="387.9" y1="530.8" x2="591.5" y2="655.5" stroke="#D81B60" stroke-width="1.5" marker-end="url(#arrow_rival_density)"/>
+<line x1="394.6" y1="769.2" x2="584.4" y2="686.8" stroke="#D81B60" stroke-width="1.5" marker-end="url(#arrow_rival_density)"/>
+<line x1="385.7" y1="821.8" x2="592.5" y2="688.7" stroke="#D81B60" stroke-width="1.5" marker-end="url(#arrow_rival_density)"/>
+<line x1="373.2" y1="316.4" x2="605.8" y2="653.5" stroke="#D81B60" stroke-width="1.5" marker-end="url(#arrow_rival_density)"/>
+<ellipse cx="115.0" cy="311.0" rx="58.5" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="115.0" y="315.0" text-anchor="middle" font-size="11.5" fill="#161616">AppCategory</text>
+<ellipse cx="115.0" cy="399.0" rx="75.0" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="115.0" y="403.0" text-anchor="middle" font-size="11.5" fill="#161616">AudienceProfile</text>
+<ellipse cx="115.0" cy="487.0" rx="50.0" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="115.0" y="491.0" text-anchor="middle" font-size="11.5" fill="#161616">Archetype</text>
+<ellipse cx="360.5" cy="136.0" rx="50.0" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="140.0" text-anchor="middle" font-size="11.5" fill="#161616">PayerProb</text>
+<ellipse cx="360.5" cy="190.0" rx="48.0" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="194.0" text-anchor="middle" font-size="11.5" fill="#161616">LtvMult</text>
+<ellipse cx="618.5" cy="178.7" rx="58.5" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="618.5" y="182.7" text-anchor="middle" font-size="11.5" fill="#161616">GameQuality</text>
+<ellipse cx="360.5" cy="244.0" rx="48.0" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="360.5" y="248.0" text-anchor="middle" font-size="11.5" fill="#161616">Hour</text>
+<ellipse cx="360.5" cy="298.0" rx="50.0" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="360.5" y="302.0" text-anchor="middle" font-size="11.5" fill="#161616">DayOfWeek</text>
+<ellipse cx="618.5" cy="302.0" rx="48.0" ry="19.0" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5"/>
+<text x="618.5" y="306.0" text-anchor="middle" font-size="11.5" fill="#161616">PPayer</text>
+<ellipse cx="360.5" cy="352.0" rx="48.0" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="360.5" y="356.0" text-anchor="middle" font-size="11.5" fill="#161616">OS</text>
+<ellipse cx="618.5" cy="548.7" rx="48.0" ry="19.0" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5"/>
+<text x="618.5" y="552.7" text-anchor="middle" font-size="11.5" fill="#161616">ELTV</text>
+<ellipse cx="618.5" cy="425.3" rx="48.0" ry="19.0" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5"/>
+<text x="618.5" y="429.3" text-anchor="middle" font-size="11.5" fill="#161616">LTV</text>
+<ellipse cx="360.5" cy="406.0" rx="83.5" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="410.0" text-anchor="middle" font-size="11.5" fill="#161616">RivalValueLoading</text>
+<ellipse cx="360.5" cy="460.0" rx="79.0" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="464.0" text-anchor="middle" font-size="11.5" fill="#161616">RivalRetargeting</text>
+<ellipse cx="360.5" cy="514.0" rx="58.5" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="518.0" text-anchor="middle" font-size="11.5" fill="#161616">RivalPacing</text>
+<ellipse cx="360.5" cy="568.0" rx="91.5" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="572.0" text-anchor="middle" font-size="11.5" fill="#161616">RivalExchPropensity</text>
+<ellipse cx="360.5" cy="622.0" rx="54.5" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="626.0" text-anchor="middle" font-size="11.5" fill="#161616">RivalNoise</text>
+<ellipse cx="360.5" cy="676.0" rx="58.5" ry="19.0" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.5"/>
+<text x="360.5" y="680.0" text-anchor="middle" font-size="11.5" fill="#161616">RivalFlight</text>
+<ellipse cx="360.5" cy="784.0" rx="54.5" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="360.5" y="788.0" text-anchor="middle" font-size="11.5" fill="#161616">AdExchange</text>
+<ellipse cx="360.5" cy="730.0" rx="54.5" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="360.5" y="734.0" text-anchor="middle" font-size="11.5" fill="#161616">DeviceType</text>
+<ellipse cx="360.5" cy="838.0" rx="48.0" ry="19.0" fill="#FFFFFF" stroke="#455A64" stroke-width="1.5"/>
+<text x="360.5" y="842.0" text-anchor="middle" font-size="11.5" fill="#161616">Week</text>
+<ellipse cx="618.5" cy="795.3" rx="62.5" ry="19.0" fill="#FFF3E0" stroke="#EF6C00" stroke-width="1.5"/>
+<text x="618.5" y="799.3" text-anchor="middle" font-size="11.5" fill="#161616">CompetingBid</text>
+<ellipse cx="618.5" cy="672.0" rx="54.5" ry="19.0" fill="#FFF3E0" stroke="#EF6C00" stroke-width="1.5"/>
+<text x="618.5" y="676.0" text-anchor="middle" font-size="11.5" fill="#161616">BidDensity</text>
+<line x1="40" y1="889" x2="62" y2="889" stroke="#E53935" stroke-width="2.6"/>
+<text x="67" y="893" font-size="9.5" fill="#37474F">#1 pairing</text>
+<line x1="145" y1="889" x2="167" y2="889" stroke="#8E24AA" stroke-width="2.6"/>
+<text x="172" y="893" font-size="9.5" fill="#37474F">#2 exposure</text>
+<line x1="255" y1="889" x2="277" y2="889" stroke="#F9A825" stroke-width="2.6"/>
+<text x="282" y="893" font-size="9.5" fill="#37474F">#3 os_spend</text>
+<line x1="365" y1="889" x2="387" y2="889" stroke="#00838F" stroke-width="2.6"/>
+<text x="392" y="893" font-size="9.5" fill="#37474F">#4 payer_timing</text>
+<line x1="40" y1="907" x2="62" y2="907" stroke="#1E88E5" stroke-width="2.6"/>
+<text x="67" y="911" font-size="9.5" fill="#37474F">#5 hour + archetype tilts</text>
+<line x1="229" y1="907" x2="251" y2="907" stroke="#2E7D32" stroke-width="2.6"/>
+<text x="256" y="911" font-size="9.5" fill="#37474F">V10 rival -&gt; CompetingBid</text>
+<line x1="418" y1="907" x2="440" y2="907" stroke="#D81B60" stroke-width="2.6"/>
+<text x="445" y="911" font-size="9.5" fill="#37474F">V10 rival -&gt; BidDensity</text>
+<line x1="40" y1="925" x2="62" y2="925" stroke="#9E9E9E" stroke-width="2.6"/>
+<text x="67" y="929" font-size="9.5" fill="#37474F">archetype tilt: declared, not wired</text>
+<text x="40" y="943" font-size="10" fill="#607D8B">nodes 23 · arcs 29 (26 wired + 3 declared)</text>
+</svg>

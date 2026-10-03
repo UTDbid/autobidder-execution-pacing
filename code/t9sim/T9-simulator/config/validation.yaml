@@ -1,0 +1,24 @@
+# =====================================================================
+# T9 v6 — Validation targets (sect-Validation of the v6 schema; USD)
+# =====================================================================
+# v6: funnel metrics are computed on the MASTER (all rows carry outcomes;
+# the won-only restriction was removed by the MMP censoring correction).
+# Levels are FULL-CALIBRATION targets. The golden run asserts DIRECTIONS
+# and invariants only (tests/test_invariants.py); levels come into force
+# once the auto-calibration loop runs on payer-rich samples.
+
+targets:
+  population_ctr: [0.02, 0.05]        # mean E1, all rows
+  click_to_install: [0.25, 0.40]      # mean F1 | E1=1
+  install_to_payer: [0.02, 0.05]      # mean G1 | F1=1
+  whale_concentration: [0.55, 0.65]   # top 5% of payers' share of total G2
+  median_payer_spend_usd: 6.0         # median G2 | G1=1
+  auction_win_rate: [0.20, 0.40]      # mean H3 (calibrated-pinned at 0.30)
+
+# Direction assertions for the golden run (no levels):
+directions:
+  - "mean G2 (payers): whale > engaged_spender > casual > time_filler"
+  - "click rate increases with r = LU6[ad_genre]  (relevance works)"
+  - "mean sold H4: rewarded > interstitial > banner  (format eCPM ordering)"
+  - "mean EV(lost) > mean EV(won)  (adverse selection present)"
+  - "Tier-2 signal: P(win) increases with H2 within format"

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="435" viewBox="0 0 1240 435" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="aamber" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#A67C00"/></marker>
+<marker id="atilt" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#E53935"/></marker>
+<marker id="ateal" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#00838F"/></marker>
+<marker id="aev" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8E24AA"/></marker>
+<marker id="anew" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2E7D32"/></marker>
+</defs>
+<rect width="1240" height="435" fill="#FFFFFF"/>
+<text x="620.0" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#212121">T9Sim Schema Overview</text>
+<text x="162" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#B0BEC5">LATENTS</text>
+<text x="457" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#B0BEC5">OBSERVABLES</text>
+<text x="752" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#B0BEC5">ESTIMANDS</text>
+<text x="1062" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#B0BEC5">OUTCOMES + AUCTION</text>
+<polyline points="280,138 340,138" fill="none" stroke="#E53935" stroke-width="2.0" marker-end="url(#atilt)"/>
+<polyline points="575,138 635,138" fill="none" stroke="#E53935" stroke-width="2.0" marker-end="url(#atilt)"/>
+<polyline points="870,138 930,138" fill="none" stroke="#00838F" stroke-width="2.1" marker-end="url(#ateal)"/>
+<polyline points="280,200 635,200" fill="none" stroke="#A67C00" stroke-width="2.2" marker-end="url(#aamber)"/>
+<polyline points="870,200 1100,200 1100,310" fill="none" stroke="#8E24AA" stroke-width="1.9" marker-end="url(#aev)"/>
+<polyline points="545,164 545,324 930,324" fill="none" stroke="#2E7D32" stroke-width="1.9" marker-end="url(#anew)"/>
+<polyline points="280,336 930,336" fill="none" stroke="#2E7D32" stroke-width="2.1" marker-end="url(#anew)"/>
+<rect x="45" y="112" width="235" height="120" rx="10" fill="#BBDEFB" stroke="#1565C0" stroke-width="1.8"/>
+<text x="61" y="143" font-size="12.5" font-weight="700" fill="#1A1A1A">USER · APP · CAMPAIGN</text>
+<rect x="224" y="125" width="44" height="17" rx="8.5" fill="#78909C"/>
+<text x="246.0" y="137" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">oracle</text>
+<rect x="340" y="112" width="235" height="52" rx="10" fill="#FFFFFF" stroke="#546E7A" stroke-width="1.8"/>
+<text x="356" y="143" font-size="12.5" font-weight="700" fill="#1A1A1A">BID-TIME OBSERVABLES</text>
+<rect x="507" y="125" width="56" height="17" rx="8.5" fill="#1565C0"/>
+<text x="535.0" y="137" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">DSP · C1</text>
+<rect x="635" y="112" width="235" height="120" rx="10" fill="#E1BEE7" stroke="#6A1B9A" stroke-width="1.8"/>
+<text x="651" y="143" font-size="12.5" font-weight="700" fill="#1A1A1A">GROUND-TRUTH VALUE</text>
+<rect x="814" y="125" width="44" height="17" rx="8.5" fill="#78909C"/>
+<text x="836.0" y="137" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">oracle</text>
+<rect x="930" y="112" width="265" height="52" rx="10" fill="#FFCDD2" stroke="#C62828" stroke-width="1.8"/>
+<text x="946" y="143" font-size="12.5" font-weight="700" fill="#1A1A1A">CONVERSION OUTCOMES</text>
+<rect x="1127" y="125" width="56" height="17" rx="8.5" fill="#C62828"/>
+<text x="1155.0" y="137" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">MMP · C2</text>
+<rect x="45" y="310" width="235" height="52" rx="10" fill="#C8E6C9" stroke="#2E7D32" stroke-width="1.8"/>
+<text x="61" y="341" font-size="12.5" font-weight="700" fill="#1A1A1A">RIVAL POOL</text>
+<rect x="224" y="323" width="44" height="17" rx="8.5" fill="#78909C"/>
+<text x="246.0" y="335" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">oracle</text>
+<rect x="930" y="310" width="265" height="52" rx="10" fill="#FFE0B2" stroke="#EF6C00" stroke-width="1.8"/>
+<text x="946" y="341" font-size="12.5" font-weight="700" fill="#1A1A1A">AUCTION</text>
+<rect x="1127" y="323" width="56" height="17" rx="8.5" fill="#2E7D32"/>
+<text x="1155.0" y="335" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF">SSP · C3</text>
+<line x1="45" y1="400" x2="69" y2="400" stroke="#A67C00" stroke-width="2.6"/>
+<text x="73" y="404" font-size="10" fill="#37474F">latent pools form value</text>
+<line x1="233" y1="400" x2="257" y2="400" stroke="#E53935" stroke-width="2.6"/>
+<text x="261" y="404" font-size="10" fill="#37474F">dependency edges</text>
+<line x1="379" y1="400" x2="403" y2="400" stroke="#00838F" stroke-width="2.6"/>
+<text x="407" y="404" font-size="10" fill="#37474F">value realises the funnel</text>
+<line x1="579" y1="400" x2="603" y2="400" stroke="#8E24AA" stroke-width="2.6"/>
+<text x="607" y="404" font-size="10" fill="#37474F">value drives the market</text>
+<line x1="767" y1="400" x2="791" y2="400" stroke="#2E7D32" stroke-width="2.6"/>
+<text x="795" y="404" font-size="10" fill="#37474F">rival market</text>
+</svg>

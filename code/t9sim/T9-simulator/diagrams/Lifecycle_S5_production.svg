@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="740" viewBox="0 0 1180 740" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="mgenerative" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1B5E20"/></marker>
+<marker id="minert" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#BDBDBD"/></marker>
+<marker id="mlookup" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#616161"/></marker>
+<marker id="minferential" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565C0"/></marker>
+<marker id="mtarget" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#00838F"/></marker>
+<marker id="mscoring" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6A1B9A"/></marker>
+<marker id="mfuture" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8E24AA"/></marker>
+<marker id="mfeedback" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#EF6C00"/></marker>
+</defs>
+<rect width="1180" height="740" fill="#FFFFFF"/>
+<text x="590" y="32" text-anchor="middle" font-size="21" font-weight="700" fill="#212121">Stage 5 — Inference in production (AXON-analogue)</text>
+<text x="590" y="54" text-anchor="middle" font-size="11.5" fill="#546E7A">At bid time only observables exist; frozen models -&gt; EV_hat &amp; P(win|b) -&gt; one bid. Latents permanently absent; outcomes are in the future.</text>
+<text x="180" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">OBSERVABLES</text>
+<text x="595" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">LATENT GROUND TRUTH</text>
+<text x="997" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">OUTCOME LABELS</text>
+<line x1="194" y1="220" x2="450" y2="338" stroke="#1565C0" stroke-width="2.1" marker-end="url(#minferential)"/>
+<text x="322" y="274" text-anchor="middle" font-size="9" fill="#1565C0" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">live X</text>
+<line x1="740" y1="356" x2="800" y2="351" stroke="#6A1B9A" stroke-width="2.1" marker-end="url(#mscoring)"/>
+<text x="770" y="348" text-anchor="middle" font-size="9" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">frozen</text>
+<line x1="965" y1="392" x2="965" y2="448" stroke="#6A1B9A" stroke-width="2.1" marker-end="url(#mscoring)"/>
+<text x="965" y="415" text-anchor="middle" font-size="9" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">EV_hat, P(win|b)</text>
+<line x1="982" y1="448" x2="1012" y2="220" stroke="#8E24AA" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#mfuture)"/>
+<text x="997" y="329" text-anchor="middle" font-size="9" fill="#8E24AA" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">bid -&gt; outcome (future)</text>
+<line x1="740" y1="161" x2="855" y2="148" stroke="#8E24AA" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#mfuture)"/>
+<text x="798" y="150" text-anchor="middle" font-size="9" fill="#8E24AA" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">world uses L (bidder blind)</text>
+<line x1="940" y1="220" x2="705" y2="310" stroke="#EF6C00" stroke-width="2.1" stroke-dasharray="6,4" marker-end="url(#mfeedback)"/>
+<text x="823" y="260" text-anchor="middle" font-size="9" fill="#EF6C00" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">obs. = C1-C4 map -&gt; next train set (loop TBD)</text>
+<g><rect x="40" y="100" width="280" height="120" rx="9" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.8"/>
+<text x="180" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">OBSERVABLES  (X)</text>
+<text x="180" y="140" text-anchor="middle" font-size="9.5" fill="#37474F">A user · B app · C campaign · D time</text>
+<text x="180" y="154" text-anchor="middle" font-size="9.5" fill="#37474F">keys: app_id/campaign_id · context: slot/time</text>
+<text x="180" y="211" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#1565C0">[LIVE INPUT (only X)]</text>
+</g>
+<g opacity="0.6"><rect x="450" y="90" width="290" height="142" rx="9" fill="#ECEFF1" stroke="#B0BEC5" stroke-width="1.8" stroke-dasharray="5,4"/>
+<text x="595" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">LATENT GROUND TRUTH  (L)</text>
+<text x="595" y="130" text-anchor="middle" font-size="9.5" fill="#37474F">LU1-7 · LA1/2 · LC1/2</text>
+<text x="595" y="144" text-anchor="middle" font-size="9.5" fill="#37474F">estimands p_*, e_ltv, ev_truth</text>
+<text x="595" y="223" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#90A4AE">[ABSENT — permanently unobservable]</text>
+</g>
+<g><rect x="855" y="100" width="285" height="120" rx="9" fill="#EDE7F6" stroke="#6A1B9A" stroke-width="1.8"/>
+<text x="998" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">OUTCOME LABELS  (Y)</text>
+<text x="998" y="140" text-anchor="middle" font-size="9.5" fill="#37474F">E click · F install · G payer/LTV</text>
+<text x="998" y="154" text-anchor="middle" font-size="9.5" fill="#37474F">H3 won · H4 clearing</text>
+<text x="998" y="211" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#6A1B9A">[FUTURE — partial feedback]</text>
+</g>
+<g><rect x="450" y="310" width="290" height="92" rx="9" fill="#EFEBE9" stroke="#6D4C41" stroke-width="1.8"/>
+<text x="595" y="332" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">MODEL</text>
+<text x="595" y="350" text-anchor="middle" font-size="9.5" fill="#37474F">Tier-1 4-head hurdle</text>
+<text x="595" y="364" text-anchor="middle" font-size="9.5" fill="#37474F">Tier-2 AFT  -&gt;  P(win|b)</text>
+<text x="595" y="393" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#6D4C41">[FROZEN]</text>
+</g>
+<g><rect x="800" y="310" width="330" height="82" rx="9" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.8"/>
+<text x="965" y="332" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">PREDICTIONS</text>
+<text x="965" y="350" text-anchor="middle" font-size="9.5" fill="#37474F">EV_hat = product of 4 heads</text>
+<text x="965" y="364" text-anchor="middle" font-size="9.5" fill="#37474F">P(win | b)</text>
+</g>
+<g><rect x="800" y="448" width="330" height="66" rx="9" fill="#E1F5FE" stroke="#0277BD" stroke-width="1.8"/>
+<text x="965" y="470" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">ACTION</text>
+<text x="965" y="488" text-anchor="middle" font-size="9.5" fill="#37474F">bid* = argmax (EV_hat - b)*P(win|b)</text>
+</g>
+<rect x="40" y="600" width="1100" height="78" rx="9" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="52" y="619" font-size="10.5" font-weight="700" fill="#455A64">Key points</text>
+<text x="52" y="637" font-size="10" fill="#37474F">- Latents are permanently ABSENT; the oracle (latents-as-inputs) is impossible in production.</text>
+<text x="52" y="652" font-size="10" fill="#37474F">- id-keys recover frozen per-entity latents baked into the model (the only hidden-quality channel pre-BN).</text>
+<text x="52" y="667" font-size="10" fill="#37474F">- What returns (won-only vs all-rows, H4?) = the C1-C4 censoring map -&gt; tomorrow's training data.</text>
+<line x1="40" y1="700" x2="64" y2="700" stroke="#1565C0" stroke-width="2.4" marker-end="url(#minferential)"/>
+<text x="70" y="704" font-size="9.5" fill="#37474F">inference: model consumes X  (X -&gt; Y_hat)</text>
+<line x1="307.70000000000005" y1="700" x2="331.70000000000005" y2="700" stroke="#6A1B9A" stroke-width="2.4" marker-end="url(#mscoring)"/>
+<text x="337.70000000000005" y="704" font-size="9.5" fill="#37474F">predict / score</text>
+<line x1="427.20000000000005" y1="700" x2="451.20000000000005" y2="700" stroke="#8E24AA" stroke-width="2.4" stroke-dasharray="6,4" marker-end="url(#mfuture)"/>
+<text x="457.20000000000005" y="704" font-size="9.5" fill="#37474F">after the bid (future / world)</text>
+<line x1="632.2" y1="700" x2="656.2" y2="700" stroke="#EF6C00" stroke-width="2.4" stroke-dasharray="6,4" marker-end="url(#mfeedback)"/>
+<text x="662.2" y="704" font-size="9.5" fill="#37474F">-&gt; next training data</text>
+<text x="40" y="720" font-size="9.5" font-style="italic" fill="#90A4AE">box colour + [pill] = the role's availability at this stage</text>
+</svg>

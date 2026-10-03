@@ -1,0 +1,10 @@
+version: 1
+status: design_only
+metric: incremental_underdelivery_percentage_points_vs_kappa_0
+primary_cap_pp: 10.0
+sensitivity_caps_pp:
+  - 5.0
+  - 20.0
+report_absolute_underdelivery: true
+utility_scalarization: prohibited
+interpretation: operational_service_guardrails_not_estimated_preferences

@@ -1,0 +1,48 @@
+{
+  "adopter_policies": [
+    {
+      "kappa": 0.3,
+      "label": "k0.3"
+    },
+    {
+      "kappa": 0.5,
+      "label": "k0.5"
+    },
+    {
+      "kappa": 0.8,
+      "label": "k0.8"
+    },
+    {
+      "kappa": 1.0,
+      "label": "k1.0"
+    },
+    {
+      "kappa": 1.2,
+      "label": "k1.2"
+    },
+    {
+      "label": "raw",
+      "policy_mode": "raw"
+    }
+  ],
+  "alphas": [
+    0.0,
+    1.0
+  ],
+  "description": "All-market aligned width frontier with explicit Raw endpoint.",
+  "h": 4,
+  "horizon": 48,
+  "lookback": 4,
+  "low_kappa": 0.0,
+  "max_action": 100.0,
+  "q_scale": 1.0,
+  "reference_mode": "pid",
+  "reference_params": {
+    "pid_integral_limit": 1.0,
+    "pid_kd": 0.0,
+    "pid_ki": 0.5,
+    "pid_kp": 4.0
+  },
+  "schema_version": 3,
+  "status": "POST_CONFIRMATORY_WIDTH_ALIGNMENT_20260902"
+}

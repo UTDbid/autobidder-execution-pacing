@@ -1,0 +1,8 @@
+Grid,Nodes/path,Interpretation
+Finite execution width,"0, 0.3, 0.5, 0.8, 1.0, 1.2",Symmetric multiplicative boundary
+Raw endpoint,Raw,Projection bypass; not large finite κ
+Market uniform,same finite menu + Raw,All 48 advertisers use one width
+Rollout 1,0→0.3,First permission
+Rollout 2,0.3→0.5,Small dose expansion
+Rollout 3,0.3→0.8,Focal operating expansion
+Rollout 4,0→0.8,Direct transition from pacing-only

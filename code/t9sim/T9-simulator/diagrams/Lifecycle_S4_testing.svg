@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="740" viewBox="0 0 1180 740" font-family="Segoe UI, Arial, sans-serif">
+<defs>
+<marker id="mgenerative" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1B5E20"/></marker>
+<marker id="minert" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#BDBDBD"/></marker>
+<marker id="mlookup" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#616161"/></marker>
+<marker id="minferential" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565C0"/></marker>
+<marker id="mtarget" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#00838F"/></marker>
+<marker id="mscoring" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#6A1B9A"/></marker>
+<marker id="mfuture" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8E24AA"/></marker>
+<marker id="mfeedback" markerWidth="9" markerHeight="9" refX="7.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#EF6C00"/></marker>
+</defs>
+<rect width="1180" height="740" fill="#FFFFFF"/>
+<text x="590" y="32" text-anchor="middle" font-size="21" font-weight="700" fill="#212121">Stage 4 — Model testing / evaluation</text>
+<text x="590" y="54" text-anchor="middle" font-size="11.5" fill="#546E7A">Frozen X-&gt;prediction maps scored on the COMMON all-rows test set; latents re-enter ONLY as the evaluator's yardstick, never as features.</text>
+<text x="180" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">OBSERVABLES</text>
+<text x="595" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">LATENT GROUND TRUTH</text>
+<text x="997" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#90A4AE">OUTCOME LABELS</text>
+<line x1="194" y1="220" x2="450" y2="338" stroke="#1565C0" stroke-width="2.1" marker-end="url(#minferential)"/>
+<text x="322" y="274" text-anchor="middle" font-size="9" fill="#1565C0" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">features X (base_test)</text>
+<line x1="740" y1="356" x2="800" y2="351" stroke="#6A1B9A" stroke-width="2.1" marker-end="url(#mscoring)"/>
+<text x="770" y="348" text-anchor="middle" font-size="9" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">frozen forward</text>
+<line x1="965" y1="392" x2="969" y2="470" stroke="#6A1B9A" stroke-width="2.1" marker-end="url(#mscoring)"/>
+<text x="967" y="426" text-anchor="middle" font-size="9" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">predictions</text>
+<line x1="1012" y1="220" x2="1140" y2="500" stroke="#00838F" stroke-width="2.1" marker-end="url(#mtarget)"/>
+<text x="1076" y="355" text-anchor="middle" font-size="9" fill="#00838F" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">realised labels (all-rows)</text>
+<line x1="696" y1="232" x2="760" y2="500" stroke="#6A1B9A" stroke-width="2.1" marker-end="url(#mscoring)"/>
+<text x="728" y="361" text-anchor="middle" font-size="9" fill="#6A1B9A" stroke="#FFFFFF" stroke-width="3" paint-order="stroke" font-weight="600">yardstick: ev_truth, lu7</text>
+<g><rect x="40" y="100" width="280" height="120" rx="9" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.8"/>
+<text x="180" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">OBSERVABLES  (X)</text>
+<text x="180" y="140" text-anchor="middle" font-size="9.5" fill="#37474F">A user · B app · C campaign · D time</text>
+<text x="180" y="154" text-anchor="middle" font-size="9.5" fill="#37474F">keys: app_id/campaign_id · context: slot/time</text>
+<text x="180" y="211" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#1565C0">[INPUT — the only features]</text>
+</g>
+<g><rect x="450" y="90" width="290" height="142" rx="9" fill="#FFF8E1" stroke="#F9A825" stroke-width="1.8"/>
+<text x="595" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">LATENT GROUND TRUTH  (L)</text>
+<text x="595" y="130" text-anchor="middle" font-size="9.5" fill="#37474F">LU1-7 · LA1/2 · LC1/2</text>
+<text x="595" y="144" text-anchor="middle" font-size="9.5" fill="#37474F">estimands p_*, e_ltv, ev_truth</text>
+<text x="595" y="223" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#F57F17">[YARDSTICK ONLY — evaluator, not a feature]</text>
+</g>
+<g><rect x="855" y="100" width="285" height="120" rx="9" fill="#E0F2F1" stroke="#00838F" stroke-width="1.8"/>
+<text x="998" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">OUTCOME LABELS  (Y)</text>
+<text x="998" y="140" text-anchor="middle" font-size="9.5" fill="#37474F">E click · F install · G payer/LTV</text>
+<text x="998" y="154" text-anchor="middle" font-size="9.5" fill="#37474F">H3 won · H4 clearing</text>
+<text x="998" y="211" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#00838F">[SCORING TARGET — common all-rows]</text>
+</g>
+<g><rect x="450" y="310" width="290" height="92" rx="9" fill="#EFEBE9" stroke="#6D4C41" stroke-width="1.8"/>
+<text x="595" y="332" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">MODEL</text>
+<text x="595" y="350" text-anchor="middle" font-size="9.5" fill="#37474F">Tier-1 4-head hurdle</text>
+<text x="595" y="364" text-anchor="middle" font-size="9.5" fill="#37474F">Tier-2 AFT  -&gt;  P(win|b)</text>
+<text x="595" y="393" text-anchor="middle" font-size="9.5" font-style="italic" font-weight="700" fill="#6D4C41">[FROZEN]</text>
+</g>
+<g><rect x="800" y="310" width="330" height="82" rx="9" fill="#F3E5F5" stroke="#8E24AA" stroke-width="1.8"/>
+<text x="965" y="332" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">PREDICTIONS</text>
+<text x="965" y="350" text-anchor="middle" font-size="9.5" fill="#37474F">EV_hat = product of 4 heads</text>
+<text x="965" y="364" text-anchor="middle" font-size="9.5" fill="#37474F">P(win | b)</text>
+</g>
+<g><rect x="760" y="470" width="380" height="100" rx="9" fill="#FFF8E1" stroke="#F9A825" stroke-width="1.8"/>
+<text x="950" y="492" text-anchor="middle" font-size="13" font-weight="700" fill="#1A1A1A">EVALUATOR  (yardstick)</text>
+<text x="950" y="510" text-anchor="middle" font-size="9.5" fill="#37474F">AUC/log-loss/RMSE · ev_ratio/spearman</text>
+<text x="950" y="524" text-anchor="middle" font-size="9.5" fill="#37474F">profit/ROAS vs oracle/H2</text>
+</g>
+<rect x="40" y="600" width="1100" height="78" rx="9" fill="#F7F9FB" stroke="#CFD8DC" stroke-width="1.2"/>
+<text x="52" y="619" font-size="10.5" font-weight="700" fill="#455A64">Key points</text>
+<text x="52" y="637" font-size="10" fill="#37474F">- Latents come back — but only in scoring code (ev_truth, lu7); the feature lists are A/B/C/D only.</text>
+<text x="52" y="652" font-size="10" fill="#37474F">- ALL conditions scored on the same uncensored all-rows test set (no won-only restriction).</text>
+<text x="52" y="667" font-size="10" fill="#37474F">- oracle-features = diagnostic ceiling (value-funnel latents only); report profit + EV-bias, not raw ROAS.</text>
+<line x1="40" y1="700" x2="64" y2="700" stroke="#1565C0" stroke-width="2.4" marker-end="url(#minferential)"/>
+<text x="70" y="704" font-size="9.5" fill="#37474F">inference: model consumes X  (X -&gt; Y_hat)</text>
+<line x1="307.70000000000005" y1="700" x2="331.70000000000005" y2="700" stroke="#00838F" stroke-width="2.4" marker-end="url(#mtarget)"/>
+<text x="337.70000000000005" y="704" font-size="9.5" fill="#37474F">supervision / labels</text>
+<line x1="455.70000000000005" y1="700" x2="479.70000000000005" y2="700" stroke="#6A1B9A" stroke-width="2.4" marker-end="url(#mscoring)"/>
+<text x="485.70000000000005" y="704" font-size="9.5" fill="#37474F">predict / score</text>
+<text x="40" y="720" font-size="9.5" font-style="italic" fill="#90A4AE">box colour + [pill] = the role's availability at this stage</text>
+</svg>
