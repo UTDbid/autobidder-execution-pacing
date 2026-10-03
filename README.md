@@ -1,12 +1,32 @@
+<div align="center">
+
 # Managing Autobidder Execution under Campaign Pacing
 
-**Code and data release** for the paper *"Managing Autobidder Execution under Campaign Pacing"* (POM / Marketing Interface).
+**Code & Data Release** · *POM / Marketing Interface*
 
-This repository bundles the core evaluation code, the three datasets' setup and
-extraction pipelines, the training source for the five learned autobidders, and
-the full figure/table source data plus plotting code needed to reproduce the
-manuscript's results end to end: download the data, train the autobidders,
-evaluate them under the pacing controllers, and rebuild every figure/table.
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#reproduction)
+[![Datasets](https://img.shields.io/badge/Datasets-AuctionNet%20T9Sim%20iPinYou-8A2BE2)](#datasets-and-download-links)
+[![中文文档](https://img.shields.io/badge/中文-README_CN-EB4B4B)](README_CN.md)
+
+</div>
+
+---
+
+> **Reproduce it end to end** — download the public data, train the five autobidders from the bundled source, evaluate them under the pacing controllers, and rebuild every figure and table.
+
+**English** · [**中文**](README_CN.md)
+
+---
+
+## Contents
+
+- [What is in this repository](#what-is-in-this-repository)
+- [The five learned autobidders](#the-five-learned-autobidders)
+- [The three pacing controllers](#the-three-pacing-controllers)
+- [Repository layout](#repository-layout)
+- [Reproduction](#reproduction)
+- [Datasets and download links](#datasets-and-download-links)
+- [License](#license)
 
 ---
 
@@ -28,7 +48,9 @@ controllers**, across **three datasets**:
 | **Figures & tables** | Every manuscript exhibit's source CSV + plotting code | `plotting/` |
 | **Frozen configs** | The exact experiment grids (κ widths, adoption fractions, seeds) | `configs/` |
 
-### The five learned autobidders
+---
+
+## The five learned autobidders
 
 | Bidder | Type | Where it lives |
 | --- | --- | --- |
@@ -43,14 +65,16 @@ controllers**, across **three datasets**:
 > DT and SemBid share the `code/bidders/sembid_cpa/` tree; GAS is bundled
 > separately.
 
-### The three pacing controllers (references)
+---
+
+## The three pacing controllers
 
 `traffic-aware`, `PID`, and `dual` pacing are implemented as pure, auditable
 reference policies in `code/common/reference_policies.py` and
 `code/auctionnet/micro/mandate_core_v2.py`. The Mandate then constrains the
 bidder's *raw* proposal relative to the reference action:
 
-```
+```text
 enforce_action(raw, ref, κ)  →  clip to [ref·(1−κ), ref·(1+κ)]   (relative_hard)
 ```
 
@@ -58,7 +82,7 @@ enforce_action(raw, ref, κ)  →  clip to [ref·(1−κ), ref·(1+κ)]   (relat
 
 ## Repository layout
 
-```
+```text
 ├── code/
 │   ├── auctionnet/          # core evaluator (micro + macro) + common reference policies
 │   ├── bidders/             # five autobidders' training + inference source
@@ -84,13 +108,13 @@ enforce_action(raw, ref, κ)  →  clip to [ref·(1−κ), ref·(1+κ)]   (relat
 The full end-to-end flow (data → train → evaluate → build figures) is in
 [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md):
 
-```
+```text
 download datasets  →  train autobidders  →  evaluate (micro/macro, κ, T9Sim, iPinYou)
 →  l01–l31 evidence  →  build_derived_data.py  →  derived CSVs  →  build_all_figures.py
 ```
 
-To rebuild just the figures/tables from the checked-in source tables (no data,
-no training):
+To rebuild **just the figures and tables** from the checked-in source tables
+(no data, no training):
 
 ```bash
 pip install pandas numpy matplotlib
@@ -116,14 +140,6 @@ Each `data/<dataset>/` directory contains the exact download + integrity-audit
 so they run outside the authors' machines.
 
 ---
-
-## Citation
-
-If you use this code or data, please cite the paper:
-
-> *Managing Autobidder Execution under Campaign Pacing*. (POM / Marketing Interface.)
-
-*(BibTeX placeholder — fill in with the final citation once available.)*
 
 ## License
 
