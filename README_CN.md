@@ -19,8 +19,8 @@
 ## 目录
 
 - [仓库里有什么](#whats-inside)
-- [五个 autobidder](#bidders)
-- [三种 pacing 控制器](#controllers)
+- [autobidder](#bidders)
+- [pacing 控制器](#controllers)
 - [目录结构](#layout)
 - [如何复现](#how-to-reproduce)
 - [数据集与下载链接](#datasets)
@@ -46,7 +46,7 @@
 ---
 
 <a id="bidders"></a>
-## 五个 autobidder
+## autobidder
 
 | autobidder | 类型 | 训练入口 |
 | --- | --- | --- |
@@ -56,12 +56,12 @@
 | **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
 | **SemBid** | OpenLBM / Qwen2.5-0.5B 语言出价模型 | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
-> 五个 autobidder 的训练源码都在仓库里（`docs/REPRODUCTION.md` §3），评估器会直接加载你训练出来的 checkpoint。DT 与 SemBid 共用 `code/bidders/sembid_cpa/`，GAS 单独打包。
+> 五个 autobidder 的训练源码都随仓库打包（入口见 `docs/REPRODUCTION.md` §3），评估时直接加载训练出来的 checkpoint。DT、SemBid 在 `code/bidders/sembid_cpa/` 下，GAS 在 `code/bidders/gas/` 下。
 
 ---
 
 <a id="controllers"></a>
-## 三种 pacing 控制器
+## pacing 控制器
 
 traffic-aware、PID、dual 三种 pacing 以纯、可审计的参照策略实现，代码在
 `code/common/reference_policies.py` 和 `code/auctionnet/micro/mandate_core_v2.py`。
@@ -104,10 +104,10 @@ enforce_action(raw, ref, κ)  →  clip 到 [ref·(1−κ), ref·(1+κ)]   (rela
 
 ```text
 下载数据集  →  训练 autobidder  →  评估（微观/宏观、κ、T9Sim、iPinYou）
-→  l01–l31 证据  →  build_derived_data.py  →  派生 CSV  →  build_all_figures.py
+→  评估产出  →  build_derived_data.py  →  派生 CSV  →  build_all_figures.py
 ```
 
-只想把图表跑出来、不碰数据和训练的话，直接：
+如果只想重建图表（无需数据、无需训练）：
 
 ```bash
 pip install pandas numpy matplotlib

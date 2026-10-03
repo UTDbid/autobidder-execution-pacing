@@ -108,7 +108,7 @@ The full end-to-end flow (data → train → evaluate → build figures) is in
 
 ```text
 download datasets  →  train autobidders  →  evaluate (micro/macro, κ, T9Sim, iPinYou)
-→  l01–l31 evidence  →  build_derived_data.py  →  derived CSVs  →  build_all_figures.py
+→  evaluation outputs  →  build_derived_data.py  →  derived CSVs  →  build_all_figures.py
 ```
 
 To rebuild **just the figures and tables** from the checked-in source tables
