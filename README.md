@@ -17,8 +17,8 @@
 ---
 
 <p align="center">
-  <img src="docs/figures/auto-bidding_roadmap.png" alt="Layered advertising control and execution authority" width="800">
-  <br><em>Figure 1 · Layered advertising control and execution authority</em>
+  <img src="plotting/figures/main/fig1_execution_boundary_framework.png" alt="Execution Boundary Framework" width="800">
+  <br><em>Execution Boundary Framework</em>
 </p>
 
 ---
