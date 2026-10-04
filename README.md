@@ -16,6 +16,13 @@
 
 ---
 
+<p align="center">
+  <img src="docs/figures/auto-bidding_roadmap.png" alt="Layered advertising control and execution authority" width="800">
+  <br><em>Figure 1 · Layered advertising control and execution authority</em>
+</p>
+
+---
+
 ## Contents
 
 - [What is in this repository](#what-is-in-this-repository)

@@ -16,6 +16,13 @@
 
 ---
 
+<p align="center">
+  <img src="docs/figures/auto-bidding_roadmap.png" alt="分层广告控制与执行权限" width="800">
+  <br><em>图 1 · 分层广告控制与执行权限（Layered advertising control and execution authority）</em>
+</p>
+
+---
+
 ## 目录
 
 - [仓库里有什么](#whats-inside)
