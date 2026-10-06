@@ -38,9 +38,7 @@
 ## What is in this repository
 
 The paper studies how much *discretion* (`κ`) a pacing-controlled autobidder
-should be given over bid execution. It evaluates a **Mandate** mechanism
-`(q_scale, κ, h)` — resource release, execution boundary/discretion, review
-horizon — on top of **five learned autobidders** under **three pacing
+should be given over bid execution. It evaluates an **execution boundary** (execution width `κ`) on top of **five learned autobidders** under **three pacing
 controllers**, across **three datasets**:
 
 | Block | Contents | Location |
@@ -76,11 +74,11 @@ controllers**, across **three datasets**:
 
 `traffic-aware`, `PID`, and `dual` pacing are implemented as pure, auditable
 reference policies in `code/common/reference_policies.py` and
-`code/auctionnet/micro/mandate_core_v2.py`. The Mandate then constrains the
-bidder's *raw* proposal relative to the reference action:
+`code/auctionnet/micro/mandate_core_v2.py`. The execution boundary then constrains the
+bidder's *native* proposal relative to the reference action:
 
 ```text
-enforce_action(raw, ref, κ)  →  clip to [ref·(1−κ), ref·(1+κ)]   (relative_hard)
+enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]   (relative_hard)
 ```
 
 ---
