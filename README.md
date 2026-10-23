@@ -75,7 +75,7 @@ campaign-control policies in `code/common/reference_policies.py` and
 bidder's native action relative to the reference action:
 
 ```text
-enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]   (relative_hard)
+enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 ```
 
 ---
