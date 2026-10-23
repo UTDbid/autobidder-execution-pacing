@@ -17,8 +17,8 @@
 ---
 
 <p align="center">
-  <img src="plotting/figures/main/fig1_execution_boundary_framework.png" alt="执行边界框架" width="800">
-  <br><em>执行边界框架（Execution Boundary Framework）</em>
+  <img src="plotting/figures/main/fig1_execution_boundary_framework.png" alt="Execution Boundary Framework" width="800">
+  <br><em>Execution Boundary Framework</em>
 </p>
 
 ---
@@ -31,7 +31,7 @@
 - [目录结构](#layout)
 - [如何复现](#how-to-reproduce)
 - [数据集与下载链接](#datasets)
-- [许可](#license)
+- [License](#license)
 
 ---
 
@@ -55,15 +55,13 @@
 <a id="bidders"></a>
 ## autobidder
 
-| autobidder | 类型 | 训练入口 |
+| autobidder | 类型 | 源码 |
 | --- | --- | --- |
-| **CQL** | Conservative Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/cql.py` |
-| **IQL** | Implicit Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
-| **DT** | Decision Transformer（`state_dim=16`、`K=20`） | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/dt.py` |
-| **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
-| **SemBid** | 语言出价模型 | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
-
-> autobidder 的训练源码都在仓库里（入口见 `docs/REPRODUCTION.md` §3），评估时直接加载训练出来的 checkpoint。DT、SemBid 在 `code/bidders/sembid_cpa/` 下，GAS 在 `code/bidders/gas/` 下。
+| **CQL** | Conservative Q-Learning（torch.jit） | `code/bidders/sembid_cpa/` |
+| **IQL** | Implicit Q-Learning（torch.jit） | `code/bidders/sembid_cpa/` |
+| **DT** | Decision Transformer（`state_dim=16`、`K=20`） | `code/bidders/sembid_cpa/` |
+| **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/` |
+| **SemBid** | 语言出价模型 | `code/bidders/sembid_cpa/` |
 
 ---
 
@@ -123,7 +121,7 @@ python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2–7
 ```
 
-它会从仓库内已有的 `plotting/data/derived/`、`plotting/data/load/`、`plotting/data/server_checked/` 直接产出论文图表（数字与论文一致），端到端已实测可跑。
+它会从仓库内已有的 `plotting/data/derived/`、`plotting/data/load/`、`plotting/data/server_checked/` 直接产出论文图表。
 
 ---
 
@@ -136,11 +134,15 @@ cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2�
 | **T9Sim** | 带真值标注的 RTB 模拟器（10 × 1000 万曝光种子） | [Zenodo 21533031](https://zenodo.org/records/21533031)（DOI 10.5281/zenodo.21533031） | CC-BY-4.0 |
 | **iPinYou** | 真实日志 RTB 广告活动数据（1950 万条：模型拟合 1231.9 万 + 校准 307.6 万 + 测试 410.1 万） | 竞赛 7z + season-2 zip——见 `data/ipinyou/` 脚本 | iPinYou 竞赛条款 |
 
-每个 `data/<dataset>/` 目录里都是作者实际使用的下载、校验、提取脚本，通过 `POMS_DATA_ROOT` 参数化，换台机器也能跑。
+每个 `data/<dataset>/` 目录包含对应的下载、校验、提取脚本。
 
 ---
 
 <a id="license"></a>
-## 许可
+## License
 
-`code/` 里的评估/分析代码为学术复现而发布。第三方组件遵循各自许可：T9Sim（`code/t9sim/T9-simulator/`，见其 `LICENSE` / `LICENSE-DATA`）、GAS（`code/bidders/gas/`），iPinYou/AuctionNet 数据集遵循各自条款。各组件说明见 `docs/REPRODUCTION.md`。
+The evaluation/analysis code in `code/` is released for academic reproduction.
+Third-party components carry their own licenses: T9Sim (`code/t9sim/T9-simulator/`,
+see its `LICENSE` / `LICENSE-DATA`), GAS (`code/bidders/gas/`), and the
+iPinYou/AuctionNet datasets under their respective terms. See
+`docs/REPRODUCTION.md` for per-component notes.

@@ -58,18 +58,13 @@ datasets**:
 
 ## The five learned autobidders
 
-| Bidder | Type | Training entrypoint |
+| Bidder | Type | Source |
 | --- | --- | --- |
-| **CQL** | Conservative Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/cql.py` |
-| **IQL** | Implicit Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
-| **DT** | Decision Transformer (`state_dim=16`, `K=20`) | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/dt.py` |
-| **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
-| **SemBid** | Language-bidding model | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
-
-> All five bidders are trained from source bundled in this repository
-> (`docs/REPRODUCTION.md` §3); the evaluator loads the resulting checkpoints.
-> DT and SemBid share the `code/bidders/sembid_cpa/` tree; GAS is bundled
-> separately.
+| **CQL** | Conservative Q-Learning (torch.jit) | `code/bidders/sembid_cpa/` |
+| **IQL** | Implicit Q-Learning (torch.jit) | `code/bidders/sembid_cpa/` |
+| **DT** | Decision Transformer (`state_dim=16`, `K=20`) | `code/bidders/sembid_cpa/` |
+| **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/` |
+| **SemBid** | Language-bidding model | `code/bidders/sembid_cpa/` |
 
 ---
 
@@ -129,9 +124,9 @@ python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figures 2–7
 ```
 
-This reproduces the manuscript's figures/tables **as typeset numbers** from the
-bundled `plotting/data/derived/`, `plotting/data/load/`, and
-`plotting/data/server_checked/`. Verified to run end-to-end.
+This reproduces the manuscript's figures/tables from the bundled
+`plotting/data/derived/`, `plotting/data/load/`, and
+`plotting/data/server_checked/`.
 
 ---
 
@@ -143,9 +138,8 @@ bundled `plotting/data/derived/`, `plotting/data/load/`, and
 | **T9Sim** | Truth-referenced RTB simulator (10 × 10M-impression seeds) | [Zenodo 21533031](https://zenodo.org/records/21533031) (DOI 10.5281/zenodo.21533031) | CC-BY-4.0 |
 | **iPinYou** | Real logged RTB campaign data (19.5M records: 12.3M fitting + 3.1M calibration + 4.1M test) | contest 7z + season-2 zip — see `data/ipinyou/` scripts | iPinYou contest terms |
 
-Each `data/<dataset>/` directory contains the exact download + integrity-audit
-+ extraction scripts used by the authors, parameterized via `POMS_DATA_ROOT`
-so they run outside the authors' machines.
+Each `data/<dataset>/` directory contains the corresponding download,
+integrity-audit, and extraction scripts.
 
 ---
 
