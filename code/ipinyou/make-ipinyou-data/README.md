@@ -3,6 +3,9 @@ make-ipinyou-data
 
 This project is to formalise the iPinYou RTB data into a standard format for further researches.
 
+> Upstream conversion README. The release's iPinYou pipeline is documented in
+> `docs/REPRODUCTION.md` §2.3.
+
 ### Step 0
 The raw data of iPinYou (`ipinyou.contest.dataset.zip`) can be downloaded from [UCL website](http://bunwell.cs.ucl.ac.uk/ipinyou.contest.dataset.zip).
 

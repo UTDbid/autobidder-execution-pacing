@@ -17,7 +17,7 @@ Requirements: the three public datasets.
 ## 1. Environment
 
 A single Python ≥ 3.11 environment suffices for training, evaluation and
-plotting; only the SemBid bidder needs a GPU with the vLLM stack.
+plotting; SemBid additionally needs a GPU for the Qwen2.5-0.5B embeddings.
 
 ```bash
 # training + evaluation + plotting (campaign replay, synchronous market, DT/GAS, figures)
@@ -26,8 +26,8 @@ pip install torch numpy pandas pyarrow scipy scikit-learn xgboost matplotlib pyy
 # T9Sim simulator package (install from the bundled source)
 pip install -e code/t9sim/T9-simulator
 
-# SemBid bidder additionally needs the vLLM dependencies of
-# code/bidders/sembid_cpa/ (transformers + the Qwen2.5-0.5B weight).
+# SemBid uses precomputed Qwen2.5-0.5B-Instruct embeddings. The optional
+# text encoder requires sentence-transformers.
 ```
 
 ---
@@ -112,7 +112,7 @@ Training code for all five bidders is in `code/bidders/`. The entrypoints below
 train them from the datasets in §2; training settings are listed in
 [`TRAINING.md`](TRAINING.md).
 
-| Bidder | Training entrypoint |
+| Bidder | Model source |
 | --- | --- |
 | CQL | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/cql.py` |
 | IQL | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
@@ -141,7 +141,7 @@ python code/auctionnet/micro/mandate_eval_v2.py \
   --checkpoint   <path> --normalizer <path> \          # cql/iql/dt (from §3)
   --gas-root     <path> --gas-action-num 5 \           # gas
   --sembid-model-dir <path> --sembid-embedding-lookup <path> \  # sembid
-  --reference-mode pacing|traffic_aware|smoothed_controller|response_aware \
+  --reference-mode pacing|traffic_aware|pid|dual|smoothed_controller|response_aware \
   --policy-mode hard --conversion-seed <s> --market-seed <s> \
   --output <results.csv>
 ```

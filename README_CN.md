@@ -99,7 +99,7 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 │   ├── data/derived/        # 每张图/表的源 CSV（随仓库附带）
 │   ├── evidence/locked/     # locked evidence 包（l01–l31）
 │   └── scripts/server_release/  # build_derived_data.py + 图表构建脚本
-└── docs/                    # 复现指南 + 资产清单
+└── docs/                    # 复现指南 + 训练设置
 ```
 
 ---

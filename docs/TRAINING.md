@@ -2,7 +2,7 @@
 
 Settings used for the five learned autobidders, as reported in the paper's
 E-Companion (`ec:tab:impl-offline-rl` and the DT/GAS/SemBid implementation
-text). The same values are reflected in the training-script defaults.
+text).
 
 ## CQL
 
@@ -13,7 +13,7 @@ text). The same values are reflected in the training-script defaults.
 | Discount factor | γ = 1.0 |
 | Target-update coefficient | τ = 0.001 |
 | Learning rates | Actor, critics, entropy temperature: 1e-4 |
-| Objective | CQL temperature 1.0; conservative weight 1.0 |
+| Objective | CQL temperature 1.0; conservative weight 1.0 (`min_q_weight`) |
 | Normalization | Training-derived min-max scaling on state coordinates 13–15 |
 | Evaluation action | Deterministic Gaussian-policy mean |
 

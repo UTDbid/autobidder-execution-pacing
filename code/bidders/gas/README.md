@@ -12,6 +12,9 @@
   <a href="https://tianchi.aliyun.com/competition/entrance/532236/rankingList"><img src="https://img.shields.io/badge/🏆_Competition-NeurIPS'24_Auction_Competition_Winner-blue" alt="Competition GAS"></a>
 </p>
 
+> This is the upstream GAS README. For the dataset and evaluation flow used in
+> this release, see `docs/REPRODUCTION.md` §2.1 and §4.1.
+
 ## 📝 Introduction
 We propose a flexible and practical Generative Auto-bidding scheme
 using post-training Search, termed GAS, to refine a base policy

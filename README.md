@@ -100,7 +100,7 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 │   ├── data/derived/        # every figure/table source CSV (checked in)
 │   ├── evidence/locked/     # locked evidence package (l01–l31)
 │   └── scripts/server_release/  # build_derived_data.py + figure/table builders
-└── docs/                    # reproduction guide + asset inventory
+└── docs/                    # reproduction guide + training settings
 ```
 
 ---
