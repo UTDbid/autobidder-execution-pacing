@@ -55,13 +55,10 @@
 <a id="bidders"></a>
 ## autobidder
 
-| autobidder | 类型 | 源码 |
-| --- | --- | --- |
-| **CQL** | Conservative Q-Learning（torch.jit） | `code/bidders/sembid_cpa/` |
-| **IQL** | Implicit Q-Learning（torch.jit） | `code/bidders/sembid_cpa/` |
-| **DT** | Decision Transformer（`state_dim=16`、`K=20`） | `code/bidders/sembid_cpa/` |
-| **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/` |
-| **SemBid** | 语言出价模型 | `code/bidders/sembid_cpa/` |
+| 源码 | autobidder |
+| --- | --- |
+| `code/bidders/sembid_cpa/` | CQL（Conservative Q-Learning，torch.jit）、IQL（Implicit Q-Learning，torch.jit）、DT（Decision Transformer，`state_dim=16`、`K=20`）、SemBid（语言出价模型） |
+| `code/bidders/gas/` | GAS（Gradient-Ascent Strategy：DT 策略 + 重加权搜索 critic） |
 
 ---
 

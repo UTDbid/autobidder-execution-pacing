@@ -57,13 +57,10 @@ three pacing controllers, and three datasets.
 
 ## The five learned autobidders
 
-| Bidder | Type | Source |
-| --- | --- | --- |
-| **CQL** | Conservative Q-Learning (torch.jit) | `code/bidders/sembid_cpa/` |
-| **IQL** | Implicit Q-Learning (torch.jit) | `code/bidders/sembid_cpa/` |
-| **DT** | Decision Transformer (`state_dim=16`, `K=20`) | `code/bidders/sembid_cpa/` |
-| **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/` |
-| **SemBid** | Language-bidding model | `code/bidders/sembid_cpa/` |
+| Source | Bidders |
+| --- | --- |
+| `code/bidders/sembid_cpa/` | CQL (Conservative Q-Learning, torch.jit), IQL (Implicit Q-Learning, torch.jit), DT (Decision Transformer, `state_dim=16`, `K=20`), SemBid (language-bidding model) |
+| `code/bidders/gas/` | GAS (Gradient-Ascent Strategy: DT policy + reweighted-search critic) |
 
 ---
 
