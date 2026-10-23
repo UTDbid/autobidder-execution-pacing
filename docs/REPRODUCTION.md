@@ -43,10 +43,21 @@ target directory (default: this repo's `data/`).
 python data/auctionnet/download_official_alimama.py   # 8 ZIPs → data/auctionnet/
 ```
 
-The script pins the 8 official archives on the Alimama OSS bucket
-(`alimama-bidding-competition.oss-cn-beijing.aliyuncs.com`): period 7–8 and
-the trajectory archives, plus the `final/` variants. After download, the raw
-CSVs are converted to the evaluator's input format with
+The eight archives are on the Alimama OSS bucket:
+
+```text
+BASE=https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com
+$BASE/share/autoBidding_aigb_track_data_period_7-8.zip
+$BASE/share/final/autoBidding_aigb_track_final_data_period_7-8.zip
+$BASE/share/autoBidding_aigb_track_data_trajectory_data.zip
+$BASE/share/autoBidding_aigb_track_data_trajectory_data_extended_1.zip
+$BASE/share/autoBidding_aigb_track_data_trajectory_data_extended_2.zip
+$BASE/share/final/autoBidding_aigb_track_final_data_trajectory_data_1.zip
+$BASE/share/final/autoBidding_aigb_track_final_data_trajectory_data_2.zip
+$BASE/share/final/autoBidding_aigb_track_final_data_trajectory_data_3.zip
+```
+
+After download, the raw CSVs are converted to the evaluator's input format with
 `data/auctionnet/convert_period_to_trajectory.py` and the
 `data/auctionnet/auctionnet_official/convert_official_raw_to_trajectory.py`
 pipeline (validation, conversion, and checksumming).
@@ -65,6 +76,10 @@ bash data/t9sim/download_t9sim.sh           # 10 × ~1.7 GB zips from Zenodo
 bash data/t9sim/extract_audit_t9sim_formal.sh   # → 10 × auctions.parquet (10M rows each)
 ```
 
+The files are published under Zenodo record 21533031
+(`https://zenodo.org/records/21533031`); the download script reads
+`https://zenodo.org/api/records/21533031`.
+
 The `code/t9sim/T9-simulator/` package is the simulator itself (the same
 source deposited to Zenodo). The replay driver is
 `code/t9sim/run_reference_experiment.py` (`--parquet … --references … --kappas …`).
@@ -77,6 +92,11 @@ bash data/ipinyou/download_ipinyou_season2.sh  # season-2 supplement
 bash data/ipinyou/extract_audit_ipinyou.sh
 python code/ipinyou/preprocess_ipinyou.py       # → per-campaign train/test parquet
 ```
+
+The two source archives are:
+
+- `https://www.dropbox.com/scl/fi/dlam6yqswcwu4x0dnooig/ipinyou.contest.dataset.7z?rlkey=h7q2ey4f7u8n0w7y8euo3zx20&dl=1`
+- `https://ndownloader.figshare.com/files/10082688`
 
 The logged-replay driver is `code/ipinyou/run_ipinyou_reference_experiment.py`
 (`--train … --test … --campaign … --output …`).  The evaluation uses 19.5

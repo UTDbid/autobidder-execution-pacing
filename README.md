@@ -131,9 +131,9 @@ cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figu
 
 | Dataset | What it is | Download | License / terms |
 | --- | --- | --- | --- |
-| **AuctionNet** | Alimama auto-bidding track (periods 7–8, trajectory data) | 8 ZIPs on the Alimama OSS bucket — see `data/auctionnet/download_official_alimama.py` | Alimama competition terms |
+| **AuctionNet** | Alimama auto-bidding track (periods 7–8, trajectory data) | [Alimama OSS](https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/) — 8 ZIPs (period 7–8, trajectory, and `final/` variants; full list in `docs/REPRODUCTION.md` §2.1) | Alimama competition terms |
 | **T9Sim** | Truth-referenced RTB simulator (10 × 10M-impression seeds) | [Zenodo 21533031](https://zenodo.org/records/21533031) (DOI 10.5281/zenodo.21533031) | CC-BY-4.0 |
-| **iPinYou** | Real logged RTB campaign data (19.5M records: 12.3M fitting + 3.1M calibration + 4.1M test) | contest 7z + season-2 zip — see `data/ipinyou/` scripts | iPinYou contest terms |
+| **iPinYou** | Real logged RTB campaign data (19.5M records: 12.3M fitting + 3.1M calibration + 4.1M test) | [contest dataset](https://www.dropbox.com/scl/fi/dlam6yqswcwu4x0dnooig/ipinyou.contest.dataset.7z?rlkey=h7q2ey4f7u8n0w7y8euo3zx20&dl=1) · [season 2](https://ndownloader.figshare.com/files/10082688) | iPinYou contest terms |
 
 Each `data/<dataset>/` directory contains the corresponding download,
 integrity-audit, and extraction scripts.

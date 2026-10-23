@@ -129,9 +129,9 @@ cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2�
 
 | 数据集 | 说明 | 下载 | 许可 / 条款 |
 | --- | --- | --- | --- |
-| **AuctionNet** | Alimama 自动出价赛道（第 7–8 期、轨迹数据） | Alimama OSS 桶上的 8 个 ZIP——见 `data/auctionnet/download_official_alimama.py` | Alimama 竞赛条款 |
+| **AuctionNet** | Alimama 自动出价赛道（第 7–8 期、轨迹数据） | [Alimama OSS](https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/)——8 个 ZIP（第 7–8 期、轨迹数据和 `final/` 版本；完整列表见 `docs/REPRODUCTION.md` §2.1） | Alimama 竞赛条款 |
 | **T9Sim** | 带真值标注的 RTB 模拟器（10 × 1000 万曝光种子） | [Zenodo 21533031](https://zenodo.org/records/21533031)（DOI 10.5281/zenodo.21533031） | CC-BY-4.0 |
-| **iPinYou** | 真实日志 RTB 广告活动数据（1950 万条：模型拟合 1231.9 万 + 校准 307.6 万 + 测试 410.1 万） | 竞赛 7z + season-2 zip——见 `data/ipinyou/` 脚本 | iPinYou 竞赛条款 |
+| **iPinYou** | 真实日志 RTB 广告活动数据（1950 万条：模型拟合 1231.9 万 + 校准 307.6 万 + 测试 410.1 万） | [主数据集](https://www.dropbox.com/scl/fi/dlam6yqswcwu4x0dnooig/ipinyou.contest.dataset.7z?rlkey=h7q2ey4f7u8n0w7y8euo3zx20&dl=1) · [season 2](https://ndownloader.figshare.com/files/10082688) | iPinYou 竞赛条款 |
 
 每个 `data/<dataset>/` 目录包含对应的下载、校验、提取脚本。
 
