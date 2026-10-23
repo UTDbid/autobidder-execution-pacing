@@ -1,13 +1,9 @@
 # scripts/data/auctionnet_official — Official AuctionNet Flow
 
-This directory replaces the deprecated `sample_auctionnet_raw.py` (which
-replaced all 48 advertisers with `PidBiddingStrategy` and used
-`pv_num=500`/`num_tick=24`, both diverging from the official
-[`alimama-tech/AuctionNet`](https://github.com/alimama-tech/AuctionNet)
-rules).
-
-The scripts here mirror the **official flow** verbatim, with **only one
-project-specific override**: the 48-entry CPA constraint list.
+The scripts here mirror the **official
+[`alimama-tech/AuctionNet`](https://github.com/alimama-tech/AuctionNet) flow**
+verbatim, with **only one project-specific override**: the 48-entry CPA
+constraint list.
 
 ## Layout
 

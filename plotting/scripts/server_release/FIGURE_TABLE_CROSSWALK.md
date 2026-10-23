@@ -92,14 +92,6 @@ the Main Results**, **EC.3 Extensions and Robustness**.
 
 ---
 
-## Older assets
-
-CSV files for exhibits removed from earlier manuscript versions remain in
-`plotting/data/derived/` for provenance; they are not linked to a current
-exhibit.
-
----
-
 ## Build order
 
 ```bash
