@@ -113,7 +113,7 @@ evaluation, plus the source tables behind each exhibit.
 Requirements: the three public datasets (links below).
 
 1. Download and extract the datasets with the scripts in `data/<dataset>/`.
-2. Train the five bidders using the entrypoints in `code/bidders/`.
+2. Train the five bidders with the code in `code/bidders/`.
 3. Run the evaluators in `code/auctionnet/`, `code/t9sim/`, and `code/ipinyou/`.
 4. Run `build_derived_data.py` to rebuild the source tables in
    `plotting/data/derived/` from the locked evidence in

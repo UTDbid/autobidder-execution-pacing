@@ -108,8 +108,8 @@ split.
 
 ## 3. Train the autobidders
 
-Training code for all five bidders is in `code/bidders/`. The entrypoints below
-train them from the datasets in §2; training settings are listed in
+Training code for all five bidders is in `code/bidders/`. The table below
+identifies the model source for each bidder; training settings are listed in
 [`TRAINING.md`](TRAINING.md).
 
 | Bidder | Model source |

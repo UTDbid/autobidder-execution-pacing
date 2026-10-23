@@ -112,7 +112,7 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 需要准备：三个公开数据集（下载链接见下文）。
 
 1. 用 `data/<dataset>/` 下的脚本下载并解压数据集。
-2. 用 `code/bidders/` 下的入口训练五个 bidder。
+2. 用 `code/bidders/` 下的代码训练五个 bidder。
 3. 运行 `code/auctionnet/`、`code/t9sim/`、`code/ipinyou/` 下的评估器。
 4. 运行 `build_derived_data.py`，从 `plotting/evidence/locked/` 的 locked evidence
    重建 `plotting/data/derived/` 下的源表；每个图表对应的源表见
