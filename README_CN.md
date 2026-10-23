@@ -57,8 +57,8 @@
 
 | autobidder | 类型 | 源码 |
 | --- | --- | --- |
-| **CQL** | Conservative Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/` |
-| **IQL** | Implicit Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/` |
+| **CQL** | Conservative Q-Learning | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/` |
+| **IQL** | Implicit Q-Learning | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/` |
 | **DT** | Decision Transformer（`state_dim=16`、`K=20`） | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/` |
 | **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/run/` |
 | **SemBid** | 语言出价模型 | `code/bidders/sembid_cpa/Training/` |

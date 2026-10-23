@@ -59,8 +59,8 @@ three pacing controllers, and three datasets.
 
 | Bidder | Type | Source |
 | --- | --- | --- |
-| **CQL** | Conservative Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/` |
-| **IQL** | Implicit Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/` |
+| **CQL** | Conservative Q-Learning | `code/bidders/sembid_cpa/bidding_train_env/baseline/cql/` |
+| **IQL** | Implicit Q-Learning | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/` |
 | **DT** | Decision Transformer (`state_dim=16`, `K=20`) | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/` |
 | **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/run/` |
 | **SemBid** | Language-bidding model | `code/bidders/sembid_cpa/Training/` |
