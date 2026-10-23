@@ -1,6 +1,6 @@
 <div align="center">
 
-# Managing Autobidder Execution under Campaign Pacing
+# Execution Authority in Digital Advertising: Coordinating Autobidding and Campaign Control
 
 **代码与数据发布** · *POM / Marketing Interface*
 
@@ -38,15 +38,15 @@
 <a id="whats-inside"></a>
 ## 项目概览
 
-这篇论文研究一个出价裁量权问题：受 pacing 控制的 autobidder，出价到底该被允许多大空间（`κ`）？我们提出执行边界机制（execution width / boundary），并在多个学习型 autobidder、三类 pacing 控制器、三个数据集上做了评估。
+这篇论文研究数字广告中的**执行权（execution authority）**问题：受 pacing 控制的 autobidder，出价到底该被允许多大空间（bidder discretion，`κ`），以及 autobidder 与 campaign control 应当如何协调。我们提出执行边界机制（execution boundary / execution width `κ`），并在五个学习型 autobidder、三类 pacing 控制器、三个数据集上做了评估。
 
 | 模块 | 内容 | 位置 |
 | --- | --- | --- |
 | **核心评估器** | 单广告主*微观*回放 + 48 广告主同步*宏观*市场模拟器 + 参考 pacing 策略 | `code/auctionnet/` |
 | **autobidder** | CQL、IQL、DT、GAS、SemBid——训练源码都在仓库里 | `code/bidders/` |
 | **pacing 控制器** | traffic-aware、PID、dual（参考策略） | `code/auctionnet/micro/mandate_core_v2.py`、`code/common/reference_policies.py` |
-| **数据集** | AuctionNet（Alimama AIGB）、T9Sim（带真值标注的模拟器）、iPinYou（真实竞价日志）——下载与提取脚本 | `data/` |
-| **跨数据集分析** | iPinYou/T9Sim 聚合、κ 选择挑战、数据集规模核算 | `code/analysis/`、`code/kappa_selection/` |
+| **数据集** | AuctionNet、T9Sim（带真值标注的模拟器）、iPinYou（真实竞价日志）——下载与提取脚本 | `data/` |
+| **跨数据集分析** | iPinYou/T9Sim 聚合、campaign load 与 scenario calibration 分析、数据集规模核算 | `code/analysis/`、`plotting/data/load/`、`plotting/data/server_checked/` |
 | **图表** | 论文每个图表展示对应的源 CSV + 画图代码 | `plotting/` |
 | **冻结配置** | 精确实验网格（κ 宽度、采纳比例、随机种子） | `configs/` |
 
@@ -61,7 +61,7 @@
 | **IQL** | Implicit Q-Learning（torch.jit） | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
 | **DT** | Decision Transformer（`state_dim=16`、`K=20`） | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/dt.py` |
 | **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
-| **SemBid** | OpenLBM / Qwen2.5-0.5B 语言出价模型 | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
+| **SemBid** | 语言出价模型 | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
 > autobidder 的训练源码都在仓库里（入口见 `docs/REPRODUCTION.md` §3），评估时直接加载训练出来的 checkpoint。DT、SemBid 在 `code/bidders/sembid_cpa/` 下，GAS 在 `code/bidders/gas/` 下。
 
@@ -89,11 +89,11 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 │   ├── bidders/             # autobidder 的训练 + 推理源码
 │   ├── t9sim/               # T9Sim 模拟器包 + 回放驱动
 │   ├── ipinyou/             # iPinYou 预处理 + 日志回放驱动
-│   ├── kappa_selection/     # κ 选择挑战（01_protocol/02_configs/03_code + 冻结 06_results）
+│   ├── kappa_selection/     # 历史 κ 选择分析（不属于当前论文）
 │   └── analysis/            # 跨数据集聚合 + 数据集规模核算
 ├── configs/                 # 冻结实验网格（宏观/微观 κ 宽度 × 采纳比例 × 种子）
 ├── data/
-│   ├── auctionnet/          # AuctionNet/AIGB 下载 + 转换脚本
+│   ├── auctionnet/          # AuctionNet 下载 + 转换脚本
 │   ├── t9sim/               # T9Sim（Zenodo）下载 + 提取脚本
 │   └── ipinyou/             # iPinYou 下载 + 提取脚本
 ├── plotting/
@@ -119,10 +119,11 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 ```bash
 pip install pandas numpy matplotlib
 cd plotting/scripts/server_release
-python build_all_figures.py      # → plotting/figures/{main,ec}/*.{pdf,svg,png}
+python build_all_figures.py      # → plotting/figures/ec/*.png
+cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2–7
 ```
 
-它会从仓库内已有的 `plotting/data/derived/` 直接产出论文图表（排版后的数字），端到端已实测可跑。
+它会从仓库内已有的 `plotting/data/derived/`、`plotting/data/load/`、`plotting/data/server_checked/` 直接产出论文图表（排版后的数字），端到端已实测可跑。
 
 ---
 
@@ -131,9 +132,9 @@ python build_all_figures.py      # → plotting/figures/{main,ec}/*.{pdf,svg,png
 
 | 数据集 | 说明 | 下载 | 许可 / 条款 |
 | --- | --- | --- | --- |
-| **AuctionNet / AIGB** | Alimama 自动出价赛道（第 7–8 期、轨迹数据） | Alimama OSS 桶上的 8 个 ZIP——见 `data/auctionnet/download_official_alimama.py` | Alimama AIGB 竞赛条款 |
+| **AuctionNet** | Alimama 自动出价赛道（第 7–8 期、轨迹数据） | Alimama OSS 桶上的 8 个 ZIP——见 `data/auctionnet/download_official_alimama.py` | Alimama 竞赛条款 |
 | **T9Sim** | 带真值标注的 RTB 模拟器（10 × 1000 万曝光种子） | [Zenodo 21533031](https://zenodo.org/records/21533031)（DOI 10.5281/zenodo.21533031） | CC-BY-4.0 |
-| **iPinYou** | 真实日志 RTB 广告活动数据 | 竞赛 7z + season-2 zip——见 `data/ipinyou/` 脚本 | iPinYou 竞赛条款 |
+| **iPinYou** | 真实日志 RTB 广告活动数据（1950 万条：模型拟合 1231.9 万 + 校准 307.6 万 + 测试 410.1 万） | 竞赛 7z + season-2 zip——见 `data/ipinyou/` 脚本 | iPinYou 竞赛条款 |
 
 每个 `data/<dataset>/` 目录里都是作者实际使用的下载、校验、提取脚本，通过 `POMS_DATA_ROOT` 参数化，换台机器也能跑。
 

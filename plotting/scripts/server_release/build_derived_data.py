@@ -80,18 +80,44 @@ def build_design_tables() -> None:
     micro8 = stats["auctionnet_micro"]["high_p8"]
     macro11 = stats["auctionnet_macro"]["period11"]
     macro12 = stats["auctionnet_macro"]["period12"]
+    macro13 = stats["auctionnet_macro"]["period13"]
     ipy = stats["ipinyou"]
     t9 = stats["t9sim"]
+    ipy_total = ipy["train_rows"] + ipy["calibration_rows"] + ipy["test_rows"]
     design = pd.DataFrame(
         [
             ["AuctionNet campaign", f"48 advertisers; {micro7['unique_pvs']:,}/{micro8['unique_pvs']:,} opportunities", "CRN seed × bidder × pacing", "Campaign performance–delivery frontier", "Primary campaign evidence"],
             ["AuctionNet market", f"48 synchronous advertisers; {macro11['unique_pvs']:,}/{macro12['unique_pvs']:,} opportunities", "Synchronous-market episode", "Value, prices, delivery, current auction revenue", "Primary market evidence"],
             ["T9Sim", f"{t9['underlying_rows_total']:,} auctions; {t9['generator_seeds']} generator seeds", "Generator seed × information view", "True value and purchase-set efficiency", "Truth-level mechanism"],
-            ["iPinYou", f"{ipy['campaigns']} campaigns; {ipy['test_rows']:,} test log records", "Logged campaign", "Clicks, efficiency, spend, delivery", "Historical budget-pressure boundary"],
+            ["iPinYou", f"{ipy['campaigns']} campaigns; {ipy_total:,} log records ({ipy['train_rows']:,} fitting + {ipy['calibration_rows']:,} calibration + {ipy['test_rows']:,} test)", "Logged campaign", "Clicks, efficiency, spend, delivery", "Historical budget-pressure boundary"],
         ],
         columns=["Environment", "Scale", "Replication unit", "Primary outcomes", "Evidence role"],
     )
     save(design, "main/table1_research_design.csv")
+
+    # Data partitions reported in the manuscript's EC table (ec:tab:data-scale).
+    # AuctionNet record counts are advertiser--opportunity records: 48 advertisers
+    # times the number of unique auctions.  The bidder-fitting count comes from the
+    # training manifest rather than the replay statistics.
+    n_advertisers = 48
+    bidder_fit = stats.get("auctionnet_bidder_training", {}).get("records", 1_670_400)
+    partitions = pd.DataFrame(
+        [
+            ["AuctionNet campaign", "Bidder fitting", f"{bidder_fit:,} campaign--time-step records"],
+            ["AuctionNet campaign", "Development", f"{micro7['unique_pvs'] * n_advertisers:,} records ({micro7['unique_pvs']:,} auctions)"],
+            ["AuctionNet campaign", "Evaluation", f"{micro8['unique_pvs'] * n_advertisers:,} records ({micro8['unique_pvs']:,} auctions)"],
+            ["AuctionNet synchronous market", "Primary rollout", f"{(macro11['unique_pvs'] + macro12['unique_pvs']) * n_advertisers:,} records ({macro11['unique_pvs'] + macro12['unique_pvs']:,} auctions)"],
+            ["AuctionNet synchronous market", "Temporal evaluation", f"{macro13['unique_pvs'] * n_advertisers:,} records ({macro13['unique_pvs']:,} auctions)"],
+            ["iPinYou", "Model fitting (first 80%)", f"{ipy['train_rows']:,} records"],
+            ["iPinYou", "Calibration (remaining 20%)", f"{ipy['calibration_rows']:,} records"],
+            ["iPinYou", "Evaluation (official test)", f"{ipy['test_rows']:,} records"],
+            ["T9Sim", "Model fitting (days 1--14)", f"{t9['training_rows_per_seed'] * t9['generator_seeds']:,} auctions"],
+            ["T9Sim", "Calibration (days 15--20)", f"{t9['calibration_rows_per_seed'] * t9['generator_seeds']:,} auctions"],
+            ["T9Sim", "Evaluation (days 21--28)", f"{t9['evaluation_rows_per_seed'] * t9['generator_seeds']:,} auctions"],
+        ],
+        columns=["Environment", "Partition and role", "Scale"],
+    )
+    save(partitions, "ec/table_a2_dataset_scale.csv")
 
     save(
         pd.DataFrame(
@@ -102,13 +128,11 @@ def build_design_tables() -> None:
                 ["Market rollout", "CQL × 3 pacing references × 4 paths", "25%, 50%, 75%, 100% adoption", "20 paired episodes per cell"],
                 ["T9Sim", "3 pacing references × 4 information views × 3 budgets", "0, 0.3, 0.5, 0.8, 1.0, 1.2; Raw separate", "10 generator seeds"],
                 ["iPinYou", "3 pacing references × 9 campaigns × 3 budget levels", "0, 0.3, 0.5, 0.8, 1.0, 1.2; Raw separate", "Logged-support replay"],
-                ["κ-selection", "15 bidder–reference pairs × 3 service caps", "0, 0.3, 0.5, 0.8, 1.0", "Retrospective screen; STOP"],
             ],
             columns=["Component", "Design", "Width/adoption menu", "Replication"],
         ),
         "ec/table_a1_design_audit.csv",
     )
-    save(design, "ec/table_a2_dataset_scale.csv")
     save(
         pd.DataFrame(
             [

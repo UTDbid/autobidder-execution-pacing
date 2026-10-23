@@ -206,7 +206,7 @@ def ec_r1() -> None:
     fig.legend(handles=handles, loc="upper center", ncol=7, frameon=False,
                bbox_to_anchor=(.60, .975), fontsize=8.7,
                columnspacing=.85, handletextpad=.25)
-    save(fig,"fig_r1_full_bidder_frontiers","ec")
+    save(fig,"fig_ec1_full_bidder_frontiers","ec")
 
 
 def ec_r2() -> None:
@@ -237,7 +237,7 @@ def ec_r3() -> None:
         a.bar(x+(j-1)*w,q.value_delta/1000,w,label=cnd.replace("_"," "),**style)
         b.bar(x+(j-1)*w,q.underdelivery_delta_pp,w,label=cnd.replace("_"," "),**style)
     for ax,y in [(a,r"Δ value ($\times 10^3$)"),(b,"Δ underdelivery (pp)")]:ax.axhline(0,color=INK,lw=.6);ax.set_xticks(x);ax.set_xticklabels([REF_LABELS.get(v,v) for v in refs],rotation=25,ha="right");ax.set_ylabel(y);clean(ax)
-    panel(a,"a","Advertiser value");panel(b,"b","Underdelivery");handles,labels=a.get_legend_handles_labels();fig.legend(handles,labels,loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.5,.99));save(fig,"fig_r3_directional_decomposition","ec")
+    panel(a,"a","Advertiser value");panel(b,"b","Underdelivery");handles,labels=a.get_legend_handles_labels();fig.legend(handles,labels,loc="upper center",ncol=3,frameon=False,bbox_to_anchor=(.5,.99));save(fig,"fig_ec2_directional_controllers","ec")
 
 
 def ec_r4() -> None:
@@ -251,7 +251,7 @@ def ec_r4() -> None:
                 if value < 0: negative_cell_lines(ax,i,j)
                 ax.text(j,i,f"{value:+.1f}",ha="center",va="center",fontsize=10.3,
                         color="white" if abs(value)>.58*lim else INK,zorder=4)
-    axes[0].set_ylabel("Budget multiplier");negative_cell_legend(fig);save(fig,"fig_r4_opportunity_slack","ec")
+    axes[0].set_ylabel("Budget multiplier");negative_cell_legend(fig);save(fig,"fig_ec4_supply_budget_response","ec")
 
 
 def ec_r5() -> None:
@@ -265,7 +265,7 @@ def ec_r5() -> None:
               label=f"{REF_LABELS[ref]} · {block[-1]}",**style)
         b.bar(x+(i-1.5)*w,100*q.mean_delta_underdelivery,w,**style)
     for ax,y in [(a,r"Δ value ($\times 10^3$)"),(b,"Δ underdelivery (pp)")]:ax.axhline(0,color=INK,lw=.6);ax.set_xticks(x);ax.set_xticklabels([BIDDER_LABEL[v] for v in models],rotation=20,ha="right");ax.set_ylabel(y);clean(ax)
-    panel(a,"a","Advertiser value");panel(b,"b","Underdelivery");handles,labels=a.get_legend_handles_labels();fig.legend(handles,labels,loc="upper center",ncol=2,frameon=False,bbox_to_anchor=(.5,.99));save(fig,"fig_r5_sparse_feedback","ec")
+    panel(a,"a","Advertiser value");panel(b,"b","Underdelivery");handles,labels=a.get_legend_handles_labels();fig.legend(handles,labels,loc="upper center",ncol=2,frameon=False,bbox_to_anchor=(.5,.99));save(fig,"fig_ec6_auctionnet_low","ec")
 
 
 def ec_r6() -> None:
@@ -313,7 +313,7 @@ def ec_r6() -> None:
             for ref in REFS_MACRO]
     fig.legend(handles=refs, loc="upper center", ncol=3, frameon=False,
                bbox_to_anchor=(.5, .99))
-    save(fig,"fig_r6_complete_market_rollouts","ec")
+    save(fig,"fig_ec7_rollout_paths","ec")
 
 
 def ec_r7() -> None:
@@ -363,7 +363,7 @@ def ec_r8() -> None:
     colorbar=fig.colorbar(im,cax=cax,ticks=[-180,-120,-60,0,60])
     colorbar.set_label("Click change (shared scale)",fontsize=9.5)
     colorbar.ax.tick_params(labelsize=8.5)
-    axes[0].set_ylabel("Campaign");negative_cell_legend(fig);save(fig,"fig_r8_ipinyou_campaign_heterogeneity","ec")
+    axes[0].set_ylabel("Campaign");negative_cell_legend(fig);save(fig,"fig_ec5_ipinyou_clicks","ec")
 
 
 def ec_r9() -> None:
@@ -372,7 +372,7 @@ def ec_r9() -> None:
         for ref in REFS:
             q=d[(d.reference.eq(ref))&np.isclose(d.budget_multiplier,budget)].sort_values("information_view");ax.plot(q.information_view,q.true_value_delta/1000,color=REF_COLORS[ref],ls=REF_STYLES[ref],marker=REF_MARKERS[ref],mfc="white",label=REF_LABELS[ref])
         ax.axhline(0,color=INK,lw=.6);ax.set_xlabel("Information view");ax.text(.03,.95,f"Budget ×{budget:.1f}",transform=ax.transAxes,va="top",fontweight="bold");clean(ax)
-    axes[0].set_ylabel(r"True value change ($\times 10^3$)");axes[0].legend(loc="best");save(fig,"fig_r9_t9sim_truth_mechanism","ec")
+    axes[0].set_ylabel(r"True value change ($\times 10^3$)");axes[0].legend(loc="best");save(fig,"fig_ec3_t9sim_truth","ec")
 
 
 def ec_r10() -> None:

@@ -1,0 +1,4 @@
+controller,binding_rate,realized_discretion
+Traffic-aware,0.0704,0.9840
+PID,0.2310,0.9271
+Dual,0.4222,0.8626

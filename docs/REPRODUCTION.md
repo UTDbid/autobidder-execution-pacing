@@ -16,16 +16,16 @@ are already checked in and §5 can be run on its own (no data, no training).
 ## 1. Environment
 
 A single Python ≥ 3.11 environment suffices for training, evaluation and
-plotting; only the SemBid bidder needs a GPU with the OpenLBM / vLLM stack.
+plotting; only the SemBid bidder needs a GPU with the vLLM stack.
 
 ```bash
-# training + evaluation + plotting (micro/macro, DT/GAS, κ-selection, figures)
+# training + evaluation + plotting (micro/macro, DT/GAS, figures)
 pip install torch numpy pandas pyarrow scipy scikit-learn xgboost matplotlib pyyaml
 
 # T9Sim simulator package (install from the bundled source)
 pip install -e code/t9sim/T9-simulator
 
-# SemBid bidder additionally needs the OpenLBM/vLLM dependencies of
+# SemBid bidder additionally needs the vLLM dependencies of
 # code/bidders/sembid_cpa/ (transformers + the Qwen2.5-0.5B weight).
 ```
 
@@ -37,7 +37,7 @@ All three datasets have public download links. The bundled `data/<dataset>/`
 scripts reproduce the download + integrity-audit + extraction steps and are
 parameterized by `POMS_DATA_ROOT` (default: this repo's `data/` directory).
 
-### 2.1 AuctionNet / Alimama AIGB
+### 2.1 AuctionNet
 
 ```bash
 python data/auctionnet/download_official_alimama.py   # 8 ZIPs → data/auctionnet/
@@ -79,7 +79,10 @@ python code/ipinyou/preprocess_ipinyou.py       # → per-campaign train/test pa
 ```
 
 The logged-replay driver is `code/ipinyou/run_ipinyou_reference_experiment.py`
-(`--train … --test … --campaign … --output …`). `code/ipinyou/make-ipinyou-data/`
+(`--train … --test … --campaign … --output …`).  The evaluation uses 19.5
+million retained log records: 12,318,831 for model fitting (first 80%),
+3,076,427 for calibration (remaining 20%), and 4,100,716 in the official test
+split. `code/ipinyou/make-ipinyou-data/`
 is the upstream (Python 2) conversion tool kept for provenance of the raw
 format; the Python-3 path above supersedes it.
 
@@ -114,9 +117,12 @@ authors' training outputs and their approximate sizes were:
 
 ## 4. Evaluation
 
-The evaluation produces the manuscript's 31 locked-evidence aggregates
-(`l01`–`l31`), which `build_derived_data.py` turns into the figure/table source
-CSVs.
+The evaluation produces 31 locked-evidence aggregates (`l01`–`l31`), which
+`build_derived_data.py` turns into the figure/table source CSVs.  The current
+manuscript uses the AuctionNet, T9Sim, iPinYou, and market aggregates
+(`l01`–`l15`, `l21`–`l26`, `l29`–`l31`); `l16`–`l20` (the historical
+κ-selection challenge) and `l27`–`l28` (reliability and response-aware
+diagnostics) do not support any exhibit in the current version.
 
 ### 4.1 AuctionNet micro + macro (`l01–l11`, `l21–l30`)
 
@@ -137,8 +143,7 @@ python code/auctionnet/micro/mandate_eval_v2.py \
 ```
 
 The frozen grids live in `configs/` (macro `uniform`/`rollout_*` × `pid`/`dual`/
-`traffic`) and in `code/kappa_selection/02_configs/` (`p8_retrospective_missing_grid.json`
-and split grids). The synchronous 48-advertiser macro evaluator is
+`traffic`). The synchronous 48-advertiser macro evaluator is
 `code/auctionnet/macro/src/platformbid_v1/evaluator.py`.
 
 DT and SemBid source is bundled at `code/bidders/sembid_cpa/`; the evaluator
@@ -163,7 +168,7 @@ mapped to `l12–l15`:
 | `l14_t9sim_policy_cells.csv` | `t9sim_policy_cells.csv` |
 | `l15_t9sim_exclusive_purchases.csv` | `t9sim_exclusive_purchase_differences.csv` |
 
-### 4.3 κ-selection (`l16–l20`)
+### 4.3 Historical κ-selection analysis (`l16–l20`; not in the current manuscript)
 
 ```bash
 cd code/kappa_selection/03_code
@@ -171,8 +176,10 @@ python prepare_challenge.py                       # freeze grids/manifest (idemp
 python analyze_selection_challenge.py --phase retrospective
 ```
 
-The retrospective phase reads the inherited calibration + test surfaces and the
-per-cell `results.json` (produced by `mandate_eval_v2.py` above) and writes:
+This analysis is retained for provenance only; the current manuscript no longer
+reports a κ-selection challenge. The retrospective phase reads the inherited
+calibration + test surfaces and the per-cell `results.json` (produced by
+`mandate_eval_v2.py` above) and writes:
 
 | Locked evidence | Output |
 | --- | --- |
@@ -205,8 +212,13 @@ Once `l01`–`l31` are at `plotting/evidence/locked/`:
 ```bash
 cd plotting/scripts/server_release
 python build_derived_data.py     # l01–l31 → plotting/data/derived/{main,ec}/*.csv
-python build_all_figures.py      # derived CSVs → figures/{main,ec}/*.{pdf,svg,png}
+python build_all_figures.py      # E-Companion figures → figures/ec/*.png
+cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7 → figures/main/*.png
 ```
+
+Figure 1 is the preserved conceptual asset
+(`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is
+typeset from `table2a`/`table2b` in the manuscript's unified layout pass.
 
 The `l01`–`l31` filenames are defined in `build_derived_data.py` (`FILES`), and
 `FIGURE_TABLE_CROSSWALK.md` maps every manuscript exhibit to its source CSV.
@@ -216,7 +228,8 @@ the figures can be rebuilt without the data, training or evaluation above:
 
 ```bash
 cd plotting/scripts/server_release
-python build_all_figures.py      # from the checked-in plotting/data/derived/
+python build_all_figures.py      # E-Companion figures from checked-in derived CSVs
+cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7
 ```
 
 ---

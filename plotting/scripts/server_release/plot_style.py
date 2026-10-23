@@ -75,8 +75,5 @@ def place_panel_subtitles(fig) -> None:
 def save(fig, stem: str, section: str) -> None:
     out = MAIN if section == "main" else EC
     place_panel_subtitles(fig)
-    suffix = "_above" if section == "ec" else "_below"
-    for ext in ["pdf", "svg"]:
-        fig.savefig(out / f"{stem}{suffix}.{ext}", bbox_inches="tight", pad_inches=0.07)
-    fig.savefig(out / f"{stem}{suffix}.png", dpi=320, bbox_inches="tight", pad_inches=0.07)
+    fig.savefig(out / f"{stem}.png", dpi=320, bbox_inches="tight", pad_inches=0.07)
     plt.close(fig)

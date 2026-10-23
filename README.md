@@ -1,6 +1,6 @@
 <div align="center">
 
-# Managing Autobidder Execution under Campaign Pacing
+# Execution Authority in Digital Advertising: Coordinating Autobidding and Campaign Control
 
 **Code & Data Release** · *POM / Marketing Interface*
 
@@ -37,17 +37,20 @@
 
 ## What is in this repository
 
-The paper studies how much *discretion* (`κ`) a pacing-controlled autobidder
-should be given over bid execution. It evaluates an **execution boundary** (execution width `κ`) on top of **five learned autobidders** under **three pacing
-controllers**, across **three datasets**:
+The paper studies **execution authority** in digital advertising: how much
+*bidder discretion* (`κ`) a pacing-controlled autobidder should be given over
+bid execution, and how bidder and campaign control should be coordinated. It
+evaluates an **execution boundary** (execution width `κ`) on top of **five
+learned autobidders** under **three pacing controllers**, across **three
+datasets**:
 
 | Block | Contents | Location |
 | --- | --- | --- |
 | **Core evaluator** | Single-advertiser *micro* replay + 48-advertiser synchronous *macro* market simulator + reference pacing policies | `code/auctionnet/` |
 | **Autobidders** | CQL, IQL, DT, GAS, SemBid — training source bundled under `code/bidders/` | `code/bidders/` |
 | **Pacing controllers** | traffic-aware, PID, dual (reference policies) | `code/auctionnet/micro/mandate_core_v2.py`, `code/common/reference_policies.py` |
-| **Datasets** | AuctionNet (Alimama AIGB), T9Sim (truth-referenced simulator), iPinYou (logged auctions) — setup + extraction scripts | `data/` |
-| **Cross-dataset analysis** | iPinYou/T9Sim aggregation, κ-selection challenge, dataset-scale accounting | `code/analysis/`, `code/kappa_selection/` |
+| **Datasets** | AuctionNet, T9Sim (truth-referenced simulator), iPinYou (logged auctions) — setup + extraction scripts | `data/` |
+| **Cross-dataset analysis** | iPinYou/T9Sim aggregation, campaign-load and scenario-calibration analyses, dataset-scale accounting | `code/analysis/`, `plotting/data/load/`, `plotting/data/server_checked/` |
 | **Figures & tables** | Every manuscript exhibit's source CSV + plotting code | `plotting/` |
 | **Frozen configs** | The exact experiment grids (κ widths, adoption fractions, seeds) | `configs/` |
 
@@ -61,7 +64,7 @@ controllers**, across **three datasets**:
 | **IQL** | Implicit Q-Learning (torch.jit) | `code/bidders/sembid_cpa/bidding_train_env/baseline/iql/iql.py` |
 | **DT** | Decision Transformer (`state_dim=16`, `K=20`) | `code/bidders/sembid_cpa/bidding_train_env/baseline/dt/dt.py` |
 | **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
-| **SemBid** | OpenLBM / Qwen2.5-0.5B language-bidding model | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
+| **SemBid** | Language-bidding model | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
 > All five bidders are trained from source bundled in this repository
 > (`docs/REPRODUCTION.md` §3); the evaluator loads the resulting checkpoints.
@@ -91,11 +94,11 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 │   ├── bidders/             # five autobidders' training + inference source
 │   ├── t9sim/               # T9Sim simulator package + replay driver
 │   ├── ipinyou/             # iPinYou preprocess + logged-replay driver
-│   ├── kappa_selection/     # κ-selection challenge (01_protocol/02_configs/03_code + frozen 06_results)
+│   ├── kappa_selection/     # historical κ-selection analysis (not part of the current manuscript)
 │   └── analysis/            # cross-dataset aggregation + dataset-scale accounting
 ├── configs/                 # frozen experiment grids (macro/micro κ-width × adoption × seed)
 ├── data/
-│   ├── auctionnet/          # download + convert scripts for AuctionNet/AIGB
+│   ├── auctionnet/          # download + convert scripts for AuctionNet
 │   ├── t9sim/               # download + extract scripts for T9Sim (Zenodo)
 │   └── ipinyou/             # download + extract scripts for iPinYou
 ├── plotting/
@@ -122,11 +125,13 @@ To rebuild **just the figures and tables** from the checked-in source tables
 ```bash
 pip install pandas numpy matplotlib
 cd plotting/scripts/server_release
-python build_all_figures.py      # → plotting/figures/{main,ec}/*.{pdf,svg,png}
+python build_all_figures.py      # → plotting/figures/ec/*.png
+cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figures 2–7
 ```
 
 This reproduces the manuscript's figures/tables **as typeset numbers** from the
-bundled `plotting/data/derived/`. Verified to run end-to-end.
+bundled `plotting/data/derived/`, `plotting/data/load/`, and
+`plotting/data/server_checked/`. Verified to run end-to-end.
 
 ---
 
@@ -134,9 +139,9 @@ bundled `plotting/data/derived/`. Verified to run end-to-end.
 
 | Dataset | What it is | Download | License / terms |
 | --- | --- | --- | --- |
-| **AuctionNet / AIGB** | Alimama auto-bidding track (periods 7–8, trajectory data) | 8 ZIPs on the Alimama OSS bucket — see `data/auctionnet/download_official_alimama.py` | Alimama AIGB competition terms |
+| **AuctionNet** | Alimama auto-bidding track (periods 7–8, trajectory data) | 8 ZIPs on the Alimama OSS bucket — see `data/auctionnet/download_official_alimama.py` | Alimama competition terms |
 | **T9Sim** | Truth-referenced RTB simulator (10 × 10M-impression seeds) | [Zenodo 21533031](https://zenodo.org/records/21533031) (DOI 10.5281/zenodo.21533031) | CC-BY-4.0 |
-| **iPinYou** | Real logged RTB campaign data | contest 7z + season-2 zip — see `data/ipinyou/` scripts | iPinYou contest terms |
+| **iPinYou** | Real logged RTB campaign data (19.5M records: 12.3M fitting + 3.1M calibration + 4.1M test) | contest 7z + season-2 zip — see `data/ipinyou/` scripts | iPinYou contest terms |
 
 Each `data/<dataset>/` directory contains the exact download + integrity-audit
 + extraction scripts used by the authors, parameterized via `POMS_DATA_ROOT`

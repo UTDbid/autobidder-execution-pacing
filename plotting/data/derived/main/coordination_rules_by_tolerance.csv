@@ -1,0 +1,13 @@
+tolerance_pp,rule,value_delta_k,cpa_delta,underdelivery_delta_pp,exceedance_rate,positive_pairs
+5,Projection,2.25,-2.35,3.32,0.192,13/15
+5,Convex blending,2.68,-2.77,2.70,0.117,15/15
+5,Accept-or-revert,1.42,-1.53,2.54,0.208,11/15
+10,Projection,3.33,-3.57,6.81,0.208,15/15
+10,Convex blending,2.82,-2.93,3.68,0.058,15/15
+10,Accept-or-revert,1.73,-1.80,3.21,0.025,11/15
+15,Projection,3.58,-4.05,10.19,0.275,15/15
+15,Convex blending,3.29,-3.69,8.60,0.225,15/15
+15,Accept-or-revert,3.12,-3.51,9.42,0.292,13/15
+20,Projection,3.83,-4.59,13.33,0.208,15/15
+20,Convex blending,3.75,-4.35,11.77,0.217,15/15
+20,Accept-or-revert,3.58,-4.22,12.16,0.217,14/15

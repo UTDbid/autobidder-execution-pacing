@@ -1,5 +1,12 @@
-Environment,Scale,Replication unit,Primary outcomes,Evidence role
-AuctionNet campaign,"48 advertisers; 499,976/499,979 opportunities",CRN seed × bidder × pacing,Campaign performance–delivery frontier,Primary campaign evidence
-AuctionNet market,"48 synchronous advertisers; 499,977/499,975 opportunities",Synchronous-market episode,"Value, prices, delivery, current auction revenue",Primary market evidence
-T9Sim,"100,000,000 auctions; 10 generator seeds",Generator seed × information view,True value and purchase-set efficiency,Truth-level mechanism
-iPinYou,"9 campaigns; 4,100,716 test log records",Logged campaign,"Clicks, efficiency, spend, delivery",Historical budget-pressure boundary
+Environment,Partition and role,Scale
+AuctionNet campaign,Bidder fitting,"1,670,400 campaign--time-step records"
+AuctionNet campaign,Development,"23,998,848 records (499,976 auctions)"
+AuctionNet campaign,Evaluation,"23,998,992 records (499,979 auctions)"
+AuctionNet synchronous market,Primary rollout,"47,997,696 records (999,952 auctions)"
+AuctionNet synchronous market,Temporal evaluation,"23,998,896 records (499,977 auctions)"
+iPinYou,Model fitting (first 80%),"12,318,831 records"
+iPinYou,Calibration (remaining 20%),"3,076,427 records"
+iPinYou,Evaluation (official test),"4,100,716 records"
+T9Sim,Model fitting (days 1--14),"49,993,330 auctions"
+T9Sim,Calibration (days 15--20),"21,428,370 auctions"
+T9Sim,Evaluation (days 21--28),"28,578,300 auctions"
