@@ -8,9 +8,22 @@ hard_truncate guarantees cost <= budget, but does not guarantee CPA <= cpa_const
 import sys, os, torch, numpy as np, math, logging, json, pickle, time, argparse, random
 
 # ─── Paths: use existing strategy classes ───
-STRATEGY_ENV = '/home/wangmeiyi/AuctionNet/AuctionNet/strategy_train_env'
-GAS_CODE = '/home/wangmeiyi/AuctionNet/GAS'
-DT_TEST_DIR = '/home/wangmeiyi/AuctionNet/DT+Teachable+bid/Experiments/Exp_01_LanguageDT_Baseline_Comparison/Code/Testing'
+AUCTIONNET_ROOT = os.environ.get("AUCTIONNET_ROOT", "")
+if not AUCTIONNET_ROOT:
+    raise RuntimeError(
+        "Set AUCTIONNET_ROOT to the AuctionNet project root "
+        "(the directory containing AuctionNet/, GAS/, and DT+Teachable+bid/)."
+    )
+STRATEGY_ENV = os.path.join(AUCTIONNET_ROOT, "AuctionNet", "strategy_train_env")
+GAS_CODE = os.path.join(AUCTIONNET_ROOT, "GAS")
+DT_TEST_DIR = os.path.join(
+    AUCTIONNET_ROOT,
+    "DT+Teachable+bid",
+    "Experiments",
+    "Exp_01_LanguageDT_Baseline_Comparison",
+    "Code",
+    "Testing",
+)
 # Remove any conflicting paths that shadow bidding_train_env
 _conflict_dirs = ['Code', 'Code/Algorithms']
 sys.path = [p for p in sys.path if not any(p.endswith(c) or ('/sembid_cpa/' + c) in p for c in _conflict_dirs)]
@@ -43,12 +56,12 @@ def create_baseline_agent(model_type, model_dir, budget, cpa, category, **kwargs
         return BaselineDTBiddingStrategy(model_dir=model_dir, budget=budget, cpa=cpa, category=category)
     elif model_type == "gas":
         from bidding_train_env.strategy import PlayerBiddingStrategy
-        os.chdir('/home/wangmeiyi/AuctionNet/GAS')
+        os.chdir(GAS_CODE)
         return PlayerBiddingStrategy(budget=budget, cpa=cpa, category=category,
             load_dir=model_dir, baseline_method='dt_reweight', reweight_w=0.2)
     elif model_type == "gave":
         from bidding_train_env.strategy import PlayerBiddingStrategy
-        os.chdir('/home/wangmeiyi/AuctionNet/GAS')
+        os.chdir(GAS_CODE)
         mp = {"device":"cpu","save_dir":model_dir,"budget_rate":1.0,"hidden_size":512,
               "learning_rate":1e-4,"time_dim":8,
               "block_config":{"n_ctx":1024,"n_embd":512,"n_layer":8,"n_head":4,

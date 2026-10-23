@@ -65,6 +65,8 @@ three pacing controllers, and three datasets.
 | **GAS** | Gradient-Ascent Strategy (DT policy + reweighted-search critic) | `code/bidders/gas/run/` |
 | **SemBid** | Language-bidding model | `code/bidders/sembid_cpa/Training/` |
 
+Training settings are listed in [`docs/TRAINING.md`](docs/TRAINING.md).
+
 ---
 
 ## The three pacing controllers

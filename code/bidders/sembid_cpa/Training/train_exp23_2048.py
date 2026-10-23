@@ -25,7 +25,7 @@ from language_dt_with_task_flexible_hf_first import LanguageGuidedDTWithTaskFlex
 from torch.utils.data import DataLoader, WeightedRandomSampler
 
 # 配置日志
-log_dir = "/home/wangmeiyi/AuctionNet/logs"
+log_dir = os.environ.get("SEMBID_LOG_DIR", "logs")
 os.makedirs(log_dir, exist_ok=True)
 
 logging.basicConfig(
@@ -52,8 +52,8 @@ def parse_args():
 
     # 数据配置
     parser.add_argument('--data_file', type=str,
-                        default='/home/wangmeiyi/AuctionNet/data/train/alimama_trajectories/high_conversion_sampled/trajectory_data_exp17b_dim2048_0.5gb.pkl',
-                        help='训练数据路径（2048维预处理后的pkl文件）')
+                        default=os.environ.get('SEMBID_DATA_PKL'),
+                        help='训练数据路径（或设置 SEMBID_DATA_PKL）')
 
     # 训练配置
     parser.add_argument('--batch_size', type=int, default=64,
@@ -73,6 +73,8 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if not args.data_file:
+        raise SystemExit("--data_file is required (or set SEMBID_DATA_PKL)")
 
     logger.info("="*70)
     logger.info("🤖 Exp23: 2048维 Language-Guided DT Training (H/F before State)")
@@ -82,7 +84,8 @@ def main():
     if args.output_dir is None:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         exp_name = f"Exp23_Qwen_DT_2048_{timestamp}{args.exp_name}"
-        output_dir = f"/home/wangmeiyi/AuctionNet/models/LanguageDT/{exp_name}"
+        base_output = os.environ.get("SEMBID_OUTPUT_DIR", os.path.join(os.getcwd(), "outputs"))
+        output_dir = os.path.join(base_output, exp_name)
     else:
         output_dir = args.output_dir
 

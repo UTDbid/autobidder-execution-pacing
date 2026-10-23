@@ -639,11 +639,13 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=str, default=None,
                         help='结果输出路径；提供后不写入模型checkpoint目录')
     parser.add_argument('--test_file', type=str,
-                       default='/home/wangmeiyi/AuctionNet/data/test/alimama/high_conv_sampled/period-7.csv',
-                       help='测试数据文件')
+                       default=os.environ.get('SEMBID_TEST_CSV'),
+                       help='测试数据文件（或设置 SEMBID_TEST_CSV）')
     parser.add_argument('--language_emb_dim', type=int, default=2048, help='语言嵌入维度')
     parser.add_argument('--embedding_lookup', type=str, default=None, help='Embedding查找表路径')
     args = parser.parse_args()
+    if not args.test_file:
+        parser.error("--test_file is required (or set SEMBID_TEST_CSV)")
 
     logger.info("="*80)
     logger.info("Exp23 Qwen-0.5B + 2048维 测试开始 (标准版)")

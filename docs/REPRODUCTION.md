@@ -109,7 +109,8 @@ split.
 ## 3. Train the autobidders
 
 Training code for all five bidders is in `code/bidders/`. The entrypoints below
-train them from the datasets in §2.
+train them from the datasets in §2; training settings are listed in
+[`TRAINING.md`](TRAINING.md).
 
 | Bidder | Training entrypoint |
 | --- | --- |
@@ -209,6 +210,7 @@ manuscript exhibit to its source CSV.
 
 ## 6. Notes on bundled source
 
-- The bundled DT/SemBid source still carries a few `/home/wangmeiyi/AuctionNet/…`
-  defaults from the authors' machines. They are confined to training and
-  stand-alone test scripts; evaluation paths are passed explicitly on the CLI.
+- Training and stand-alone test scripts read optional paths from environment
+  variables: `AUCTIONNET_ROOT`, `SEMBID_DATA_PKL`, `SEMBID_TEST_CSV`,
+  `SEMBID_LOG_DIR`, and `SEMBID_OUTPUT_DIR`. Evaluation paths are passed
+  explicitly on the CLI.

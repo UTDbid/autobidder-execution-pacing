@@ -63,6 +63,8 @@
 | **GAS** | Gradient-Ascent Strategy（DT 策略 + 重加权搜索 critic） | `code/bidders/gas/run/` |
 | **SemBid** | 语言出价模型 | `code/bidders/sembid_cpa/Training/` |
 
+训练超参见 [`docs/TRAINING.md`](docs/TRAINING.md)。
+
 ---
 
 <a id="controllers"></a>
