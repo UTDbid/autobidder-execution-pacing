@@ -38,17 +38,17 @@
 <a id="whats-inside"></a>
 ## 项目概览
 
-这篇论文研究数字广告中的**执行权（execution authority）**：受 pacing 控制的 autobidder，出价应该在多大程度上偏离 campaign control 的建议（bidder discretion，`κ`），以及两者如何协调。我们在五个学习型 autobidder、三类 pacing 控制器和三个数据集上评估执行边界（execution width `κ`）。
+这篇论文研究数字广告中的**执行权（execution authority）**：受 pacing 控制的 autobidder，出价应该在多大程度上偏离 campaign control 的建议（bidder discretion，`κ`），以及两者如何协调。我们在五个学习型 autobidder、三类 pacing 控制器和三个数据集上评估执行边界（execution boundary；execution width `κ`）。
 
 | 模块 | 内容 | 位置 |
 | --- | --- | --- |
-| **核心评估器** | 单广告主*微观*回放 + 48 广告主同步*宏观*市场模拟器 + 参考 pacing 策略 | `code/auctionnet/` |
+| **核心评估器** | 单广告主*微观*回放（campaign replay）+ 48 广告主同步*宏观*市场模拟器（synchronous market）+ 参考 pacing 策略（campaign-control policies） | `code/auctionnet/` |
 | **autobidder** | CQL、IQL、DT、GAS、SemBid 的训练代码 | `code/bidders/` |
-| **pacing 控制器** | traffic-aware、PID、dual（参考策略） | `code/auctionnet/micro/mandate_core_v2.py`、`code/common/reference_policies.py` |
-| **数据集** | AuctionNet、T9Sim（带真值标注的模拟器）、iPinYou（真实竞价日志）的下载和解压脚本 | `data/` |
-| **跨数据集分析** | iPinYou/T9Sim 聚合、campaign load 与 scenario calibration 分析、数据集规模核算 | `code/analysis/`、`plotting/data/load/`、`plotting/data/server_checked/` |
+| **pacing 控制器** | traffic-aware、PID、dual（参考策略；campaign-control policies） | `code/auctionnet/micro/mandate_core_v2.py`、`code/common/reference_policies.py` |
+| **数据集** | AuctionNet、T9Sim（带真值标注的模拟器；synthetic auctions with latent outcomes）、iPinYou（真实竞价日志；real-world DSP log records）的下载和解压脚本 | `data/` |
+| **跨数据集分析** | iPinYou/T9Sim 聚合、campaign load 与 scenario calibration 分析、数据集规模核算（dataset-scale accounting） | `code/analysis/`、`plotting/data/load/`、`plotting/data/server_checked/` |
 | **图表** | 每个图表的源 CSV 和画图代码 | `plotting/` |
-| **冻结配置** | 实验网格（κ 宽度、采纳比例、随机种子） | `configs/` |
+| **冻结配置** | 实验网格（κ 宽度、采纳比例（adoption levels）、随机种子） | `configs/` |
 
 ---
 
@@ -70,7 +70,7 @@
 
 traffic-aware、PID、dual 三种 pacing 用简洁、可审计的参考策略实现，代码在
 `code/common/reference_policies.py` 和 `code/auctionnet/micro/mandate_core_v2.py`。
-执行边界（execution boundary）会把 autobidder 的原生出价相对参考动作做一次裁剪：
+执行边界（execution boundary）会把 autobidder 的原生出价（native action）相对参考动作（reference action）做一次裁剪：
 
 ```text
 enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]   (relative_hard)
