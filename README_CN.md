@@ -73,7 +73,7 @@ traffic-aware、PID、dual 三种 pacing 用简洁、可审计的参考策略实
 执行边界（execution boundary）会把 autobidder 的原生出价（native action）相对参考动作（reference action）做一次裁剪：
 
 ```text
-enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]   (relative_hard)
+enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]   (relative_hard)
 ```
 
 ---
