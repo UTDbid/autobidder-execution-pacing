@@ -7,11 +7,9 @@ Prerequisites: the three public datasets and trained bidder checkpoints.
 
 1. Data: download and extract the datasets (§2).
 2. Training: train the five bidders (§3).
-3. Evaluation: run the evaluators to obtain per-cell results (§4).
-4. Aggregation: `build_derived_data.py` performs the aggregation into the
-   source-table layout under `plotting/data/derived/`;
-   `FIGURE_TABLE_CROSSWALK.md` maps each exhibit to its table.
-5. Figures: rebuild the exhibits from the source tables (§5).
+3. Evaluation and tables: run the evaluators (§4), then `build_derived_data.py`
+   to turn their outputs into the source tables under `plotting/data/derived/`.
+4. Figures: rebuild the exhibits from the source tables (§5).
 
 ---
 
@@ -118,10 +116,8 @@ authors' training outputs and their approximate sizes were:
 
 ## 4. Evaluation
 
-The evaluators below produce the per-cell results behind the manuscript. The
-authors' aggregation into the locked evidence package (`l01`–`l31`) is not
-distributed; `build_derived_data.py` is included as a reference for readers who
-build their own evidence.
+The evaluators below produce the per-cell results behind the manuscript.
+`build_derived_data.py` turns those results into the source tables.
 
 ### 4.1 AuctionNet micro + macro
 
@@ -157,15 +153,12 @@ python code/ipinyou/run_ipinyou_reference_experiment.py --train <t> --test <t> -
 python code/analysis/analyze_marketing_evidence.py --root <run-root>
 ```
 
-The `analyze_marketing_evidence.py` aggregation emits the four upstream tables
-mapped to `l12–l15`:
+The `analyze_marketing_evidence.py` aggregation emits four upstream tables:
 
-| Locked evidence | Upstream output |
-| --- | --- |
-| `l12_ipinyou_canonical_logged_policy_raw.csv` | `ipinyou_policy_cells.csv` |
-| `l13_ipinyou_canonical_logged_policy_contrasts.csv` | `ipinyou_wide_tight_contrasts.csv` |
-| `l14_t9sim_policy_cells.csv` | `t9sim_policy_cells.csv` |
-| `l15_t9sim_exclusive_purchases.csv` | `t9sim_exclusive_purchase_differences.csv` |
+- `ipinyou_policy_cells.csv`
+- `ipinyou_wide_tight_contrasts.csv`
+- `t9sim_policy_cells.csv`
+- `t9sim_exclusive_purchase_differences.csv`
 
 ### 4.3 Dataset-scale accounting
 
@@ -174,8 +167,6 @@ python code/analysis/collect_dataset_raw_statistics.py \
   --project-root <...> --legacy-root <...> --external-root <...> \
   --output dataset_raw_statistics.json
 ```
-
-→ maps to `l31_dataset_scale_accounting.json`.
 
 ---
 
@@ -189,8 +180,7 @@ python build_all_figures.py      # E-Companion figures → figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7 → figures/main/*.png
 ```
 
-`build_derived_data.py` performs this aggregation from the locked evidence
-package (`l01`–`l31`) produced by the evaluation stage.
+`build_derived_data.py` performs this aggregation from the evaluation outputs.
 
 Figure 1 is the preserved conceptual asset
 (`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is

@@ -120,7 +120,7 @@ python plotting/scripts/rebuild_main_figures.py
 # E-Companion figures (EC.1--EC.7)
 cd plotting/scripts/server_release && python build_all_figures.py
 
-# full pipeline from locked evidence (requires l01--l31)
+# full pipeline from evaluation outputs
 cd plotting/scripts/server_release && python build_derived_data.py
 ```
 

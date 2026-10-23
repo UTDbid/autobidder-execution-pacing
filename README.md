@@ -115,9 +115,9 @@ bidder checkpoints.
 2. Train the five bidders with the entrypoints under `code/bidders/`.
 3. Run the evaluators under `code/auctionnet/`, `code/t9sim/`, and
    `code/ipinyou/`.
-4. Aggregate the per-cell evaluation outputs into the source-table layout under
-   `plotting/data/derived/`. `build_derived_data.py` shows how the aggregation
-   is organized, and `FIGURE_TABLE_CROSSWALK.md` maps each exhibit to its table.
+4. Run `build_derived_data.py` to turn the evaluation outputs into the source
+   tables under `plotting/data/derived/`; `FIGURE_TABLE_CROSSWALK.md` maps each
+   exhibit to its table.
 5. Rebuild the figures from the source tables:
 
 ```bash
