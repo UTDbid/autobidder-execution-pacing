@@ -2,7 +2,7 @@
 
 # Execution Authority in Digital Advertising: Coordinating Autobidding and Campaign Control
 
-**Code & Data Release** · *POM / Marketing Interface*
+**Code & Data Release**
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](#reproduction)
 [![Datasets](https://img.shields.io/badge/Datasets-AuctionNet%20T9Sim%20iPinYou-8A2BE2)](#datasets-and-download-links)
