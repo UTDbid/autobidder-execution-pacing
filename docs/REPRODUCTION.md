@@ -3,7 +3,7 @@
 The repository contains the scripts used for data preparation, training, and
 evaluation, together with the source tables behind each exhibit.
 
-Requirements: the three public datasets and trained bidder checkpoints.
+Requirements: the three public datasets.
 
 1. Download and extract the datasets (§2).
 2. Train the five bidders (§3).
@@ -120,16 +120,7 @@ train them from the datasets in §2; training settings are listed in
 | GAS | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
 | SemBid | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
-The evaluator loads the resulting checkpoints. For reference, the checkpoint
-sizes used in the paper were:
-
-| Bidder | Approx. size |
-| --- | --- |
-| CQL | 1.4 MB |
-| IQL | 0.3 MB |
-| DT | 32 MB |
-| GAS | ~0.3 GB |
-| SemBid | ~1 GB × 16 cp |
+The evaluator loads the trained models.
 
 ---
 

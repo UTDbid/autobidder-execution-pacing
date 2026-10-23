@@ -110,8 +110,7 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 The repository includes the scripts used for data preparation, training, and
 evaluation, plus the source tables behind each exhibit.
 
-Requirements: the three public datasets (links below) and trained bidder
-checkpoints.
+Requirements: the three public datasets (links below).
 
 1. Download and extract the datasets with the scripts in `data/<dataset>/`.
 2. Train the five bidders using the entrypoints in `code/bidders/`.

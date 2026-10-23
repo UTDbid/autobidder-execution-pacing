@@ -109,7 +109,7 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 
 仓库包含数据准备、训练和评估脚本，以及论文图表对应的源表。
 
-需要准备：三个公开数据集（下载链接见下文）和训练好的 bidder checkpoint。
+需要准备：三个公开数据集（下载链接见下文）。
 
 1. 用 `data/<dataset>/` 下的脚本下载并解压数据集。
 2. 用 `code/bidders/` 下的入口训练五个 bidder。
