@@ -128,6 +128,5 @@ cd plotting/scripts/server_release && python build_all_figures.py
 cd plotting/scripts/server_release && python build_derived_data.py
 ```
 
-The PNGs in `plotting/figures/` are the manuscript's final unified layout.  The
-plotting scripts regenerate the same data with the repository's Matplotlib
-style; minor layout differences are expected.
+The PNGs in `plotting/figures/` are generated from the checked-in source
+tables by the scripts above.

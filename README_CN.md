@@ -123,7 +123,7 @@ python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2–7
 ```
 
-它会从仓库内已有的 `plotting/data/derived/`、`plotting/data/load/`、`plotting/data/server_checked/` 直接产出论文图表（排版后的数字），端到端已实测可跑。
+它会从仓库内已有的 `plotting/data/derived/`、`plotting/data/load/`、`plotting/data/server_checked/` 直接产出论文图表（数字与论文一致），端到端已实测可跑。
 
 ---
 

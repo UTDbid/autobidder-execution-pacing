@@ -218,7 +218,7 @@ cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 
 
 Figure 1 is the preserved conceptual asset
 (`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is
-typeset from `table2a`/`table2b` in the manuscript's unified layout pass.
+typeset from `table2a`/`table2b`.
 
 The `l01`–`l31` filenames are defined in `build_derived_data.py` (`FILES`), and
 `FIGURE_TABLE_CROSSWALK.md` maps every manuscript exhibit to its source CSV.
