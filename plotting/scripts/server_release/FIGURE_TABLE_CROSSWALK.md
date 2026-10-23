@@ -101,7 +101,7 @@ python plotting/scripts/rebuild_main_figures.py
 # E-Companion figures (EC.1--EC.7)
 cd plotting/scripts/server_release && python build_all_figures.py
 
-# full pipeline from evaluation outputs
+# rebuild source tables from locked evidence
 cd plotting/scripts/server_release && python build_derived_data.py
 ```
 

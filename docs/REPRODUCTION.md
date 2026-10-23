@@ -7,8 +7,9 @@ Requirements: the three public datasets and trained bidder checkpoints.
 
 1. Download and extract the datasets (§2).
 2. Train the five bidders (§3).
-3. Run the evaluators (§4), then `build_derived_data.py` to produce the source
-   tables in `plotting/data/derived/`.
+3. Run the evaluators (§4), then `build_derived_data.py` to rebuild the source
+   tables in `plotting/data/derived/` from the locked evidence in
+   `plotting/evidence/locked/`.
 4. Rebuild the figures from those tables (§5).
 
 ---
@@ -196,7 +197,8 @@ python build_all_figures.py      # E-Companion figures → figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7 → figures/main/*.png
 ```
 
-`build_derived_data.py` performs this aggregation from the evaluation outputs.
+The locked evidence package (`l01`–`l31`) is in `plotting/evidence/locked/`;
+`build_derived_data.py` rebuilds the source tables from it.
 
 Figure 1 is the preserved conceptual asset
 (`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is

@@ -96,6 +96,7 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]
 │   └── ipinyou/             # download + extract scripts for iPinYou
 ├── plotting/
 │   ├── data/derived/        # every figure/table source CSV (checked in)
+│   ├── evidence/locked/     # locked evidence package (l01–l31)
 │   └── scripts/server_release/  # build_derived_data.py + figure/table builders
 └── docs/                    # reproduction guide + asset inventory
 ```
@@ -113,9 +114,10 @@ checkpoints.
 1. Download and extract the datasets with the scripts in `data/<dataset>/`.
 2. Train the five bidders using the entrypoints in `code/bidders/`.
 3. Run the evaluators in `code/auctionnet/`, `code/t9sim/`, and `code/ipinyou/`.
-4. Run `build_derived_data.py` to turn the evaluation outputs into the source
-   tables in `plotting/data/derived/`. `FIGURE_TABLE_CROSSWALK.md` maps each
-   exhibit to its table.
+4. Run `build_derived_data.py` to rebuild the source tables in
+   `plotting/data/derived/` from the locked evidence in
+   `plotting/evidence/locked/`. `FIGURE_TABLE_CROSSWALK.md` maps each exhibit
+   to its table.
 5. Rebuild the figures from the source tables:
 
 ```bash

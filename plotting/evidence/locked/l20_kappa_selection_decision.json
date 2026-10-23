@@ -1,0 +1,6 @@
+{
+  "outcome": "STOP",
+  "strongest_baseline": "B_global_cal",
+  "frozen_rules": [],
+  "reason": "Transparent rules do not beat the strongest calibration baseline broadly enough to justify a fresh challenge."
+}

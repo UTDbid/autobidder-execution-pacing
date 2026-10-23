@@ -1,0 +1,5 @@
+cap_pp,rule,baseline,mean_improvement,ci_low,ci_high,regret_reduction,pairs_not_worse,references_not_worse,loo_bidder_positive,loo_reference_positive,regret_gate,breadth_gate,delivery_gate,guardrail_gate,proximity_gate,all_gates
+10.0,R1_frontier,B_global_cal,0.00010290084795168925,-0.0021025393853704058,0.002061374050960731,0.054914035857772436,13,2,4,1,False,False,True,True,True,False
+10.0,R2_near_best_95,B_global_cal,0.00010290084795168925,-0.0021025393853704058,0.002061374050960731,0.054914035857772436,13,2,4,1,False,False,True,True,True,False
+10.0,R4_kink_aware,B_global_cal,0.00010290084795168925,-0.0021025393853704058,0.002061374050960731,0.054914035857772436,13,2,4,1,False,False,True,True,True,False
+10.0,R3_sequential,B_global_cal,-0.0015141767800372636,-0.00515766927634399,0.0014190627061725228,-0.8080551292736733,11,1,0,1,False,False,True,True,True,False
