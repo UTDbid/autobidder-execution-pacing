@@ -69,7 +69,7 @@ three pacing controllers, and three datasets.
 
 ## The three pacing controllers
 
-`traffic-aware`, `PID`, and `dual` pacing are implemented as small, auditable
+`traffic-aware`, `PID`, and `dual` pacing are implemented as auditable
 campaign-control policies in `code/common/reference_policies.py` and
 `code/auctionnet/micro/mandate_core_v2.py`. The execution boundary then constrains the
 bidder's native action relative to the reference action:
@@ -134,9 +134,6 @@ cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figu
 | **AuctionNet** | Alimama auto-bidding track (period 7–8, trajectory data) | [Alimama OSS](https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/) — 8 ZIPs (period 7–8, trajectory, and `final/` variants; full list in `docs/REPRODUCTION.md` §2.1) | Alimama competition terms |
 | **T9Sim** | Synthetic auctions with latent outcomes (10 generated masters, 100M auctions) | [Zenodo 21533031](https://zenodo.org/records/21533031) (DOI 10.5281/zenodo.21533031) | CC-BY-4.0 |
 | **iPinYou** | Real-world DSP log records (19.5M: 12.3M model fitting + 3.1M calibration + 4.1M evaluation) | [contest dataset](https://www.dropbox.com/scl/fi/dlam6yqswcwu4x0dnooig/ipinyou.contest.dataset.7z?rlkey=h7q2ey4f7u8n0w7y8euo3zx20&dl=1) · [season 2](https://ndownloader.figshare.com/files/10082688) | iPinYou contest terms |
-
-Each `data/<dataset>/` directory contains the corresponding download,
-integrity-audit, and extraction scripts.
 
 ---
 

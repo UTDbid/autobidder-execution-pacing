@@ -92,19 +92,11 @@ the Main Results**, **EC.3 Extensions and Robustness**.
 
 ---
 
-## Exhibits from earlier versions that are no longer in the manuscript
+## Older assets
 
-| Removed exhibit | Old asset | Status |
-|---|---|---|
-| Reference-bidder heatmap (old EC R2) | `figure_r2_architecture_heatmap.csv` | Experiment no longer reported |
-| Targeted-rollout figure (old EC R7) | `figure_r7_targeted_rollout.csv` | Replaced by EC table `ec:tab:g1` |
-| κ-selection challenge (old EC R10, table J1) | `figure_r10_kappa_selection.csv`; `table_j1_kappa_selection.csv` | Experiment no longer reported |
-| Architecture-scope table (old EC B1) | `table_b1_architecture_scope.csv` | Superseded by `ec:tab:coordination-reference` |
-| Research-design table (old main Table 1) | `table1_research_design.csv` | Exhibit removed from the manuscript |
-| Design audit, claim crosswalk, formal grids, information boundaries, outcome accounting, complete temporal, slack stress, reliability, macro extensions (old EC A1, A3--A6, B2, D2, E1, F2) | corresponding `table_*.csv` files | Exhibit removed from the manuscript |
-
-The CSV files remain in `plotting/data/derived/` for provenance; they are not
-linked to a current manuscript exhibit.
+CSV files for exhibits removed from earlier manuscript versions remain in
+`plotting/data/derived/` for provenance; they are not linked to a current
+exhibit.
 
 ---
 

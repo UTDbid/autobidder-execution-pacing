@@ -80,9 +80,8 @@ The files are published under Zenodo record 21533031
 (`https://zenodo.org/records/21533031`); the download script reads
 `https://zenodo.org/api/records/21533031`.
 
-The `code/t9sim/T9-simulator/` package is the simulator itself (the same
-source deposited to Zenodo). The replay driver is
-`code/t9sim/run_reference_experiment.py` (`--parquet … --references … --kappas …`).
+The replay driver is `code/t9sim/run_reference_experiment.py`
+(`--parquet … --references … --kappas …`).
 
 ### 2.3 iPinYou
 
@@ -102,9 +101,7 @@ The logged-replay driver is `code/ipinyou/run_ipinyou_reference_experiment.py`
 (`--train … --test … --campaign … --output …`).  The evaluation uses 19.5
 million retained log records: 12,318,831 for model fitting (first 80%),
 3,076,427 for calibration (remaining 20%), and 4,100,716 in the official test
-split. `code/ipinyou/make-ipinyou-data/`
-is the upstream (Python 2) conversion tool kept for provenance of the raw
-format; the Python-3 path above supersedes it.
+split.
 
 ---
 
@@ -124,13 +121,13 @@ train them from the datasets in §2.
 The evaluator loads the resulting checkpoints. For reference, the checkpoint
 sizes used in the paper were:
 
-| Bidder | Authors' checkpoint path (relative to their `$BID`) | Approx. size |
-| --- | --- | --- |
-| CQL | `sembid_new/models/baselines/high/20260725_recovery_v1/cql/full_attempt1/checkpoint_400000/cql_model.pth` + `normalize_dict.pkl` | 1.4 MB |
-| IQL | `sembid_new/models/baselines/high/20260725_recovery_v1/iql/full_attempt1/checkpoint_400000/iql_model.pth` + `normalize_dict.pkl` | 0.3 MB |
-| DT | `sembid_new/models/baselines/high/20260725_recovery_v1/dt/full_attempt2/checkpoint_400000/dt.pt` + `normalize_dict.pkl` | 32 MB |
-| GAS | `sembid_new/models/gas/high/20260727_212220_20260725_recovery_v1_b_high_full1/` (`policy/dt.pt` + `critics/critic_*`) | ~0.3 GB |
-| SemBid | `autonomy_assurance_20260810/staging/controller_adapters/sembid_high_200k` + `sembid_new/data/high/train/derived/sembid_cikm2026/20260729_high_qwen05b_800k/embedding_lookup.pkl` | ~1 GB × 16 cp |
+| Bidder | Approx. size |
+| --- | --- |
+| CQL | 1.4 MB |
+| IQL | 0.3 MB |
+| DT | 32 MB |
+| GAS | ~0.3 GB |
+| SemBid | ~1 GB × 16 cp |
 
 ---
 
@@ -210,19 +207,6 @@ manuscript exhibit to its source CSV.
 
 ## 6. Notes on bundled source
 
-- `code/bidders/sembid_cpa/` serves **both** DT and SemBid: it is the
-  `Code/Code` tree, byte-identical to the `legacy_sembid_cpa` tree the DT
-  checkpoint was trained from (md5-verified).
-- The GAS adapter's `git rev-parse` provenance check is skipped when `.git` is
-  absent (this repo strips VCS metadata); it still verifies when `.git` exists.
 - The bundled DT/SemBid source still carries a few `/home/wangmeiyi/AuctionNet/…`
-  defaults from the authors' machines. They are confined to training/stand-alone
-  test scripts and to an `argparse` default inside `test_exp23_standard.py`'s
-  `__main__` block, so the evaluator import is unaffected — every evaluation
-  data/checkpoint path is passed explicitly on the CLI.
-- `code/ipinyou/make-ipinyou-data/` is Python 2 (upstream iPinYou tool), kept
-  for raw-format provenance; the Python-3 `preprocess_ipinyou.py` is the path
-  actually used.
-- One Mid-level recalibration launch script (`run_mid_candidate_grid.sh`) was
-  `0700` on the authors' system and could not be read; the Mid-recalibration
-  `.py` pipeline it fronted is present in `data/auctionnet/auctionnet_official/`.
+  defaults from the authors' machines. They are confined to training and
+  stand-alone test scripts; evaluation paths are passed explicitly on the CLI.
