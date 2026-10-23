@@ -89,13 +89,9 @@ the Main Results**, **EC.3 Extensions and Robustness**.
 | EC.21 | `ec:tab:impl-market-outcomes` | Market Outcomes at 50% Adoption | `derived/main/table3_market_consequences_50pct.csv` |
 | EC.22 | `ec:tab:impl-nonadopters` | Non-Adopter Value at 50% Adoption | `derived/ec/table_f1_complete_macro.csv` (non-adopter columns) |
 | EC.23 | `ec:tab:d3` | AuctionNet-Low Effects across Periods | `derived/ec/table_d3_sparse_feedback.csv` |
-| EC.24 | `ec:tab:headroom` | Delivery Headroom and Later-Period Outcomes | `data/load/later_campaign_load_transport.csv` (mapping to confirm) |
+| EC.24 | `ec:tab:headroom` | Delivery Headroom and Later-Period Outcomes | `data/load/later_campaign_load_transport.csv`; `data/server_checked/development_selection_maps.csv` |
 | EC.25 | `ec:tab:rollout-transition` | Width-Expansion Paths at 50% Adoption | `derived/ec/table_f1_complete_macro.csv` (rollout paths) |
 | EC.26 | `ec:tab:g1` | Targeted versus Random Adoption | `derived/ec/table_g1_targeted_rollout.csv` |
-
-Rows marked “new analysis” or “mapping to confirm” are exhibits introduced by
-the current manuscript whose source aggregates are not bundled with this
-release.
 
 ---
 

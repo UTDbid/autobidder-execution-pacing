@@ -539,7 +539,7 @@ def main() -> None:
     if not (LOCKED / FILES["scale"]).exists():
         raise SystemExit(
             f"Locked evidence package not found at {LOCKED}. "
-            "It is not distributed with this release; see docs/REPRODUCTION.md."
+            "Run the evaluation stage first; see docs/REPRODUCTION.md."
         )
     OUT.mkdir(parents=True, exist_ok=True)
     build_design_tables()

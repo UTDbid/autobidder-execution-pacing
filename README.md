@@ -105,8 +105,20 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 
 ## Reproduction
 
-The source tables behind every manuscript figure and table are checked in, so
-the figures can be rebuilt directly:
+Data preparation and training are run by the reproducer; the evaluation and
+figure code is provided here.
+
+| Stage | Run by | Where |
+| --- | --- | --- |
+| Download and extract datasets | Reproducer | `data/<dataset>/` |
+| Train the five bidders | Reproducer | `code/bidders/` |
+| Evaluate (micro/macro, T9Sim, iPinYou) | Reproducer, with the bundled evaluators | `code/auctionnet/`, `code/t9sim/`, `code/ipinyou/` |
+| Build figures and tables | Provided, from the checked-in source tables | `plotting/scripts/` |
+
+Evaluation outputs are per-cell results. Aggregate them into the source-table
+layout under `plotting/data/derived/`; `build_derived_data.py` shows how that
+aggregation is organized, and `FIGURE_TABLE_CROSSWALK.md` maps each exhibit to
+its table. The figure scripts then rebuild the exhibits:
 
 ```bash
 pip install pandas numpy matplotlib
@@ -114,11 +126,6 @@ cd plotting/scripts/server_release
 python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figures 2–7
 ```
-
-The repository also bundles the training and evaluation code and the public
-dataset download scripts. [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) maps
-those components; the full data → training → evaluation chain is not shipped as
-a one-click pipeline.
 
 ---
 

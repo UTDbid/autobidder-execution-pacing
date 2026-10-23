@@ -1,16 +1,18 @@
 # Reproduction guide
 
-This repository ships the source tables behind every manuscript figure and
-table, so the figures can be rebuilt directly without data downloads or
-training. It also bundles the training and evaluation code and the public
-dataset download scripts.
+The workflow separates what the reproducer runs from what the repository
+provides:
 
-The full data → training → evaluation → aggregation chain is not shipped as a
-one-click pipeline; several steps depend on the authors' execution environment
-and on a locked evidence package that is not part of this release.
+| Stage | Run by | Start here |
+| --- | --- | --- |
+| Download and extract datasets | Reproducer | §2 |
+| Train the five bidders | Reproducer | §3 |
+| Evaluate (micro/macro, T9Sim, iPinYou) | Reproducer, with the bundled evaluators | §4 |
+| Build figures and tables | Provided, from the checked-in source tables | §5 |
 
-- §2–§4: dataset access, training entrypoints, and evaluation entrypoints.
-- §5: rebuild the figures and tables from the checked-in source tables.
+Evaluation outputs are per-cell results. `build_derived_data.py` shows how they
+are aggregated into the source-table layout under `plotting/data/derived/`;
+`FIGURE_TABLE_CROSSWALK.md` maps each exhibit to its table.
 
 ---
 
@@ -189,8 +191,9 @@ python build_all_figures.py      # E-Companion figures → figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7 → figures/main/*.png
 ```
 
-`build_derived_data.py` regenerates the source tables from the authors' locked
-evidence package (`l01`–`l31`), which is not distributed.
+`build_derived_data.py` regenerates the source tables from the locked evidence
+package (`l01`–`l31`) produced by the evaluation stage; it is included as the
+reference for that aggregation step.
 
 Figure 1 is the preserved conceptual asset
 (`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is

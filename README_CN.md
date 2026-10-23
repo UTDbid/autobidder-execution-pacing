@@ -104,7 +104,18 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 <a id="how-to-reproduce"></a>
 ## 如何复现
 
-论文每个图表背后的源数据都在仓库里，可以直接重建：
+数据准备和模型训练由复现者完成；评估与出图代码随仓库提供。
+
+| 阶段 | 由谁执行 | 位置 |
+| --- | --- | --- |
+| 下载并提取数据集 | 复现者 | `data/<dataset>/` |
+| 训练五个 bidder | 复现者 | `code/bidders/` |
+| 评估（微观/宏观、T9Sim、iPinYou） | 复现者，使用仓库内评估器 | `code/auctionnet/`、`code/t9sim/`、`code/ipinyou/` |
+| 生成图表 | 仓库提供，从已附源表直接生成 | `plotting/scripts/` |
+
+评估产出是逐格结果。把它们按 `plotting/data/derived/` 的源表结构汇总；
+`build_derived_data.py` 展示了汇总的组织方式，`FIGURE_TABLE_CROSSWALK.md`
+给出每个图表对应的源表。随后用画图脚本重建图表：
 
 ```bash
 pip install pandas numpy matplotlib
@@ -112,10 +123,6 @@ cd plotting/scripts/server_release
 python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2–7
 ```
-
-仓库同时包含训练、评估代码和公开数据集的下载脚本。
-[`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) 说明各部分的位置；完整的
-数据 → 训练 → 评估链路不提供一键流程。
 
 ---
 
