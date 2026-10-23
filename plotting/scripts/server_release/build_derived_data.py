@@ -548,7 +548,9 @@ def main() -> None:
     build_macro()
     build_t9_and_ipinyou()
     outputs = sorted(str(p.relative_to(ROOT)) for p in OUT.rglob("*.csv"))
-    (ROOT / "qa" / "DERIVED_DATA_INVENTORY.json").write_text(json.dumps({"status": "PASS", "files": len(outputs), "outputs": outputs}, indent=2) + "\n", encoding="utf-8")
+    qa = ROOT / "qa"
+    qa.mkdir(parents=True, exist_ok=True)
+    (qa / "DERIVED_DATA_INVENTORY.json").write_text(json.dumps({"status": "PASS", "files": len(outputs), "outputs": outputs}, indent=2) + "\n", encoding="utf-8")
     print(f"Built {len(outputs)} derived source tables")
 
 
