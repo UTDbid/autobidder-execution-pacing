@@ -19,7 +19,7 @@ A single Python ≥ 3.11 environment suffices for training, evaluation and
 plotting; only the SemBid bidder needs a GPU with the vLLM stack.
 
 ```bash
-# training + evaluation + plotting (micro/macro, DT/GAS, figures)
+# training + evaluation + plotting (campaign replay, synchronous market, DT/GAS, figures)
 pip install torch numpy pandas pyarrow scipy scikit-learn xgboost matplotlib pyyaml
 
 # T9Sim simulator package (install from the bundled source)
@@ -138,7 +138,7 @@ sizes used in the paper were:
 
 The evaluators produce the per-cell results used to build the source tables.
 
-### 4.1 AuctionNet micro + macro
+### 4.1 AuctionNet campaign replay + synchronous market
 
 The core evaluator is `code/auctionnet/micro/mandate_eval_v2.py`:
 
@@ -156,8 +156,8 @@ python code/auctionnet/micro/mandate_eval_v2.py \
   --output <results.csv>
 ```
 
-The frozen grids live in `configs/` (macro `uniform`/`rollout_*` × `pid`/`dual`/
-`traffic`). The synchronous 48-advertiser macro evaluator is
+The experiment grids live in `configs/` (market `uniform`/`rollout_*` × `pid`/`dual`/
+`traffic`). The synchronous 48-advertiser market evaluator is
 `code/auctionnet/macro/src/platformbid_v1/evaluator.py`.
 
 DT and SemBid source is bundled at `code/bidders/sembid_cpa/`; the evaluator

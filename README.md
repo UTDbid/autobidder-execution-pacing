@@ -38,20 +38,20 @@
 ## What is in this repository
 
 The paper studies **execution authority** in digital advertising: how much
-discretion (`κ`) a pacing-controlled autobidder should have over bid execution,
-and how bidder and campaign control should coordinate. We evaluate an execution
-boundary (execution width `κ`) across five learned autobidders, three pacing
-controllers, and three datasets.
+bidder discretion (`κ`) a pacing-controlled autobidder should have over bid
+execution, and how bidder and campaign control should coordinate. We evaluate
+an execution boundary (execution width `κ`) across five learned autobidders,
+three pacing controllers, and three datasets.
 
 | Block | Contents | Location |
 | --- | --- | --- |
-| **Core evaluator** | Single-advertiser *micro* replay + 48-advertiser synchronous *macro* market simulator + reference pacing policies | `code/auctionnet/` |
+| **Core evaluator** | Campaign replay with external competition fixed + synchronous 48-advertiser market + campaign-control policies | `code/auctionnet/` |
 | **Autobidders** | Training code for CQL, IQL, DT, GAS, and SemBid | `code/bidders/` |
-| **Pacing controllers** | traffic-aware, PID, dual (reference policies) | `code/auctionnet/micro/mandate_core_v2.py`, `code/common/reference_policies.py` |
-| **Datasets** | Download and extraction scripts for AuctionNet, T9Sim (truth-referenced simulator), and iPinYou (logged auctions) | `data/` |
+| **Pacing controllers** | traffic-aware, PID, dual (campaign-control policies) | `code/auctionnet/micro/mandate_core_v2.py`, `code/common/reference_policies.py` |
+| **Datasets** | Download and extraction scripts for AuctionNet, T9Sim (synthetic auctions with latent outcomes), and iPinYou (real-world DSP log records) | `data/` |
 | **Cross-dataset analysis** | iPinYou/T9Sim aggregation, campaign-load and scenario-calibration analyses, dataset-scale accounting | `code/analysis/`, `plotting/data/load/`, `plotting/data/server_checked/` |
 | **Figures & tables** | Source CSVs and plotting code for each exhibit | `plotting/` |
-| **Frozen configs** | Experiment grids (κ widths, adoption fractions, seeds) | `configs/` |
+| **Experiment grids** | Execution widths, adoption levels, and seeds | `configs/` |
 
 ---
 
@@ -70,7 +70,7 @@ controllers, and three datasets.
 ## The three pacing controllers
 
 `traffic-aware`, `PID`, and `dual` pacing are implemented as small, auditable
-reference policies in `code/common/reference_policies.py` and
+campaign-control policies in `code/common/reference_policies.py` and
 `code/auctionnet/micro/mandate_core_v2.py`. The execution boundary then constrains the
 bidder's native action relative to the reference action:
 
@@ -84,12 +84,12 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 
 ```text
 ├── code/
-│   ├── auctionnet/          # core evaluator (micro + macro) + common reference policies
-│   ├── bidders/             # five autobidders' training + inference source
+│   ├── auctionnet/          # core evaluator (campaign replay + synchronous market) + campaign-control policies
+│   ├── bidders/             # five learned autobidders' training + inference source
 │   ├── t9sim/               # T9Sim simulator package + replay driver
 │   ├── ipinyou/             # iPinYou preprocess + logged-replay driver
 │   └── analysis/            # cross-dataset aggregation + dataset-scale accounting
-├── configs/                 # frozen experiment grids (macro/micro κ-width × adoption × seed)
+├── configs/                 # experiment grids (execution width × adoption × seed)
 ├── data/
 │   ├── auctionnet/          # download + convert scripts for AuctionNet
 │   ├── t9sim/               # download + extract scripts for T9Sim (Zenodo)
@@ -131,9 +131,9 @@ cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figu
 
 | Dataset | What it is | Download | License / terms |
 | --- | --- | --- | --- |
-| **AuctionNet** | Alimama auto-bidding track (periods 7–8, trajectory data) | [Alimama OSS](https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/) — 8 ZIPs (period 7–8, trajectory, and `final/` variants; full list in `docs/REPRODUCTION.md` §2.1) | Alimama competition terms |
-| **T9Sim** | Truth-referenced RTB simulator (10 × 10M-impression seeds) | [Zenodo 21533031](https://zenodo.org/records/21533031) (DOI 10.5281/zenodo.21533031) | CC-BY-4.0 |
-| **iPinYou** | Real logged RTB campaign data (19.5M records: 12.3M fitting + 3.1M calibration + 4.1M test) | [contest dataset](https://www.dropbox.com/scl/fi/dlam6yqswcwu4x0dnooig/ipinyou.contest.dataset.7z?rlkey=h7q2ey4f7u8n0w7y8euo3zx20&dl=1) · [season 2](https://ndownloader.figshare.com/files/10082688) | iPinYou contest terms |
+| **AuctionNet** | Alimama auto-bidding track (period 7–8, trajectory data) | [Alimama OSS](https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/) — 8 ZIPs (period 7–8, trajectory, and `final/` variants; full list in `docs/REPRODUCTION.md` §2.1) | Alimama competition terms |
+| **T9Sim** | Synthetic auctions with latent outcomes (10 generated masters, 100M auctions) | [Zenodo 21533031](https://zenodo.org/records/21533031) (DOI 10.5281/zenodo.21533031) | CC-BY-4.0 |
+| **iPinYou** | Real-world DSP log records (19.5M: 12.3M model fitting + 3.1M calibration + 4.1M evaluation) | [contest dataset](https://www.dropbox.com/scl/fi/dlam6yqswcwu4x0dnooig/ipinyou.contest.dataset.7z?rlkey=h7q2ey4f7u8n0w7y8euo3zx20&dl=1) · [season 2](https://ndownloader.figshare.com/files/10082688) | iPinYou contest terms |
 
 Each `data/<dataset>/` directory contains the corresponding download,
 integrity-audit, and extraction scripts.
