@@ -536,13 +536,17 @@ def build_selection() -> None:
 
 
 def main() -> None:
+    if not (LOCKED / FILES["scale"]).exists():
+        raise SystemExit(
+            f"Locked evidence package not found at {LOCKED}. "
+            "It is not distributed with this release; see docs/REPRODUCTION.md."
+        )
     OUT.mkdir(parents=True, exist_ok=True)
     build_design_tables()
     build_micro()
     build_mechanism_and_boundaries()
     build_macro()
     build_t9_and_ipinyou()
-    build_selection()
     outputs = sorted(str(p.relative_to(ROOT)) for p in OUT.rglob("*.csv"))
     (ROOT / "qa" / "DERIVED_DATA_INVENTORY.json").write_text(json.dumps({"status": "PASS", "files": len(outputs), "outputs": outputs}, indent=2) + "\n", encoding="utf-8")
     print(f"Built {len(outputs)} derived source tables")

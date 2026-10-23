@@ -89,7 +89,6 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 │   ├── bidders/             # five autobidders' training + inference source
 │   ├── t9sim/               # T9Sim simulator package + replay driver
 │   ├── ipinyou/             # iPinYou preprocess + logged-replay driver
-│   ├── kappa_selection/     # historical κ-selection analysis (not part of the current manuscript)
 │   └── analysis/            # cross-dataset aggregation + dataset-scale accounting
 ├── configs/                 # frozen experiment grids (macro/micro κ-width × adoption × seed)
 ├── data/
@@ -106,16 +105,8 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 
 ## Reproduction
 
-The full end-to-end flow (data → train → evaluate → build figures) is in
-[`docs/REPRODUCTION.md`](docs/REPRODUCTION.md):
-
-```text
-download datasets  →  train autobidders  →  evaluate (micro/macro, κ, T9Sim, iPinYou)
-→  evaluation outputs  →  build_derived_data.py  →  derived CSVs  →  build_all_figures.py
-```
-
-To rebuild **just the figures and tables** from the checked-in source tables
-(no data, no training):
+The source tables behind every manuscript figure and table are checked in, so
+the figures can be rebuilt directly:
 
 ```bash
 pip install pandas numpy matplotlib
@@ -124,9 +115,10 @@ python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → main figures 2–7
 ```
 
-This reproduces the manuscript's figures/tables from the bundled
-`plotting/data/derived/`, `plotting/data/load/`, and
-`plotting/data/server_checked/`.
+The repository also bundles the training and evaluation code and the public
+dataset download scripts. [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) maps
+those components; the full data → training → evaluation chain is not shipped as
+a one-click pipeline.
 
 ---
 

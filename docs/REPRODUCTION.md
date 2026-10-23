@@ -1,15 +1,16 @@
 # Reproduction guide
 
-The paper's results are reproduced end to end: download the three public
-datasets, train the five autobidders from the bundled source, evaluate them
-under the three pacing controllers, and rebuild every figure and table.
+This repository ships the source tables behind every manuscript figure and
+table, so the figures can be rebuilt directly without data downloads or
+training. It also bundles the training and evaluation code and the public
+dataset download scripts.
 
-```
-download datasets (§2) → train autobidders (§3) → evaluate (§4) → build figures (§5)
-```
+The full data → training → evaluation → aggregation chain is not shipped as a
+one-click pipeline; several steps depend on the authors' execution environment
+and on a locked evidence package that is not part of this release.
 
-If you only want the figures and tables as typeset numbers, the source tables
-are already checked in and §5 can be run on its own (no data, no training).
+- §2–§4: dataset access, training entrypoints, and evaluation entrypoints.
+- §5: rebuild the figures and tables from the checked-in source tables.
 
 ---
 
@@ -90,9 +91,9 @@ format; the Python-3 path above supersedes it.
 
 ## 3. Train the autobidders
 
-Each learned bidder's training source is bundled and self-contained. Train them
-per the paper's training procedure; the training data is derived from the
-public datasets in §2 with the bundled download + conversion scripts.
+Each learned bidder's training source is bundled. The entrypoints below are
+provided for reference; training requires the datasets in §2 and the authors'
+preprocessing.
 
 | Bidder | Training entrypoint |
 | --- | --- |
@@ -117,14 +118,12 @@ authors' training outputs and their approximate sizes were:
 
 ## 4. Evaluation
 
-The evaluation produces 31 locked-evidence aggregates (`l01`–`l31`), which
-`build_derived_data.py` turns into the figure/table source CSVs.  The current
-manuscript uses the AuctionNet, T9Sim, iPinYou, and market aggregates
-(`l01`–`l15`, `l21`–`l26`, `l29`–`l31`); `l16`–`l20` (the historical
-κ-selection challenge) and `l27`–`l28` (reliability and response-aware
-diagnostics) do not support any exhibit in the current version.
+The evaluators below produce the per-cell results behind the manuscript. The
+authors' aggregation into the locked evidence package (`l01`–`l31`) is not
+distributed; `build_derived_data.py` is included as a reference for readers who
+build their own evidence.
 
-### 4.1 AuctionNet micro + macro (`l01–l11`, `l21–l30`)
+### 4.1 AuctionNet micro + macro
 
 The core evaluator is `code/auctionnet/micro/mandate_eval_v2.py`:
 
@@ -150,7 +149,7 @@ DT and SemBid source is bundled at `code/bidders/sembid_cpa/`; the evaluator
 resolves it automatically relative to the repo (`--dt-code-root`,
 `--sembid-code-root`, and `GAS_REPO_ROOT` env var).
 
-### 4.2 T9Sim + iPinYou (`l12–l15`)
+### 4.2 T9Sim + iPinYou
 
 ```bash
 python code/t9sim/run_reference_experiment.py  --parquet <auctions.parquet> ... --output cells.csv
@@ -168,32 +167,7 @@ mapped to `l12–l15`:
 | `l14_t9sim_policy_cells.csv` | `t9sim_policy_cells.csv` |
 | `l15_t9sim_exclusive_purchases.csv` | `t9sim_exclusive_purchase_differences.csv` |
 
-### 4.3 Historical κ-selection analysis (`l16–l20`; not in the current manuscript)
-
-```bash
-cd code/kappa_selection/03_code
-python prepare_challenge.py                       # freeze grids/manifest (idempotent)
-python analyze_selection_challenge.py --phase retrospective
-```
-
-This analysis is retained for provenance only; the current manuscript no longer
-reports a κ-selection challenge. The retrospective phase reads the inherited
-calibration + test surfaces and the per-cell `results.json` (produced by
-`mandate_eval_v2.py` above) and writes:
-
-| Locked evidence | Output |
-| --- | --- |
-| `l16_kappa_selection_calibration.csv` | `calibration_surface.csv` |
-| `l17_kappa_selection_evaluation.csv` | `evaluation_surface.csv` |
-| `l18_kappa_selection_rules.csv` | `rule_summary.csv` |
-| `l19_kappa_selection_gates.csv` | `success_gates.csv` |
-| `l20_kappa_selection_decision.json` | `decision.json` |
-
-`KAPPA_INPUT_ROOT` points at the directory holding the unpacked upstream
-results. The authors' frozen retrospective outputs are bundled at
-`code/kappa_selection/06_results/retrospective/` for reference.
-
-### 4.4 Dataset-scale accounting (`l31`)
+### 4.3 Dataset-scale accounting
 
 ```bash
 python code/analysis/collect_dataset_raw_statistics.py \
@@ -205,32 +179,23 @@ python code/analysis/collect_dataset_raw_statistics.py \
 
 ---
 
-## 5. Rebuild derived CSVs and figures
+## 5. Rebuild figures from the checked-in source tables
 
-Once `l01`–`l31` are at `plotting/evidence/locked/`:
+No data download or training is required:
 
 ```bash
 cd plotting/scripts/server_release
-python build_derived_data.py     # l01–l31 → plotting/data/derived/{main,ec}/*.csv
 python build_all_figures.py      # E-Companion figures → figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7 → figures/main/*.png
 ```
 
+`build_derived_data.py` regenerates the source tables from the authors' locked
+evidence package (`l01`–`l31`), which is not distributed.
+
 Figure 1 is the preserved conceptual asset
 (`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is
-typeset from `table2a`/`table2b`.
-
-The `l01`–`l31` filenames are defined in `build_derived_data.py` (`FILES`), and
-`FIGURE_TABLE_CROSSWALK.md` maps every manuscript exhibit to its source CSV.
-
-**Figure-only shortcut** — the derived source tables are already checked in, so
-the figures can be rebuilt without the data, training or evaluation above:
-
-```bash
-cd plotting/scripts/server_release
-python build_all_figures.py      # E-Companion figures from checked-in derived CSVs
-cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7
-```
+typeset from `table2a`/`table2b`.  `FIGURE_TABLE_CROSSWALK.md` maps every
+manuscript exhibit to its source CSV.
 
 ---
 

@@ -87,7 +87,6 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 │   ├── bidders/             # autobidder 的训练 + 推理源码
 │   ├── t9sim/               # T9Sim 模拟器包 + 回放驱动
 │   ├── ipinyou/             # iPinYou 预处理 + 日志回放驱动
-│   ├── kappa_selection/     # 历史 κ 选择分析（不属于当前论文）
 │   └── analysis/            # 跨数据集聚合 + 数据集规模核算
 ├── configs/                 # 冻结实验网格（宏观/微观 κ 宽度 × 采纳比例 × 种子）
 ├── data/
@@ -105,14 +104,7 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 <a id="how-to-reproduce"></a>
 ## 如何复现
 
-完整流程（数据 → 训练 → 评估 → 出图）见 [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md)：
-
-```text
-下载数据集  →  训练 autobidder  →  评估（微观/宏观、κ、T9Sim、iPinYou）
-→  评估产出  →  build_derived_data.py  →  派生 CSV  →  build_all_figures.py
-```
-
-如果只想重建图表（无需数据、无需训练）：
+论文每个图表背后的源数据都在仓库里，可以直接重建：
 
 ```bash
 pip install pandas numpy matplotlib
@@ -121,7 +113,9 @@ python build_all_figures.py      # → plotting/figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # → 主图 2–7
 ```
 
-它会从仓库内已有的 `plotting/data/derived/`、`plotting/data/load/`、`plotting/data/server_checked/` 直接产出论文图表。
+仓库同时包含训练、评估代码和公开数据集的下载脚本。
+[`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) 说明各部分的位置；完整的
+数据 → 训练 → 评估链路不提供一键流程。
 
 ---
 
