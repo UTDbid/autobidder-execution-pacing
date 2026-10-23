@@ -1,15 +1,15 @@
 # Reproduction guide
 
-The repository provides the dataset download scripts, bidder training code,
-evaluation entrypoints, and the source tables behind every manuscript exhibit.
+The repository contains the scripts used for data preparation, training, and
+evaluation, together with the source tables behind each exhibit.
 
-Prerequisites: the three public datasets and trained bidder checkpoints.
+Requirements: the three public datasets and trained bidder checkpoints.
 
-1. Data: download and extract the datasets (§2).
-2. Training: train the five bidders (§3).
-3. Evaluation and tables: run the evaluators (§4), then `build_derived_data.py`
-   to turn their outputs into the source tables under `plotting/data/derived/`.
-4. Figures: rebuild the exhibits from the source tables (§5).
+1. Download and extract the datasets (§2).
+2. Train the five bidders (§3).
+3. Run the evaluators (§4), then `build_derived_data.py` to produce the source
+   tables in `plotting/data/derived/`.
+4. Rebuild the figures from those tables (§5).
 
 ---
 
@@ -33,9 +33,9 @@ pip install -e code/t9sim/T9-simulator
 
 ## 2. Datasets — download and extraction
 
-All three datasets have public download links. The bundled `data/<dataset>/`
-scripts reproduce the download + integrity-audit + extraction steps and are
-parameterized by `POMS_DATA_ROOT` (default: this repo's `data/` directory).
+All three datasets are publicly available. The scripts in `data/<dataset>/`
+handle download, integrity checks, and extraction; `POMS_DATA_ROOT` sets the
+target directory (default: this repo's `data/`).
 
 ### 2.1 AuctionNet
 
@@ -49,7 +49,7 @@ the trajectory archives, plus the `final/` variants. After download, the raw
 CSVs are converted to the evaluator's input format with
 `data/auctionnet/convert_period_to_trajectory.py` and the
 `data/auctionnet/auctionnet_official/convert_official_raw_to_trajectory.py`
-pipeline (validation + conversion + checksum).
+pipeline (validation, conversion, and checksumming).
 
 The evaluator consumes two files per level:
 
@@ -90,8 +90,8 @@ format; the Python-3 path above supersedes it.
 
 ## 3. Train the autobidders
 
-Each learned bidder's training source is bundled. The entrypoints below train
-the five bidders from the datasets in §2.
+Training code for all five bidders is in `code/bidders/`. The entrypoints below
+train them from the datasets in §2.
 
 | Bidder | Training entrypoint |
 | --- | --- |
@@ -101,8 +101,8 @@ the five bidders from the datasets in §2.
 | GAS | `code/bidders/gas/run/train_dt_baselines.py` + `code/bidders/gas/run/train_dt_critics.py` |
 | SemBid | `code/bidders/sembid_cpa/Training/train_exp23_2048.py` |
 
-The evaluator (§4) then loads the resulting checkpoints. For reference, the
-authors' training outputs and their approximate sizes were:
+The evaluator loads the resulting checkpoints. For reference, the checkpoint
+sizes used in the paper were:
 
 | Bidder | Authors' checkpoint path (relative to their `$BID`) | Approx. size |
 | --- | --- | --- |
@@ -116,8 +116,7 @@ authors' training outputs and their approximate sizes were:
 
 ## 4. Evaluation
 
-The evaluators below produce the per-cell results behind the manuscript.
-`build_derived_data.py` turns those results into the source tables.
+The evaluators produce the per-cell results used to build the source tables.
 
 ### 4.1 AuctionNet micro + macro
 

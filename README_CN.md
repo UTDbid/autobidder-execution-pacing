@@ -38,17 +38,17 @@
 <a id="whats-inside"></a>
 ## 项目概览
 
-这篇论文研究数字广告中的**执行权（execution authority）**问题：受 pacing 控制的 autobidder，出价到底该被允许多大空间（bidder discretion，`κ`），以及 autobidder 与 campaign control 应当如何协调。我们提出执行边界机制（execution boundary / execution width `κ`），并在五个学习型 autobidder、三类 pacing 控制器、三个数据集上做了评估。
+这篇论文研究数字广告中的**执行权（execution authority）**：受 pacing 控制的 autobidder，出价应该在多大程度上偏离 campaign control 的建议（bidder discretion，`κ`），以及两者如何协调。我们在五个学习型 autobidder、三类 pacing 控制器和三个数据集上评估执行边界（execution width `κ`）。
 
 | 模块 | 内容 | 位置 |
 | --- | --- | --- |
 | **核心评估器** | 单广告主*微观*回放 + 48 广告主同步*宏观*市场模拟器 + 参考 pacing 策略 | `code/auctionnet/` |
-| **autobidder** | CQL、IQL、DT、GAS、SemBid——训练源码都在仓库里 | `code/bidders/` |
+| **autobidder** | CQL、IQL、DT、GAS、SemBid 的训练代码 | `code/bidders/` |
 | **pacing 控制器** | traffic-aware、PID、dual（参考策略） | `code/auctionnet/micro/mandate_core_v2.py`、`code/common/reference_policies.py` |
-| **数据集** | AuctionNet、T9Sim（带真值标注的模拟器）、iPinYou（真实竞价日志）——下载与提取脚本 | `data/` |
+| **数据集** | AuctionNet、T9Sim（带真值标注的模拟器）、iPinYou（真实竞价日志）的下载和解压脚本 | `data/` |
 | **跨数据集分析** | iPinYou/T9Sim 聚合、campaign load 与 scenario calibration 分析、数据集规模核算 | `code/analysis/`、`plotting/data/load/`、`plotting/data/server_checked/` |
-| **图表** | 论文每个图表展示对应的源 CSV + 画图代码 | `plotting/` |
-| **冻结配置** | 精确实验网格（κ 宽度、采纳比例、随机种子） | `configs/` |
+| **图表** | 每个图表的源 CSV 和画图代码 | `plotting/` |
+| **冻结配置** | 实验网格（κ 宽度、采纳比例、随机种子） | `configs/` |
 
 ---
 
@@ -68,7 +68,7 @@
 <a id="controllers"></a>
 ## pacing 控制器
 
-traffic-aware、PID、dual 三种 pacing 用纯、可审计的参考策略实现，代码在
+traffic-aware、PID、dual 三种 pacing 用简洁、可审计的参考策略实现，代码在
 `code/common/reference_policies.py` 和 `code/auctionnet/micro/mandate_core_v2.py`。
 执行边界（execution boundary）会把 autobidder 的原生出价相对参考动作做一次裁剪：
 
@@ -104,15 +104,15 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 <a id="how-to-reproduce"></a>
 ## 如何复现
 
-仓库提供数据下载脚本、bidder 训练代码、评估入口，以及论文每个图表背后的源表。
+仓库包含数据准备、训练和评估脚本，以及论文图表对应的源表。
 
 需要准备：三个公开数据集（下载链接见下文）和训练好的 bidder checkpoint。
 
-1. 用 `data/<dataset>/` 下的脚本下载并提取数据集。
+1. 用 `data/<dataset>/` 下的脚本下载并解压数据集。
 2. 用 `code/bidders/` 下的入口训练五个 bidder。
 3. 运行 `code/auctionnet/`、`code/t9sim/`、`code/ipinyou/` 下的评估器。
 4. 运行 `build_derived_data.py`，把评估产出转成 `plotting/data/derived/` 下的源表；
-   `FIGURE_TABLE_CROSSWALK.md` 给出每个图表对应的源表。
+   每个图表对应的源表见 `FIGURE_TABLE_CROSSWALK.md`。
 5. 从源表重建图表：
 
 ```bash

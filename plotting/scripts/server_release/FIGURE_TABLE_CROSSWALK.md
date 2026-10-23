@@ -1,14 +1,14 @@
 # Manuscript Figure/Table Crosswalk
 
-This file maps every exhibit of the current manuscript to its rendered asset and
-source data:
+Each exhibit of the current manuscript, with its rendered asset and source
+table.
 
-> *Execution Authority in Digital Advertising: Coordinating Autobidding and
-> Campaign Control*
+*Execution Authority in Digital Advertising: Coordinating Autobidding and
+Campaign Control*
 
-The manuscript contains **8 main-text figures, 8 main-text tables, 7
-E-Companion figures, and 26 E-Companion tables**.  Figures ship as PNG in
-`plotting/figures/`; source tables live in `plotting/data/`.
+The manuscript has 8 main-text figures, 8 main-text tables, 7 E-Companion
+figures, and 26 E-Companion tables. Figures are PNGs in `plotting/figures/`;
+source tables are in `plotting/data/`.
 
 ---
 
@@ -16,7 +16,7 @@ E-Companion figures, and 26 E-Companion tables**.  Figures ship as PNG in
 
 | # | Label | Caption | Asset | Source data |
 |---|---|---|---|---|
-| 1 | `fig:architecture` | Layered Advertising Control and Execution Discretion | `figures/main/fig1_execution_boundary_framework.png` | Conceptual; preserved asset (not regenerated) |
+| 1 | `fig:architecture` | Layered Advertising Control and Execution Discretion | `figures/main/fig1_execution_boundary_framework.png` | Conceptual; preserved asset |
 | 2 | `fig:campaign-frontier` | Advertiser Value and Budget Delivery across Execution Widths | `figures/main/fig2_campaign_frontier.png` | `derived/main/figure2a_campaign_frontier.csv` |
 | 3 | `fig:reallocation` | Directional Discretion in AuctionNet | `figures/main/fig3_directional_discretion.png` | `derived/main/figure4a_directional.csv` |
 | 4 | `fig:opportunity-supply` / `fig:room-selection` | Opportunity Supply and Wide--Base Value Changes (AuctionNet); Budget Pressure and Wide--Base Click Changes (iPinYou) | `figures/main/fig4_supply_budget_pressure.png` | `derived/main/figure5a_auctionnet_supply.csv`; `figure5b_ipinyou_pressure.csv` |

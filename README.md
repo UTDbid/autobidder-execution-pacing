@@ -38,21 +38,20 @@
 ## What is in this repository
 
 The paper studies **execution authority** in digital advertising: how much
-*bidder discretion* (`κ`) a pacing-controlled autobidder should be given over
-bid execution, and how bidder and campaign control should be coordinated. It
-evaluates an **execution boundary** (execution width `κ`) on top of **five
-learned autobidders** under **three pacing controllers**, across **three
-datasets**:
+discretion (`κ`) a pacing-controlled autobidder should have over bid execution,
+and how bidder and campaign control should coordinate. We evaluate an execution
+boundary (execution width `κ`) across five learned autobidders, three pacing
+controllers, and three datasets.
 
 | Block | Contents | Location |
 | --- | --- | --- |
 | **Core evaluator** | Single-advertiser *micro* replay + 48-advertiser synchronous *macro* market simulator + reference pacing policies | `code/auctionnet/` |
-| **Autobidders** | CQL, IQL, DT, GAS, SemBid — training source bundled under `code/bidders/` | `code/bidders/` |
+| **Autobidders** | Training code for CQL, IQL, DT, GAS, and SemBid | `code/bidders/` |
 | **Pacing controllers** | traffic-aware, PID, dual (reference policies) | `code/auctionnet/micro/mandate_core_v2.py`, `code/common/reference_policies.py` |
-| **Datasets** | AuctionNet, T9Sim (truth-referenced simulator), iPinYou (logged auctions) — setup + extraction scripts | `data/` |
+| **Datasets** | Download and extraction scripts for AuctionNet, T9Sim (truth-referenced simulator), and iPinYou (logged auctions) | `data/` |
 | **Cross-dataset analysis** | iPinYou/T9Sim aggregation, campaign-load and scenario-calibration analyses, dataset-scale accounting | `code/analysis/`, `plotting/data/load/`, `plotting/data/server_checked/` |
-| **Figures & tables** | Every manuscript exhibit's source CSV + plotting code | `plotting/` |
-| **Frozen configs** | The exact experiment grids (κ widths, adoption fractions, seeds) | `configs/` |
+| **Figures & tables** | Source CSVs and plotting code for each exhibit | `plotting/` |
+| **Frozen configs** | Experiment grids (κ widths, adoption fractions, seeds) | `configs/` |
 
 ---
 
@@ -70,10 +69,10 @@ datasets**:
 
 ## The three pacing controllers
 
-`traffic-aware`, `PID`, and `dual` pacing are implemented as pure, auditable
+`traffic-aware`, `PID`, and `dual` pacing are implemented as small, auditable
 reference policies in `code/common/reference_policies.py` and
 `code/auctionnet/micro/mandate_core_v2.py`. The execution boundary then constrains the
-bidder's *native* proposal relative to the reference action:
+bidder's native action relative to the reference action:
 
 ```text
 enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)]   (relative_hard)
@@ -105,18 +104,17 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 
 ## Reproduction
 
-The repository provides the dataset download scripts, bidder training code,
-evaluation entrypoints, and the source tables behind every manuscript exhibit.
+The repository includes the scripts used for data preparation, training, and
+evaluation, plus the source tables behind each exhibit.
 
-Prerequisites: the three public datasets (download links below) and trained
-bidder checkpoints.
+Requirements: the three public datasets (links below) and trained bidder
+checkpoints.
 
-1. Download and extract the datasets with the scripts under `data/<dataset>/`.
-2. Train the five bidders with the entrypoints under `code/bidders/`.
-3. Run the evaluators under `code/auctionnet/`, `code/t9sim/`, and
-   `code/ipinyou/`.
+1. Download and extract the datasets with the scripts in `data/<dataset>/`.
+2. Train the five bidders using the entrypoints in `code/bidders/`.
+3. Run the evaluators in `code/auctionnet/`, `code/t9sim/`, and `code/ipinyou/`.
 4. Run `build_derived_data.py` to turn the evaluation outputs into the source
-   tables under `plotting/data/derived/`; `FIGURE_TABLE_CROSSWALK.md` maps each
+   tables in `plotting/data/derived/`. `FIGURE_TABLE_CROSSWALK.md` maps each
    exhibit to its table.
 5. Rebuild the figures from the source tables:
 
