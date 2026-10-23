@@ -104,18 +104,17 @@ enforce_action(raw, ref, κ)  →  clip 到 [max{0, ref·(1−κ)}, ref·(1+κ)]
 <a id="how-to-reproduce"></a>
 ## 如何复现
 
-数据准备和模型训练由复现者完成；评估与出图代码随仓库提供。
+仓库提供数据下载脚本、bidder 训练代码、评估入口，以及论文每个图表背后的源表。
 
-| 阶段 | 由谁执行 | 位置 |
-| --- | --- | --- |
-| 下载并提取数据集 | 复现者 | `data/<dataset>/` |
-| 训练五个 bidder | 复现者 | `code/bidders/` |
-| 评估（微观/宏观、T9Sim、iPinYou） | 复现者，使用仓库内评估器 | `code/auctionnet/`、`code/t9sim/`、`code/ipinyou/` |
-| 生成图表 | 仓库提供，从已附源表直接生成 | `plotting/scripts/` |
+需要准备：三个公开数据集（下载链接见下文）和训练好的 bidder checkpoint。
 
-评估产出是逐格结果。把它们按 `plotting/data/derived/` 的源表结构汇总；
-`build_derived_data.py` 展示了汇总的组织方式，`FIGURE_TABLE_CROSSWALK.md`
-给出每个图表对应的源表。随后用画图脚本重建图表：
+1. 用 `data/<dataset>/` 下的脚本下载并提取数据集。
+2. 用 `code/bidders/` 下的入口训练五个 bidder。
+3. 运行 `code/auctionnet/`、`code/t9sim/`、`code/ipinyou/` 下的评估器。
+4. 把逐格评估产出汇总为 `plotting/data/derived/` 的源表结构。
+   `build_derived_data.py` 展示了汇总的组织方式，
+   `FIGURE_TABLE_CROSSWALK.md` 给出每个图表对应的源表。
+5. 从源表重建图表：
 
 ```bash
 pip install pandas numpy matplotlib

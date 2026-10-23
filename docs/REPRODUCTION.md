@@ -1,18 +1,17 @@
 # Reproduction guide
 
-The workflow separates what the reproducer runs from what the repository
-provides:
+The repository provides the dataset download scripts, bidder training code,
+evaluation entrypoints, and the source tables behind every manuscript exhibit.
 
-| Stage | Run by | Start here |
-| --- | --- | --- |
-| Download and extract datasets | Reproducer | §2 |
-| Train the five bidders | Reproducer | §3 |
-| Evaluate (micro/macro, T9Sim, iPinYou) | Reproducer, with the bundled evaluators | §4 |
-| Build figures and tables | Provided, from the checked-in source tables | §5 |
+Prerequisites: the three public datasets and trained bidder checkpoints.
 
-Evaluation outputs are per-cell results. `build_derived_data.py` shows how they
-are aggregated into the source-table layout under `plotting/data/derived/`;
-`FIGURE_TABLE_CROSSWALK.md` maps each exhibit to its table.
+1. Data: download and extract the datasets (§2).
+2. Training: train the five bidders (§3).
+3. Evaluation: run the evaluators to obtain per-cell results (§4).
+4. Aggregation: `build_derived_data.py` performs the aggregation into the
+   source-table layout under `plotting/data/derived/`;
+   `FIGURE_TABLE_CROSSWALK.md` maps each exhibit to its table.
+5. Figures: rebuild the exhibits from the source tables (§5).
 
 ---
 
@@ -93,9 +92,8 @@ format; the Python-3 path above supersedes it.
 
 ## 3. Train the autobidders
 
-Each learned bidder's training source is bundled. The entrypoints below are
-provided for reference; training requires the datasets in §2 and the authors'
-preprocessing.
+Each learned bidder's training source is bundled. The entrypoints below train
+the five bidders from the datasets in §2.
 
 | Bidder | Training entrypoint |
 | --- | --- |
@@ -191,9 +189,8 @@ python build_all_figures.py      # E-Companion figures → figures/ec/*.png
 cd ../../.. && python plotting/scripts/rebuild_main_figures.py   # main figures 2–7 → figures/main/*.png
 ```
 
-`build_derived_data.py` regenerates the source tables from the locked evidence
-package (`l01`–`l31`) produced by the evaluation stage; it is included as the
-reference for that aggregation step.
+`build_derived_data.py` performs this aggregation from the locked evidence
+package (`l01`–`l31`) produced by the evaluation stage.
 
 Figure 1 is the preserved conceptual asset
 (`plotting/figures/main/fig1_execution_boundary_framework.png`).  Figure 8 is

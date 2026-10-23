@@ -105,20 +105,20 @@ enforce_action(raw, ref, κ)  →  clip to [max{0, ref·(1−κ)}, ref·(1+κ)] 
 
 ## Reproduction
 
-Data preparation and training are run by the reproducer; the evaluation and
-figure code is provided here.
+The repository provides the dataset download scripts, bidder training code,
+evaluation entrypoints, and the source tables behind every manuscript exhibit.
 
-| Stage | Run by | Where |
-| --- | --- | --- |
-| Download and extract datasets | Reproducer | `data/<dataset>/` |
-| Train the five bidders | Reproducer | `code/bidders/` |
-| Evaluate (micro/macro, T9Sim, iPinYou) | Reproducer, with the bundled evaluators | `code/auctionnet/`, `code/t9sim/`, `code/ipinyou/` |
-| Build figures and tables | Provided, from the checked-in source tables | `plotting/scripts/` |
+Prerequisites: the three public datasets (download links below) and trained
+bidder checkpoints.
 
-Evaluation outputs are per-cell results. Aggregate them into the source-table
-layout under `plotting/data/derived/`; `build_derived_data.py` shows how that
-aggregation is organized, and `FIGURE_TABLE_CROSSWALK.md` maps each exhibit to
-its table. The figure scripts then rebuild the exhibits:
+1. Download and extract the datasets with the scripts under `data/<dataset>/`.
+2. Train the five bidders with the entrypoints under `code/bidders/`.
+3. Run the evaluators under `code/auctionnet/`, `code/t9sim/`, and
+   `code/ipinyou/`.
+4. Aggregate the per-cell evaluation outputs into the source-table layout under
+   `plotting/data/derived/`. `build_derived_data.py` shows how the aggregation
+   is organized, and `FIGURE_TABLE_CROSSWALK.md` maps each exhibit to its table.
+5. Rebuild the figures from the source tables:
 
 ```bash
 pip install pandas numpy matplotlib
